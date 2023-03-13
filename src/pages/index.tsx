@@ -1,16 +1,20 @@
 import Head from 'next/head'
-import React, { useState } from 'react'
+import React from 'react'
+import Input from '../components/forms/input'
 import * as C from '../styles/Home'
 import Clock from '../components/header/clock/Clock'
 import { ClockProps } from '../protocols/clock'
 import { BiUser } from 'react-icons/bi'
 import Link from 'next/link'
-import Error from '../components/helpers/Error'
+import useForm from '../hooks/useForm'
 
 export default function Home() {
-  const [input, setInput] = useState<string>('')
+  const user = useForm('name')
+  const password = useForm('password')
+  const email = useForm('email')
+  /*const [input, setInput] = useState<string>('')
   const [password, setPassword] = useState<string>()
-  const [error, setError] = useState<string>('')
+  const [error, setError] = useState<string>('')*/
   const clockProps: ClockProps = {
     language: 'pt-BR',
     dateTimeFormatOptions: {
@@ -20,25 +24,9 @@ export default function Home() {
       minute: '2-digit',
     },
   }
-  const handlePassword = ({ target }: React.ChangeEvent<HTMLInputElement>) => {
-    setPassword(target.value)
-    if (!password) {
-      setError
-    }
-  }
-  const handleInput = ({ target }: React.ChangeEvent<HTMLInputElement>) => {
-    setInput(target.value)
-    if (error) {
-      setError('')
-    } else {
-      setError('informe um nome')
-    }
-  }
+
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-    if (!input) {
-      setError('informe um nome')
-    }
   }
 
   return (
@@ -62,24 +50,23 @@ export default function Home() {
               <BiUser size={64} />
             </span>
             <form onSubmit={handleSubmit}>
-              <input
+              <Input
                 type="text"
-                placeholder="usuário"
-                value={input}
-                onChange={handleInput}
+                name="usuário"
+                placeHolder="usuário"
+                {...user}
               />
-              <input
+              <Input type="email" name="email" placeHolder="email" {...email} />
+              <Input
                 type="password"
-                placeholder="password"
-                value={password}
-                onChange={handlePassword}
+                name="password"
+                placeHolder="senha"
+                {...password}
               />
               <Link href="/">criar conta</Link>
-
               <button>entrar</button>
-            </form>{' '}
+            </form>
           </div>
-          <Error error={error} />
         </article>
       </C.Container>
     </>
