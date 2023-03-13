@@ -12,9 +12,7 @@ export default function Home() {
   const user = useForm('name')
   const password = useForm('password')
   const email = useForm('email')
-  /*const [input, setInput] = useState<string>('')
-  const [password, setPassword] = useState<string>()
-  const [error, setError] = useState<string>('')*/
+
   const clockProps: ClockProps = {
     language: 'pt-BR',
     dateTimeFormatOptions: {
@@ -27,6 +25,9 @@ export default function Home() {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
+    if (user.validate() && password.validate() && email.validate()) {
+      console.log('campos corretos')
+    }
   }
 
   return (
