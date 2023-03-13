@@ -6,26 +6,24 @@ interface UseClock {
   dateFormat: string
 }
 
+const getDate = ({ language, dateTimeFormatOptions }: ClockProps): string => {
+  return new Date()
+    .toLocaleDateString(language, dateTimeFormatOptions)
+    .replace('.,', '')
+}
+
 const useClock = ({
   language,
   dateTimeFormatOptions,
 }: ClockProps): UseClock => {
   const [dateFormat, setDateFormat] = useState<string>(
-    new Date()
-      .toLocaleDateString(language, dateTimeFormatOptions)
-      .replace('.,', '')
+    getDate({ language, dateTimeFormatOptions })
   )
 
   class HandleDate implements HandleDate {
-    date(): string {
-      return new Date()
-        .toLocaleDateString(language, dateTimeFormatOptions)
-        .replace('.,', '')
-    }
-
     changeDate() {
       const dateInterval = setInterval(() => {
-        const newDate = this.date()
+        const newDate = getDate({ language, dateTimeFormatOptions })
         if (dateFormat !== newDate) setDateFormat(newDate)
       }, 1000)
       return dateInterval

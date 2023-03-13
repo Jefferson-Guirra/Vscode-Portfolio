@@ -1,5 +1,4 @@
 export interface HandleDate {
-  date: () => string
   changeDate: () => NodeJS.Timer
   stopInterval: (interval: NodeJS.Timer) => void
 }
