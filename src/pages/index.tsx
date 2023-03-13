@@ -9,7 +9,6 @@ import Link from 'next/link'
 import useForm from '../hooks/useForm'
 
 export default function Home() {
-  const user = useForm('name')
   const password = useForm('password')
   const email = useForm('email')
 
@@ -25,7 +24,7 @@ export default function Home() {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-    if (user.validate() && password.validate() && email.validate()) {
+    if (password.validate() && email.validate()) {
       console.log('campos corretos')
     }
   }
@@ -51,12 +50,6 @@ export default function Home() {
               <BiUser size={64} />
             </span>
             <form onSubmit={handleSubmit}>
-              <Input
-                type="text"
-                name="usuário"
-                placeHolder="usuário"
-                {...user}
-              />
               <Input type="email" name="email" placeHolder="email" {...email} />
               <Input
                 type="password"
@@ -64,7 +57,7 @@ export default function Home() {
                 placeHolder="senha"
                 {...password}
               />
-              <Link href="/">criar conta</Link>
+              <Link href="/user/create">criar conta</Link>
               <button>entrar</button>
             </form>
           </div>
