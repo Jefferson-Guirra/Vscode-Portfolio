@@ -1,7 +1,19 @@
 import Head from 'next/head'
 import * as C from '../styles/Home'
+import Clock from '../components/header/clock/Clock'
+import { ClockProps } from '../protocols/clock'
 
 export default function Home() {
+  const clockProps: ClockProps = {
+    language: 'pt-BR',
+    dateTimeFormatOptions: {
+      day: '2-digit',
+      month: 'short',
+      hour: '2-digit',
+      minute: '2-digit',
+    },
+  }
+
   return (
     <>
       <Head>
@@ -11,7 +23,12 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <C.Container>
-        <p>tes styled-components</p>
+        <header>
+          <Clock
+            language={clockProps.language}
+            dateTimeFormatOptions={clockProps.dateTimeFormatOptions}
+          />
+        </header>
       </C.Container>
     </>
   )
