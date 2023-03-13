@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 export const Container = styled.section`
+  font-family: 'Ubuntu', sans-serif;
   background-color: #222222;
   width: 100%;
   height: 100vh;
@@ -17,34 +18,79 @@ export const Container = styled.section`
     flex: 1;
     display: flex;
     align-items: center;
+    flex-direction: column;
     justify-content: center;
 
     .content {
       display: flex;
       flex-direction: column;
-      gap: 3rem;
       align-items: center;
+      width: 100%;
+      max-width: 600px;
       justify-content: center;
       span {
         display: block;
         padding: 0.9rem;
         background-color: #2b2b2b;
         border-radius: 50%;
+        margin-bottom: 3rem;
       }
+      form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
 
-      input {
-        background-color: #1b1b1b;
-        color: #eee;
-        border: none;
-        border-radius: 5px;
-        padding: 5px;
-        height: 40px;
-      }
+        input {
+          display: block;
+          font-family: 'Ubuntu', sans-serif;
+          background-color: #1b1b1b;
+          border: 1px solid #1b1b1b;
+          color: #eee;
+          border: none;
+          border-radius: 5px;
+          padding: 5px;
+          height: 40px;
+          max-width: 300px;
+          margin-bottom: 2px;
 
-      input:focus,
-      input:hover {
-        outline: #ef8661 !important;
-        border: 2px solid #ef8661;
+          &:focus,
+          &:hover {
+            border: 1px solid var(--login-primary-color);
+          }
+
+          &:nth-child(2) {
+            margin-top: 1.5rem;
+          }
+        }
+
+        a {
+          display: block;
+          margin-left: 140px;
+          font-size: 14px;
+          color: #eeeeeeab;
+          transition: all 0.7s;
+
+          &:hover {
+            color: #eee;
+          }
+        }
+
+        button {
+          font-family: 'Ubuntu', sans-serif;
+          display: block;
+          padding: 0.5rem 1rem;
+          border-radius: 5px;
+          border: 1px solid var(--login-primary-color);
+          background-color: var(--login-primary-color);
+          margin: 1.5rem auto auto auto;
+          transition: all 0.7s;
+
+          &:hover {
+            color: #eeeeeeab;
+            background-color: #1b1b1b;
+          }
+        }
       }
     }
   }

@@ -4,11 +4,13 @@ import * as C from '../styles/Home'
 import Clock from '../components/header/clock/Clock'
 import { ClockProps } from '../protocols/clock'
 import { BiUser } from 'react-icons/bi'
-import Error from '@/components/helpers/Error'
+import Link from 'next/link'
+import Error from '../components/helpers/Error'
 
 export default function Home() {
-  const [input, setInput] = useState<string>()
-  const [error, setError] = useState<string>()
+  const [input, setInput] = useState<string>('')
+  const [password, setPassword] = useState<string>()
+  const [error, setError] = useState<string>('')
   const clockProps: ClockProps = {
     language: 'pt-BR',
     dateTimeFormatOptions: {
@@ -18,10 +20,16 @@ export default function Home() {
       minute: '2-digit',
     },
   }
+  const handlePassword = ({ target }: React.ChangeEvent<HTMLInputElement>) => {
+    setPassword(target.value)
+    if (!password) {
+      setError
+    }
+  }
   const handleInput = ({ target }: React.ChangeEvent<HTMLInputElement>) => {
     setInput(target.value)
     if (error) {
-      setError(undefined)
+      setError('')
     } else {
       setError('informe um nome')
     }
@@ -60,9 +68,18 @@ export default function Home() {
                 value={input}
                 onChange={handleInput}
               />
-            </form>
-            <Error error={error} />
+              <input
+                type="password"
+                placeholder="password"
+                value={password}
+                onChange={handlePassword}
+              />
+              <Link href="/">criar conta</Link>
+
+              <button>entrar</button>
+            </form>{' '}
           </div>
+          <Error error={error} />
         </article>
       </C.Container>
     </>

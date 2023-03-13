@@ -1,7 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+
+
+:root {
+  --login-primary-color:#ef8661
+}
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+
 }
 
 a {
