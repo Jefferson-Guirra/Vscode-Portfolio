@@ -28,7 +28,7 @@ export const Container = styled.section`
       width: 100%;
       max-width: 600px;
       justify-content: center;
-      span {
+      .user-icon {
         display: block;
         padding: 0.9rem;
         background-color: #2b2b2b;
@@ -43,6 +43,8 @@ export const Container = styled.section`
 
         a {
           display: block;
+          position: relative;
+          z-index: 2;
           margin-left: 140px;
           margin-top: -1.5rem;
           font-size: 14px;
@@ -61,7 +63,7 @@ export const Container = styled.section`
           border-radius: 5px;
           border: 1px solid var(--login-primary-color);
           background-color: var(--login-primary-color);
-          margin: 1.5rem auto auto auto;
+          margin: 1.6rem auto auto auto;
           transition: all 0.7s;
 
           &:hover {
