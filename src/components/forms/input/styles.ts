@@ -1,11 +1,13 @@
 import styled from 'styled-components'
 export const container = styled.div`
   position: relative;
+  width: 350px;
   input {
     display: block;
     font-family: 'Ubuntu', sans-serif;
     background-color: #1b1b1b;
     border: 1px solid #1b1b1b;
+    width: 100%;
     color: #eee;
     border: none;
     border-radius: 5px;
