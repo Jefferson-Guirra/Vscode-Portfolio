@@ -1,7 +1,7 @@
 import React from 'react'
 import Input from '../input'
 import Link from 'next/link'
-import { Props } from './form-protcols'
+import { Props } from './form-protocols'
 
 const Form = ({ handleSubmit, inputs, linkProps, button }: Props) => {
   return (
