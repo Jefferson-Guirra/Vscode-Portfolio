@@ -1,9 +1,9 @@
 import React from 'react'
 import Input from '../input'
 import Link from 'next/link'
-import { Props } from './form-protocols'
+import { FormProps } from './form-protocols'
 
-const Form = ({ handleSubmit, inputs, linkProps, button }: Props) => {
+const Form = ({ handleSubmit, inputs, linkProps, button }: FormProps) => {
   return (
     <>
       <form onSubmit={handleSubmit}>
