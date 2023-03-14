@@ -1,9 +1,10 @@
 import React from 'react'
 import * as C from './styles'
 import Error from '../../helpers/Error'
+import { AiOutlineEyeInvisible, AiOutlineEye } from 'react-icons/ai'
 
 interface Props {
-  placeHolder: string
+  placeholder: string
   type: string
   name: string
   onChange: ({ target }: React.ChangeEvent<HTMLInputElement>) => void
@@ -13,7 +14,7 @@ interface Props {
   onBlur: () => void
 }
 const Input = ({
-  placeHolder,
+  placeholder,
   type,
   name,
   onChange,
@@ -21,19 +22,33 @@ const Input = ({
   erro,
   onBlur,
 }: Props) => {
+  const [inputType, setInputType] = React.useState(type)
+
+  const handleTypeInput = () => {
+    inputType === type ? setInputType('text') : setInputType(name)
+  }
   return (
     <C.container>
       <input
-        placeholder={placeHolder}
+        placeholder={placeholder}
         className="input"
         id={name}
-        type={type}
+        type={inputType}
         onChange={onChange}
         value={value}
         onBlur={onBlur}
       />
-
       <Error error={erro} />
+      {name === 'password' && (
+        <span onClick={handleTypeInput}>
+          {' '}
+          {inputType === 'password' ? (
+            <AiOutlineEyeInvisible size={20} />
+          ) : (
+            <AiOutlineEye size={20} />
+          )}{' '}
+        </span>
+      )}
     </C.container>
   )
 }
