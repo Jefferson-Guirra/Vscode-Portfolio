@@ -1,17 +1,35 @@
 import Head from 'next/head'
 import React from 'react'
-import Input from '../components/forms/input'
 import * as C from '../styles/Home'
 import Clock from '../components/header/clock/Clock'
 import { ClockProps } from '../protocols/clock'
 import { BiUser } from 'react-icons/bi'
-import Link from 'next/link'
 import useForm from '../hooks/useForm'
+import Form from '../components/forms/form'
+
+interface FieldType {
+  type: string
+  inputProps: {
+    name: string
+    placeholder: string
+    type: string
+  }
+}
+const createField = (type: string, placeholder: string): FieldType => {
+  return {
+    type,
+    inputProps: {
+      name: type,
+      placeholder: placeholder,
+      type: type,
+    },
+  }
+}
 
 export default function Home() {
-  const password = useForm('password')
-  const email = useForm('email')
-
+  const password = useForm(createField('password', 'senha'))
+  const email = useForm(createField('email', 'email'))
+  const inputs = [email, password]
   const clockProps: ClockProps = {
     language: 'pt-BR',
     dateTimeFormatOptions: {
@@ -46,20 +64,15 @@ export default function Home() {
         </header>
         <article className="content-box">
           <div className="content">
-            <span>
+            <span className="user-icon">
               <BiUser size={64} />
             </span>
-            <form onSubmit={handleSubmit}>
-              <Input type="email" name="email" placeHolder="email" {...email} />
-              <Input
-                type="password"
-                name="password"
-                placeHolder="senha"
-                {...password}
-              />
-              <Link href="/user/create">criar conta</Link>
-              <button>entrar</button>
-            </form>
+            <Form
+              button="entrar"
+              handleSubmit={handleSubmit}
+              inputs={inputs}
+              linkProps={{ text: 'criar conta', router: '/user/create' }}
+            />
           </div>
         </article>
       </C.Container>
