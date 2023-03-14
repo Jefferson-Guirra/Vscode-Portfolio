@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 export const container = styled.div`
+  position: relative;
   input {
     display: block;
     font-family: 'Ubuntu', sans-serif;
@@ -10,8 +11,8 @@ export const container = styled.div`
     border-radius: 5px;
     padding: 5px;
     height: 40px;
-    max-width: 300px;
     margin-bottom: 2px;
+    margin-inline: auto;
 
     &:focus,
     &:hover {
@@ -24,5 +25,11 @@ export const container = styled.div`
   }
   div {
     margin-bottom: 1rem;
+  }
+  span {
+    margin-inline: auto;
+    position: absolute;
+    bottom: calc(1.5rem + 19px);
+    right: 7px;
   }
 `
