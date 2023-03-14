@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const Container = styled.section`
+export const container = styled.section`
   font-family: 'Ubuntu', sans-serif;
   background-color: #222222;
   width: 100%;
@@ -10,67 +10,44 @@ export const Container = styled.section`
   flex-direction: column;
 
   header {
-    text-align: center;
-    padding: 0.5rem;
-  }
-
-  .content-box {
-    flex: 1;
     display: flex;
     align-items: center;
-    flex-direction: column;
     justify-content: center;
+  }
+`
 
-    .content {
+export const contentBox = styled.article`
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .content {
+    width: 100%;
+    max-width: 300px;
+    .item {
       display: flex;
-      flex-direction: column;
       align-items: center;
-      width: 100%;
-      max-width: 600px;
-      justify-content: center;
-      .user-icon {
+      border: 1px solid #eeeeee18;
+      gap: 1rem;
+      cursor: pointer;
+      padding: 0.5rem;
+      border-radius: 12px;
+      transition: all 0.5s;
+
+      &:hover {
+        background-color: #2b2b2b9a;
+      }
+
+      span {
         display: block;
         padding: 0.9rem;
         background-color: #2b2b2b;
         border-radius: 50%;
-        margin-bottom: 3rem;
       }
-      form {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
 
-        a {
-          display: block;
-          position: relative;
-          z-index: 2;
-          margin-left: 140px;
-          margin-top: -1.5rem;
-          font-size: 14px;
-          color: #eeeeeeab;
-          transition: all 0.7s;
-
-          &:hover {
-            color: #eee;
-          }
-        }
-
-        button {
-          font-family: 'Ubuntu', sans-serif;
-          display: block;
-          padding: 0.5rem 1rem;
-          border-radius: 5px;
-          border: 1px solid var(--login-primary-color);
-          background-color: var(--login-primary-color);
-          margin: 1.6rem auto auto auto;
-          transition: all 0.7s;
-
-          &:hover {
-            color: #eeeeeeab;
-            background-color: #1b1b1b;
-          }
-        }
+      p {
+        font-size: 1.4rem;
       }
     }
   }

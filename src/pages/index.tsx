@@ -1,50 +1,26 @@
 import Head from 'next/head'
 import React from 'react'
-import * as C from '../styles/Home'
-import Clock from '../components/header/clock/Clock'
+import Clock from '@/components/header/clock/Clock'
 import { ClockProps } from '../protocols/clock'
 import { BiUser } from 'react-icons/bi'
-import useForm from '../hooks/useForm'
-import Form from '../components/forms/form'
+import * as C from '../styles/Home'
+import { useRouter } from 'next/router'
 
-interface FieldType {
-  type: string
-  inputProps: {
-    name: string
-    placeholder: string
-    type: string
-  }
-}
-const createField = (type: string, placeholder: string): FieldType => {
-  return {
-    type,
-    inputProps: {
-      name: type,
-      placeholder: placeholder,
-      type: type,
-    },
-  }
+const clockProps: ClockProps = {
+  language: 'pt-BR',
+  dateTimeFormatOptions: {
+    day: '2-digit',
+    month: 'short',
+    hour: '2-digit',
+    minute: '2-digit',
+  },
 }
 
 export default function Home() {
-  const password = useForm(createField('password', 'senha'))
-  const email = useForm(createField('email', 'email'))
-  const inputs = [email, password]
-  const clockProps: ClockProps = {
-    language: 'pt-BR',
-    dateTimeFormatOptions: {
-      day: '2-digit',
-      month: 'short',
-      hour: '2-digit',
-      minute: '2-digit',
-    },
-  }
+  const router = useRouter()
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault()
-    if (password.validate() && email.validate()) {
-      console.log('campos corretos')
-    }
+  const handleClick = () => {
+    router.push('/desktop')
   }
 
   return (
@@ -55,27 +31,24 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <C.Container>
+      <C.container>
         <header>
           <Clock
             language={clockProps.language}
             dateTimeFormatOptions={clockProps.dateTimeFormatOptions}
           />
         </header>
-        <article className="content-box">
+        <C.contentBox>
           <div className="content">
-            <span className="user-icon">
-              <BiUser size={64} />
-            </span>
-            <Form
-              button="entrar"
-              handleSubmit={handleSubmit}
-              inputs={inputs}
-              linkProps={{ text: 'criar conta', router: '/user/create' }}
-            />
+            <div className="item" onClick={handleClick}>
+              <span>
+                <BiUser size={40} />
+              </span>
+              <p>Jefferson</p>
+            </div>
           </div>
-        </article>
-      </C.Container>
+        </C.contentBox>
+      </C.container>
     </>
   )
 }
