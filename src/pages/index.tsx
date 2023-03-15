@@ -1,20 +1,8 @@
 import Head from 'next/head'
 import React from 'react'
-import Clock from '@/components/header/clock/Clock'
-import { ClockProps } from '../protocols/clock'
 import { BiUser } from 'react-icons/bi'
 import * as C from '../styles/Home'
 import { useRouter } from 'next/router'
-
-const clockProps: ClockProps = {
-  language: 'pt-BR',
-  dateTimeFormatOptions: {
-    day: '2-digit',
-    month: 'short',
-    hour: '2-digit',
-    minute: '2-digit',
-  },
-}
 
 export default function Home() {
   const router = useRouter()
@@ -32,12 +20,6 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <C.container>
-        <header>
-          <Clock
-            language={clockProps.language}
-            dateTimeFormatOptions={clockProps.dateTimeFormatOptions}
-          />
-        </header>
         <C.contentBox>
           <div className="content">
             <div className="item" onClick={handleClick}>
