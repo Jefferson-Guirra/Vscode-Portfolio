@@ -4,15 +4,10 @@ export const Container = styled.section`
   font-family: 'Ubuntu', sans-serif;
   background-color: #222222;
   width: 100%;
-  height: 100vh;
+  height: calc(100vh -24px);
   color: #d1e7e7;
   display: flex;
   flex-direction: column;
-
-  header {
-    text-align: center;
-    padding: 0.5rem;
-  }
 
   .content-box {
     flex: 1;
