@@ -1,42 +1,41 @@
 .container {
-    background-image: url('../../public/images/background.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  background-image: url('../../public/images/background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .header {
-    background-color: var(--login-secondary-color);
-    color: #eee;
-    display: flex;
-    justify-content: center;
-    font-size: 13px;
-    padding: 5px;
+  background-color: var(--login-secondary-color);
+  color: #eee;
+  display: flex;
+  justify-content: center;
+  font-size: 13px;
+  padding: 5px;
 }
 
 .nav {
-    border: 1px solid #eee;
-    width: 100%;
-    max-width: 200px;
-    border-radius: 25px;
-    padding: 10px;
-    margin-bottom: 2rem;
-    align-self: center;
+  border: 1px solid #eee;
+  width: 100%;
+  max-width: 200px;
+  border-radius: 25px;
+  padding: 10px;
+  margin-bottom: 2rem;
+  align-self: center;
 }
 
-.nav a{
-    display: block;
-    width: fit-content;
-    padding: 5px;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: .5s;
+.nav a {
+  display: block;
+  width: fit-content;
+  padding: 5px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.5s;
 }
 
-.nav a:hover{
-    background-color: var(--login-secondary-color) ;
-
+.nav a:hover {
+  background-color: var(--login-secondary-color);
 }
