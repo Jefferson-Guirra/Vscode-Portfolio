@@ -6,7 +6,12 @@ import * as C from './user-form'
 
 type Props = FormProps
 
-const UserPage = ({ button, handleSubmit, inputs, linkProps }: Props) => {
+export const UserPage = ({
+  button,
+  handleSubmit,
+  inputs,
+  linkProps,
+}: Props) => {
   return (
     <C.Container>
       <article className="content-box">
@@ -25,5 +30,3 @@ const UserPage = ({ button, handleSubmit, inputs, linkProps }: Props) => {
     </C.Container>
   )
 }
-
-export default UserPage

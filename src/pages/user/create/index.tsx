@@ -1,6 +1,6 @@
 import React from 'react'
 import useForm from '@/hooks/useForm'
-import UserPageForm from '../../../components/forms/form/userPageForm'
+import { UserPage } from '../../../components'
 
 interface FieldType {
   type: string
@@ -34,7 +34,7 @@ const CreateUser = () => {
     }
   }
   return (
-    <UserPageForm
+    <UserPage
       handleSubmit={handleSubmit}
       inputs={inputs}
       button="criar"

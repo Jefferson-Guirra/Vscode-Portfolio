@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import React from 'react'
 import useForm from '../../../hooks/useForm'
-import UserPage from '@/components/forms/form/userPageForm'
+import { UserPage } from '../../../components'
 
 interface FieldType {
   type: string
