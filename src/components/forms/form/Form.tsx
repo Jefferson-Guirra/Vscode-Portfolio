@@ -1,9 +1,14 @@
 import React from 'react'
 import Input from '../input'
 import Link from 'next/link'
-import { FormProps } from './form-protocols'
+import { FormProps } from './constants/form-props'
 
-const Form = ({ handleSubmit, inputs, linkProps, button }: FormProps) => {
+export const Form = ({
+  handleSubmit,
+  inputs,
+  linkProps,
+  button,
+}: FormProps) => {
   return (
     <>
       <form onSubmit={handleSubmit}>
@@ -16,5 +21,3 @@ const Form = ({ handleSubmit, inputs, linkProps, button }: FormProps) => {
     </>
   )
 }
-
-export default Form
