@@ -1,6 +1,6 @@
 import React from 'react'
 import useForm from '@/hooks/useForm'
-import UserPageForm from '../../../components/forms/form/userPageForm'
+import UserPageForm from '../../../components/forms/form/user/userPageForm'
 
 interface FieldType {
   type: string
