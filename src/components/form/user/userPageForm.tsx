@@ -1,7 +1,7 @@
 import React from 'react'
 import { BiUser } from 'react-icons/bi'
-import Form from '../Form'
-import { FormProps } from '../form-protocols'
+import { Form } from '../Form'
+import { FormProps } from '../@types/form-props'
 import * as C from '../user-form'
 
 type Props = FormProps
