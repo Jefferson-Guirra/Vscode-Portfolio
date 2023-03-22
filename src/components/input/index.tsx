@@ -1,6 +1,6 @@
 import React from 'react'
 import * as C from './styles'
-import Error from '../../helpers/Error'
+import Error from '../helpers/Error'
 import { AiOutlineEyeInvisible, AiOutlineEye } from 'react-icons/ai'
 
 interface Props {
