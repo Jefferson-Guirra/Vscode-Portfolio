@@ -13,7 +13,7 @@ interface Props {
   setValue: React.Dispatch<React.SetStateAction<string>>
   onBlur: () => void
 }
-const Input = ({
+export const Input = ({
   placeholder,
   type,
   name,
@@ -52,5 +52,3 @@ const Input = ({
     </C.container>
   )
 }
-
-export default Input
