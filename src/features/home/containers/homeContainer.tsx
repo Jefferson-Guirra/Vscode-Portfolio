@@ -2,7 +2,7 @@ import Head from 'next/head'
 import React from 'react'
 import HomePage from '../pages/Homepage'
 import styles from './homeContainer.module.css'
-import { Props } from '../constants/props'
+import { Props } from '../@types/props'
 
 export default function HomeContainer({ description }: Props) {
   return (

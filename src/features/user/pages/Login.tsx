@@ -1,7 +1,7 @@
 import React from 'react'
 import createField from '@/utils/create-field'
 import useForm from '@/hooks/useForm'
-import { MakeGlobalProps } from '../constants/make-props'
+import { MakeGlobalProps } from '../types/make-props'
 import { Form } from '../../../components'
 
 const makeGlobalProps: MakeGlobalProps = (inputs, handleSubmit) => {
