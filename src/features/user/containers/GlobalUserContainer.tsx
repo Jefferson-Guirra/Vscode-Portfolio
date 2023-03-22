@@ -6,7 +6,7 @@ interface Props {
   children: JSX.Element
 }
 
-const UserPage = ({ children }: Props) => {
+const GLobalUserContainer = ({ children }: Props) => {
   return (
     <main className={styles.container}>
       <article className={styles.contentBox}>
@@ -21,4 +21,4 @@ const UserPage = ({ children }: Props) => {
   )
 }
 
-export default UserPage
+export default GLobalUserContainer
