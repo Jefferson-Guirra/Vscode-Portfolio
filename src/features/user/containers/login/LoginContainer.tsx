@@ -1,6 +1,6 @@
 import React from 'react'
 import Head from 'next/head'
-import GlobalUserContainer from '../../../../containers/user/GlobalUserContainer'
+import GlobalUserContainer from '../GlobalUserContainer'
 import Login from '../../pages/Login'
 
 const LoginContainer = () => {
@@ -12,7 +12,9 @@ const LoginContainer = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <GlobalUserContainer>{Login()}</GlobalUserContainer>
+      <GlobalUserContainer>
+        <Login />
+      </GlobalUserContainer>
     </>
   )
 }
