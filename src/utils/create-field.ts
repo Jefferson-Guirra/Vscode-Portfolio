@@ -1,4 +1,4 @@
-import { FieldType } from '../constants/field-type'
+import { FieldType } from './@types/field-type'
 const createField = (type: string, placeholder: string): FieldType => {
   return {
     type,
