@@ -1,8 +1,8 @@
 .container {
-    background-image: url('../../../../public/images/background.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: calc(100vh - 24px);
-    display: flex;
-    flex-direction: column;
-  }
+  background-image: url('../../../../public/images/background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: calc(100vh - 24px);
+  display: flex;
+  flex-direction: column;
+}
