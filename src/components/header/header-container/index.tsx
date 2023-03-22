@@ -1,6 +1,6 @@
 import React from 'react'
 import Clock from '../clock/Clock'
-import { ClockProps } from '../../../constants/clock-type'
+import { ClockProps } from '../clock/types'
 import styles from './header-container.module.css'
 import { BsWifi } from 'react-icons/bs'
 import { AiFillSound } from 'react-icons/ai'

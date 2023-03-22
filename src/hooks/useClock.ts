@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import { HandleDate, ClockProps } from '../protocols/clock'
+import { ClockProps } from '../components/header/clock/types'
+import { HandleDate } from './@types/handle-date-type'
 
 interface UseClock {
   handleDate: HandleDate
