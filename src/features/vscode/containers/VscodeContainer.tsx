@@ -1,7 +1,7 @@
-import React from 'react'
+import styles from './styles.module.css'
 
 const VscodeContainer = () => {
-  return <div>VscodeContainer</div>
+  return <main className={styles.container}>VscodeContainer</main>
 }
 
 export default VscodeContainer
