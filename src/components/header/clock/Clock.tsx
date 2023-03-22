@@ -1,6 +1,6 @@
 import useClock from '../../../hooks/useClock'
 import { useEffect } from 'react'
-import { ClockProps } from '../../../protocols/clock'
+import { ClockProps } from '../../../constants/clock-type'
 
 const Clock = ({ language, dateTimeFormatOptions }: ClockProps) => {
   const { dateFormat, handleDate } = useClock({
