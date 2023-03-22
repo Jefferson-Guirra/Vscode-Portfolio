@@ -1,46 +1,7 @@
-import React from 'react'
-import useForm from '@/hooks/useForm'
-import UserPageForm from '../../../components/form/form/user/userPageForm'
+import SignupContainer from '@/features/user/containers/signup/SignupContainer'
 
-interface FieldType {
-  type: string
-  inputProps: {
-    name: string
-    placeholder: string
-    type: string
-  }
-}
-const createField = (type: string, placeholder: string): FieldType => {
-  return {
-    type,
-    inputProps: {
-      name: type,
-      placeholder: placeholder,
-      type: type,
-    },
-  }
+const signup = () => {
+  return <SignupContainer />
 }
 
-const CreateUser = () => {
-  const password = useForm(createField('password', 'senha'))
-  const email = useForm(createField('email', 'email'))
-  const name = useForm(createField('name', 'usuário'))
-  const inputs = [name, email, password]
-
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault()
-    if (password.validate() && email.validate()) {
-      console.log('campos corretos')
-    }
-  }
-  return (
-    <UserPageForm
-      handleSubmit={handleSubmit}
-      inputs={inputs}
-      button="criar"
-      linkProps={{ text: 'entrar', router: '/' }}
-    />
-  )
-}
-
-export default CreateUser
+export default signup
