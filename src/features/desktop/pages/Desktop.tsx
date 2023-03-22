@@ -5,7 +5,7 @@ import * as C from './styles'
 const Desktop = () => {
   return (
     <C.nav>
-      <Link href="/">
+      <Link href="/vscode">
         <Image
           src="/images/vscode.svg"
           alt=" vscode icon"
