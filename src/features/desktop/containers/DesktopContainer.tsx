@@ -2,7 +2,10 @@ import Head from 'next/head'
 import styles from './styles.module.css'
 import Desktop from '../pages/Desktop'
 
-const DesktopContainer = () => {
+interface Props {
+  vscodeIsOpen: string
+}
+const DesktopContainer = ({ vscodeIsOpen }: Props) => {
   return (
     <>
       <Head>
@@ -12,7 +15,7 @@ const DesktopContainer = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.container}>
-        <Desktop />
+        <Desktop vscodeIsOpen={vscodeIsOpen} />
       </main>
     </>
   )
