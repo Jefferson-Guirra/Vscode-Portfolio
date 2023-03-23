@@ -1,0 +1,73 @@
+.header {
+  background-color: #3c3c3c;
+  display: flex;
+  color: #a0a0a0;
+  padding: 5px;
+  position: relative;
+}
+.header .title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+}
+
+.header .title h4 {
+  text-align: center;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  z-index: 50;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+.icons {
+  display: block;
+  padding: 2px;
+  width: 15px;
+  height: 15px;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.icons svg {
+  display: none;
+}
+
+.icons:hover svg {
+  display: block;
+}
+
+.actions a:nth-child(1) {
+  background-color: #e5bf3c;
+}
+
+.actions a:nth-child(1) svg {
+  position: absolute;
+  top: 3px;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+}
+
+.actions a:nth-child(2) {
+  background-color: #57c038;
+}
+
+.actions a:nth-child(3) {
+  background-color: #fc5b57;
+}
+
+@media (max-width: 550px) {
+  .header .title {
+    width: 100px;
+  }
+}
