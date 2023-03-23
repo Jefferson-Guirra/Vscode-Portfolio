@@ -3,12 +3,17 @@
   color: #eee;
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   font-size: 13px;
+  position: relative;
   padding: 5px;
 }
 
 .header time {
-  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
 }
 
 .icons {
