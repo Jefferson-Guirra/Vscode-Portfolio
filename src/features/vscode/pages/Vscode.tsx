@@ -1,10 +1,9 @@
 import React from 'react'
-import { HeaderDesktopApplications } from '@/components'
 
 const Vscode = () => {
   return (
     <>
-      <HeaderDesktopApplications />
+      <p>test</p>
     </>
   )
 }
