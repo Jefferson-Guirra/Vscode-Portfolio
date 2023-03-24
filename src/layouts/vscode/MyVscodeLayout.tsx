@@ -1,5 +1,5 @@
 import React from 'react'
-import { HeaderDesktopApplications } from '../../components'
+import { HeaderDesktopApplications } from '../layout-components'
 interface Props {
   children: JSX.Element
 }
