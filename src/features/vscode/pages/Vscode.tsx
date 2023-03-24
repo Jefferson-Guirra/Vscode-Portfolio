@@ -1,10 +1,10 @@
 import React from 'react'
-import { VscodeHeader } from '@/components'
+import { HeaderDesktopApplications } from '@/components'
 
 const Vscode = () => {
   return (
     <>
-      <VscodeHeader />
+      <HeaderDesktopApplications />
     </>
   )
 }

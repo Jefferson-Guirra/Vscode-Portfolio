@@ -4,7 +4,7 @@ import { BiExpandAlt } from 'react-icons/bi'
 import Link from 'next/link'
 import { setCookie } from 'nookies'
 
-export const VscodeHeader = () => {
+export const HeaderDesktopApplications = () => {
   const handleCloseVscode = () => {
     setCookie(null, 'vscodeIsOpen', 'false')
   }
