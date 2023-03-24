@@ -1,11 +1,23 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import PageWithLayoutType from '@/layouts/@types'
 import HeaderContainer from '../components/header/header-container'
-export default function App({ Component, pageProps }: AppProps) {
+import React from 'react'
+
+type AppLayoutProps = {
+  Component: PageWithLayoutType
+  pageProps: any
+}
+
+export default function App({ Component, pageProps }: AppLayoutProps) {
+  const Layout = Component.layout ? Component.layout : React.Fragment
+
   return (
     <>
       <HeaderContainer />
-      <Component {...pageProps} />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </>
   )
 }

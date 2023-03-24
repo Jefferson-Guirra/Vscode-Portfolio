@@ -1,5 +1,7 @@
 import HomeContainer from '../features/home/containers/homeContainer'
 
-export default function Home() {
+const Home = () => {
   return <HomeContainer description="software developer homepage portfolio" />
 }
+
+export default Home
