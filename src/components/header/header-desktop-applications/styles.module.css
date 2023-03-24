@@ -48,22 +48,22 @@
 }
 
 .actions a:nth-child(1) {
+  background-color: #fc5b57;
+}
+
+.actions a:nth-child(2) {
   background-color: #e5bf3c;
 }
 
-.actions a:nth-child(1) svg {
+.actions a:nth-child(2) svg {
   position: absolute;
   top: 3px;
   left: 50%;
   transform: translate3d(-50%, -50%, 0);
 }
 
-.actions a:nth-child(2) {
-  background-color: #57c038;
-}
-
 .actions a:nth-child(3) {
-  background-color: #fc5b57;
+  background-color: #57c038;
 }
 
 @media (max-width: 550px) {

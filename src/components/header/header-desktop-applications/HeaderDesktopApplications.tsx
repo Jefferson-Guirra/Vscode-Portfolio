@@ -11,18 +11,18 @@ export const HeaderDesktopApplications = () => {
   return (
     <header className={styles.header}>
       <article className={styles.actions}>
-        <Link href="/desktop" className={styles.icons}>
-          <MdMinimize size={15} color="#000000" />
-        </Link>
-        <Link href="/" className={styles.icons}>
-          <BiExpandAlt size={15} color="#000000" />
-        </Link>
         <Link
           onClick={handleCloseVscode}
           href="/desktop"
           className={styles.icons}
         >
           <MdClose size={15} color="#000000" />
+        </Link>
+        <Link href="/desktop" className={styles.icons}>
+          <MdMinimize size={15} color="#000000" />
+        </Link>
+        <Link href="/" className={styles.icons}>
+          <BiExpandAlt size={15} color="#000000" />
         </Link>
       </article>
       <div className={styles.title}>
