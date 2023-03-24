@@ -1,6 +1,10 @@
 import styled from 'styled-components'
+interface Props {
+  vscodeIsOpen: boolean
+}
 
-export const nav = styled.nav`
+export const nav = styled.nav(
+  (props: Props) => `
   border: 1px solid #eee;
   width: 100%;
   max-width: 200px;
@@ -12,6 +16,7 @@ export const nav = styled.nav`
   align-self: center;
 
   a {
+    position: relative;
     display: block;
     width: fit-content;
     padding: 5px;
@@ -23,4 +28,18 @@ export const nav = styled.nav`
   a:hover {
     background-color: var(--login-secondary-color);
   }
+
+  a::after {
+    content: '';
+    position: absolute;
+    display: ${props.vscodeIsOpen ? 'block' : 'none'};
+    bottom: -2px;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #007acc;
+  }
 `
+)
