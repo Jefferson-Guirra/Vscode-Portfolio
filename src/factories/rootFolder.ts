@@ -14,14 +14,14 @@ const makeFolder = (
 }
 
 export const makeRootFolder = (): FolderComposite => {
+  const src = new CreateFolder('src')
+  const folderComposite = new FolderComposite()
   const presentation = makeFolder('presentation', ['home.tsx', 'test.tsx'])
   const about = makeFolder('about', ['about.tsx', 'test.tsx'])
   const about2 = makeFolder('about2', ['about.tsx', 'test.tsx'])
   about.add(about2)
-  const src = new CreateFolder('src')
   src.add(presentation)
   src.add(about)
-  const folderComposite = new FolderComposite()
   folderComposite.add(src)
 
   return folderComposite
