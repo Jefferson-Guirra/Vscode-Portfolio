@@ -2,7 +2,10 @@ import { FolderComposite } from '@/utils/folder-composite'
 import { MakeFolderElement } from '@/utils/create-folder'
 import { FolderInterface } from '@/@types/folder'
 
-const makeFolder = (folderName: string, files: string[]): FolderInterface => {
+const makeFolder = (
+  folderName: string,
+  files: Array<string | FolderInterface>
+): FolderInterface => {
   const folderElement = new MakeFolderElement(folderName)
   for (const file of files) {
     folderElement.add(file)
