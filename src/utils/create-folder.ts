@@ -10,12 +10,6 @@ export class MakeFolderElement implements FolderInterface {
     this.index = Math.random()
     this.files = []
   }
-  open(value: unknown) {
-    if (value === this.folder) {
-      return this.folder
-    }
-    return ''
-  }
   add(item: any) {
     this.files.push(item)
   }
