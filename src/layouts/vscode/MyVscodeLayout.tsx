@@ -1,6 +1,10 @@
 import React from 'react'
 import * as C from './styles'
-import { HeaderDesktopApplications, VscodeNavbar } from '../layout-components'
+import {
+  HeaderDesktopApplications,
+  VscodeNavbar,
+  FolderComponent,
+} from '../layout-components'
 interface Props {
   children: JSX.Element
 }
@@ -10,6 +14,7 @@ const MyVscodeLayout = ({ children }: Props) => {
       <HeaderDesktopApplications />
       <section className="content">
         <VscodeNavbar />
+        <FolderComponent />
         {children}
       </section>
     </C.container>
