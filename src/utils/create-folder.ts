@@ -1,6 +1,6 @@
 import { FolderInterface } from '../@types/folder'
 
-export class MakeFolderElement implements FolderInterface {
+export class CreateFolder implements FolderInterface {
   private readonly files: Array<FolderInterface | string>
   private readonly index: number
   private readonly folder: string
