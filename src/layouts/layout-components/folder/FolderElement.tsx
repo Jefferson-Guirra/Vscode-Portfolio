@@ -16,7 +16,7 @@ interface Props {
   element: any
 }
 
-const DefaultElement = (
+const JsxElementLoop = (
   element: Element,
   handleFolder: HandleFolder,
   foldersOpen: FoldersOpen
@@ -63,34 +63,21 @@ const handleElement = (
   element: any,
   handleFunction: HandleFolder,
   folderName: FoldersOpen
-) => {
-  if (typeof element === 'string') {
-    return DefaultElement(element, handleFunction, folderName)
+) => JsxElementLoop(element, handleFunction, folderName)
+
+const newFoldersOPen = (folders: number[], value: number) => {
+  if (folders.includes(value)) {
+    const newFolder = folders.filter((item) => item !== value)
+    return newFolder
   } else {
-    const defaultElement: any = {
-      folder: element.folder,
-      index: element.index,
-      files: element.files,
-    }
-    return DefaultElement(defaultElement, handleFunction, folderName)
+    return [...folders, value]
   }
 }
-
 const FolderElement = ({ element }: Props) => {
   const [foldersOpen, setFolderOpen] = useState<number[]>([])
 
-  const newFoldersOPen = (folders: number[], value: number) => {
-    if (folders.includes(value)) {
-      const newFolder = folders.filter((item) => item !== value)
-      return newFolder
-    } else {
-      return [...foldersOpen, value]
-    }
-  }
-
-  const handleFolder: HandleFolder = (value) => {
+  const handleFolder: HandleFolder = (value) =>
     setFolderOpen((state) => newFoldersOPen(state, value))
-  }
 
   return <div>{handleElement(element, handleFolder, foldersOpen)}</div>
 }
