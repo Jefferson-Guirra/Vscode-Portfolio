@@ -1,4 +1,4 @@
-import * as C from './folder-element'
+import * as C from './file'
 import Image from 'next/image'
 import {
   VscFolder,

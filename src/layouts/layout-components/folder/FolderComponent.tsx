@@ -1,5 +1,5 @@
 import { makeRootFolder } from '@/factories/rootFolder'
-import FolderElement from './FolderElement'
+import File from './File'
 import * as C from './folder-component'
 
 export const FolderComponent = () => {
@@ -7,7 +7,7 @@ export const FolderComponent = () => {
   return (
     <C.container>
       {folders.elements().map((item, index) => (
-        <FolderElement key={index} element={item} />
+        <File key={index} element={item} />
       ))}
     </C.container>
   )
