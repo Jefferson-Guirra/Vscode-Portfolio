@@ -1,8 +1,8 @@
 import { makeRootFolder } from '@/factories/rootFolder'
 import File from './File'
-import * as C from './folder-component'
+import * as C from './rootFolder'
 
-export const FolderComponent = () => {
+export const RootFolder = () => {
   const folders = makeRootFolder()
   return (
     <C.container>

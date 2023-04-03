@@ -3,7 +3,7 @@ import * as C from './styles'
 import {
   HeaderDesktopApplications,
   VscodeNavbar,
-  FolderComponent,
+  RootFolder,
 } from '../layout-components'
 interface Props {
   children: JSX.Element
@@ -14,7 +14,7 @@ const MyVscodeLayout = ({ children }: Props) => {
       <HeaderDesktopApplications />
       <section className="content">
         <VscodeNavbar />
-        <FolderComponent />
+        <RootFolder />
         {children}
       </section>
     </C.container>
