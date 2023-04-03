@@ -73,7 +73,7 @@ const newFoldersOPen = (folders: number[], value: number) => {
     return [...folders, value]
   }
 }
-const FolderElement = ({ element }: Props) => {
+const File = ({ element }: Props) => {
   const [foldersOpen, setFolderOpen] = useState<number[]>([])
 
   const handleFolder: HandleFolder = (value) =>
@@ -82,4 +82,4 @@ const FolderElement = ({ element }: Props) => {
   return <div>{handleElement(element, handleFolder, foldersOpen)}</div>
 }
 
-export default FolderElement
+export default File
