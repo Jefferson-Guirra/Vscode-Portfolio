@@ -28,7 +28,7 @@ const DefaultElement = (
           src="/images/typescript-react.svg"
           width={17}
           height={17}
-          alt="reat icon"
+          alt="icon"
         />
         <p className="file">{element}</p>
       </C.file>
@@ -38,14 +38,15 @@ const DefaultElement = (
       <C.folderContainer key={Math.random()}>
         <div className="folder" onClick={() => handleFolder(element.index)}>
           {foldersOpen.includes(element.index) ? (
-            <VscChevronDown size={17} />
+            <>
+              <VscChevronDown size={17} />
+              <VscFolderOpened size={17} />
+            </>
           ) : (
-            <VscChevronRight size={17} />
-          )}
-          {foldersOpen.includes(element.index) ? (
-            <VscFolderOpened size={17} />
-          ) : (
-            <VscFolder size={17} />
+            <>
+              <VscChevronRight size={17} />
+              <VscFolder size={17} />
+            </>
           )}
           <p>{element.folder}</p>
         </div>
