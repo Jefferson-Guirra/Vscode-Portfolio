@@ -77,19 +77,22 @@ const handleElement = (
 }
 
 const FolderElement = ({ element }: Props) => {
-  const [folderOpen, setFolderOpen] = useState<number[]>([])
-  const handleFolder: HandleFolder = (value) => {
-    setFolderOpen((state) => {
-      if (state.includes(value)) {
-        const newFolder = state.filter((item) => item !== value)
-        return newFolder
-      } else {
-        return [...folderOpen, value]
-      }
-    })
+  const [foldersOpen, setFolderOpen] = useState<number[]>([])
+
+  const newFoldersOPen = (folders: number[], value: number) => {
+    if (folders.includes(value)) {
+      const newFolder = folders.filter((item) => item !== value)
+      return newFolder
+    } else {
+      return [...foldersOpen, value]
+    }
   }
 
-  return <div>{handleElement(element, handleFolder, folderOpen)}</div>
+  const handleFolder: HandleFolder = (value) => {
+    setFolderOpen((state) => newFoldersOPen(state, value))
+  }
+
+  return <div>{handleElement(element, handleFolder, foldersOpen)}</div>
 }
 
 export default FolderElement
