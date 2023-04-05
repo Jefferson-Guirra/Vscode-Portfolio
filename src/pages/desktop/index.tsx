@@ -11,8 +11,20 @@ const index = ({ vscodeIsOpen }: Props) => {
 export default index
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  let vscode = nookies.get(ctx).vscode
+  if (!vscode) {
+    vscode = JSON.stringify({ vscodeIsOpen: 'false' })
+    nookies.set(ctx, 'vscode', vscode)
+    return {
+      props: {
+        vscodeIsOpen: 'false',
+      },
+    }
+  }
   const vscodeIsOpen =
-    nookies.get(ctx).vscodeIsOpen === 'true' ? 'true' : 'false'
+    JSON.parse(nookies.get(ctx).vscode).vscodeIsOpen === 'true'
+      ? 'true'
+      : 'false'
   return {
     props: {
       vscodeIsOpen,

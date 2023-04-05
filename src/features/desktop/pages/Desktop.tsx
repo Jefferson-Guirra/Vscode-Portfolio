@@ -1,15 +1,16 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import * as C from './styles'
-import { setCookie } from 'nookies'
+import { cookieIsOpenVscode } from '@/utils/handle-vscode-cookie'
 
 interface Props {
   vscodeIsOpen: string
 }
 const Desktop = ({ vscodeIsOpen }: Props) => {
   const handleOpenVscode = () => {
-    setCookie(null, 'vscodeIsOpen', 'true')
+    cookieIsOpenVscode('true')
   }
+
   return (
     <C.nav vscodeIsOpen={vscodeIsOpen === 'true'}>
       <Link href="/vscode" onClick={handleOpenVscode}>

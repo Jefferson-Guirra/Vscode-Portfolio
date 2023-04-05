@@ -2,11 +2,11 @@ import styles from './styles.module.css'
 import { MdMinimize, MdClose } from 'react-icons/md'
 import { BiExpandAlt } from 'react-icons/bi'
 import Link from 'next/link'
-import { setCookie } from 'nookies'
+import { cookieIsOpenVscode } from '@/utils/handle-vscode-cookie'
 
 export const HeaderDesktopApplications = () => {
   const handleCloseVscode = () => {
-    setCookie(null, 'vscodeIsOpen', 'false')
+    cookieIsOpenVscode('false')
   }
   return (
     <header className={styles.header}>
