@@ -1,14 +1,14 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import * as C from './styles'
-import { cookieIsOpenVscode } from '@/utils/handle-vscode-cookie'
+import { setCookie } from 'nookies'
 
 interface Props {
   vscodeIsOpen: string
 }
 const Desktop = ({ vscodeIsOpen }: Props) => {
   const handleOpenVscode = () => {
-    cookieIsOpenVscode('true')
+    setCookie(null, 'vscodeIsOpen', 'true')
   }
 
   return (

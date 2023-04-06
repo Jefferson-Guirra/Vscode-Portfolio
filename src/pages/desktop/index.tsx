@@ -11,23 +11,11 @@ const index = ({ vscodeIsOpen }: Props) => {
 export default index
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
-  let vscode = nookies.get(ctx).vscode
-  if (!vscode) {
-    vscode = JSON.stringify({ vscodeIsOpen: 'false' })
-    nookies.set(ctx, 'vscode', vscode)
-    return {
-      props: {
-        vscodeIsOpen: 'false',
-      },
-    }
-  }
-  const vscodeIsOpen =
-    JSON.parse(nookies.get(ctx).vscode).vscodeIsOpen === 'true'
-      ? 'true'
-      : 'false'
+  const vscodeCookie = nookies.get(ctx).vscodeIsOpen
+
   return {
     props: {
-      vscodeIsOpen,
+      vscodeIsOpen: vscodeCookie === 'true' ? 'true' : 'false',
     },
   }
 }
