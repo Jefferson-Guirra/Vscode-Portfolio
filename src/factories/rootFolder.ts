@@ -23,6 +23,5 @@ export const makeRootFolder = (): FolderComposite => {
   src.add(presentation)
   src.add(about)
   folderComposite.add(src)
-
   return folderComposite
 }

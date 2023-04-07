@@ -6,10 +6,11 @@ import {
   VscChevronRight,
   VscChevronDown,
 } from 'react-icons/vsc'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { parseCookies, setCookie } from 'nookies'
 
-type HandleFolder = (value: number) => void
-type FoldersOpen = number[]
+type HandleFolder = (value: string) => void
+type FoldersOpen = string[]
 type Element = any
 
 interface Props {
@@ -21,21 +22,21 @@ const JsxElementLoop = (
   handleFolder: HandleFolder,
   foldersOpen: FoldersOpen
 ) => {
-  if (typeof element === 'string') {
+  if (typeof element.value === 'string') {
     return (
-      <C.file key={Math.random()}>
+      <C.file key={element.index}>
         <Image
           src="/images/typescript-react.svg"
           width={17}
           height={17}
           alt="icon"
         />
-        <p className="file">{element}</p>
+        <p className="file">{element.value}</p>
       </C.file>
     )
   } else {
     return (
-      <C.folderContainer key={Math.random()}>
+      <C.folderContainer key={element.index}>
         <div className="folder" onClick={() => handleFolder(element.index)}>
           {foldersOpen.includes(element.index) ? (
             <>
@@ -48,12 +49,14 @@ const JsxElementLoop = (
               <VscFolder size={17} />
             </>
           )}
-          <p>{element.folder}</p>
+          <p>{element.value.folder}</p>
         </div>
         {foldersOpen.includes(element.index) &&
-          element.files.map((element: any) =>
-            handleElement(element, handleFolder, foldersOpen)
-          )}
+          element.value
+            .elements()
+            .map((element: any) =>
+              handleElement(element, handleFolder, foldersOpen)
+            )}
       </C.folderContainer>
     )
   }
@@ -63,21 +66,38 @@ const handleElement = (
   element: any,
   handleFunction: HandleFolder,
   folderName: FoldersOpen
-) => JsxElementLoop(element, handleFunction, folderName)
+) => {
+  return JsxElementLoop(element, handleFunction, folderName)
+}
 
-const newFoldersOPen = (folders: number[], value: number) => {
+const newFoldersOPen = (folders: string[], value: string) => {
   if (folders.includes(value)) {
     const newFolder = folders.filter((item) => item !== value)
+    setCookie(null, 'foldersOpen', JSON.stringify(newFolder))
     return newFolder
   } else {
+    setCookie(null, 'foldersOpen', JSON.stringify([...folders, value]))
     return [...folders, value]
   }
 }
 const File = ({ element }: Props) => {
-  const [foldersOpen, setFolderOpen] = useState<number[]>([])
+  const [foldersOpen, setFoldersOpen] = useState<string[]>([])
+  const handleFolder: HandleFolder = (value) => {
+    const foldersOpenCookie = parseCookies().foldersOpen
+    setFoldersOpen(
+      newFoldersOPen(
+        foldersOpenCookie ? JSON.parse(foldersOpenCookie) : [],
+        value
+      )
+    )
+  }
 
-  const handleFolder: HandleFolder = (value) =>
-    setFolderOpen((state) => newFoldersOPen(state, value))
+  useEffect(() => {
+    const foldersCookie = parseCookies().foldersOpen
+    if (foldersCookie) {
+      setFoldersOpen(JSON.parse(foldersCookie))
+    }
+  }, [])
 
   return <div>{handleElement(element, handleFolder, foldersOpen)}</div>
 }

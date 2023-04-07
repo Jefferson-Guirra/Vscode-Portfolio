@@ -1,4 +1,9 @@
+export interface Item {
+  type: string
+  value: string | FolderInterface
+  index: string
+}
 export interface FolderInterface {
-  elements: () => Array<string | FolderInterface>
-  add: (item: FolderInterface | string) => void
+  elements: () => Array<Item>
+  add: (item: any) => void
 }
