@@ -1,6 +1,5 @@
 import React from 'react'
 import * as C from './styles'
-import { LayoutStorage } from '@/context/layoutContext'
 import {
   HeaderDesktopApplications,
   VscodeNavbar,
@@ -11,16 +10,14 @@ interface Props {
 }
 const MyVscodeLayout = ({ children }: Props) => {
   return (
-    <LayoutStorage>
-      <C.container>
-        <HeaderDesktopApplications />
-        <section className="content">
-          <VscodeNavbar />
-          <RootFolder />
-          {children}
-        </section>
-      </C.container>
-    </LayoutStorage>
+    <C.container>
+      <HeaderDesktopApplications />
+      <section className="content">
+        <VscodeNavbar />
+        <RootFolder />
+        {children}
+      </section>
+    </C.container>
   )
 }
 

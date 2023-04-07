@@ -6,8 +6,7 @@ import {
   VscChevronRight,
   VscChevronDown,
 } from 'react-icons/vsc'
-import { useState, useEffect } from 'react'
-import { parseCookies, setCookie } from 'nookies'
+import { useVscodeContext } from '@/context/vscode/vscode'
 
 type HandleFolder = (value: string) => void
 type FoldersOpen = string[]
@@ -19,7 +18,7 @@ interface Props {
 
 const JsxElementLoop = (
   element: Element,
-  handleFolder: HandleFolder,
+  updateFoldersOpen: HandleFolder,
   foldersOpen: FoldersOpen
 ) => {
   if (typeof element.value === 'string') {
@@ -37,7 +36,10 @@ const JsxElementLoop = (
   } else {
     return (
       <C.folderContainer key={element.index}>
-        <div className="folder" onClick={() => handleFolder(element.index)}>
+        <div
+          className="folder"
+          onClick={() => updateFoldersOpen(element.index)}
+        >
           {foldersOpen.includes(element.index) ? (
             <>
               <VscChevronDown size={17} />
@@ -55,7 +57,7 @@ const JsxElementLoop = (
           element.value
             .elements()
             .map((element: any) =>
-              handleElement(element, handleFolder, foldersOpen)
+              handleElement(element, updateFoldersOpen, foldersOpen)
             )}
       </C.folderContainer>
     )
@@ -70,36 +72,10 @@ const handleElement = (
   return JsxElementLoop(element, handleFunction, folderName)
 }
 
-const newFoldersOPen = (folders: string[], value: string) => {
-  if (folders.includes(value)) {
-    const newFolder = folders.filter((item) => item !== value)
-    setCookie(null, 'foldersOpen', JSON.stringify(newFolder))
-    return newFolder
-  } else {
-    setCookie(null, 'foldersOpen', JSON.stringify([...folders, value]))
-    return [...folders, value]
-  }
-}
 const File = ({ element }: Props) => {
-  const [foldersOpen, setFoldersOpen] = useState<string[]>([])
-  const handleFolder: HandleFolder = (value) => {
-    const foldersOpenCookie = parseCookies().foldersOpen
-    setFoldersOpen(
-      newFoldersOPen(
-        foldersOpenCookie ? JSON.parse(foldersOpenCookie) : [],
-        value
-      )
-    )
-  }
+  const { foldersOpen, updateFoldersOpen } = useVscodeContext()
 
-  useEffect(() => {
-    const foldersCookie = parseCookies().foldersOpen
-    if (foldersCookie) {
-      setFoldersOpen(JSON.parse(foldersCookie))
-    }
-  }, [])
-
-  return <div>{handleElement(element, handleFolder, foldersOpen)}</div>
+  return <div>{handleElement(element, updateFoldersOpen, foldersOpen)}</div>
 }
 
 export default File

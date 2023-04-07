@@ -3,6 +3,7 @@ import '../styles/globals.css'
 import PageWithLayoutType from '@/layouts/@types'
 import HeaderContainer from '../components/header/header-container'
 import React from 'react'
+import { AppProvider } from '@/context'
 
 type AppLayoutProps = {
   Component: PageWithLayoutType
@@ -15,9 +16,11 @@ export default function App({ Component, pageProps }: AppLayoutProps) {
   return (
     <>
       <HeaderContainer />
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      <AppProvider>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </AppProvider>
     </>
   )
 }
