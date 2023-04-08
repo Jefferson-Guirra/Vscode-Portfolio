@@ -4,9 +4,11 @@ import { FolderInterface } from '@/@types/folder'
 
 const makeFolder = (
   folderName: string,
-  files: Array<string | FolderInterface>
+  files: Array<string | FolderInterface>,
+  folderFather: FolderInterface
 ): FolderInterface => {
   const folderElement = new CreateFolder(folderName)
+  folderFather.add(folderElement)
   for (const file of files) {
     folderElement.add(file)
   }
@@ -14,14 +16,17 @@ const makeFolder = (
 }
 
 export const makeRootFolder = (): FolderComposite => {
+  //ROOT FILES
+  const portfolio = new CreateFolder('portfolio')
+  const rootFolder = new FolderComposite()
+  rootFolder.add(portfolio)
+
+  //CHILDREN OF ROOT  FOLDER FILES
   const src = new CreateFolder('src')
-  const folderComposite = new FolderComposite()
-  const presentation = makeFolder('presentation', ['home.tsx', 'test.tsx'])
-  const about = makeFolder('about', ['about.tsx', 'test.tsx'])
-  const about2 = makeFolder('about2', ['about.tsx', 'test.tsx'])
-  about.add(about2)
-  src.add(presentation)
-  src.add(about)
-  folderComposite.add(src)
-  return folderComposite
+  portfolio.add(src)
+  makeFolder('presentation', ['home.tsx', 'test.tsx'], src)
+  const about = makeFolder('about', ['about.tsx', 'test.tsx'], src)
+  makeFolder('about2', ['about.tsx', 'test.tsx'], about)
+
+  return rootFolder
 }

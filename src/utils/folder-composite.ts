@@ -5,14 +5,16 @@ export class FolderComposite implements FolderInterface {
   constructor() {
     this.files = []
   }
-  add(item: FolderInterface | string) {
+  add(item: any) {
     if (typeof item === 'string') {
       this.files.push({
         type: 'file',
         value: item,
         index: this.files.length.toString(),
+        path: [item],
       })
     } else {
+      item.path = [item.folder]
       this.files.push({
         type: 'folder',
         value: item,
