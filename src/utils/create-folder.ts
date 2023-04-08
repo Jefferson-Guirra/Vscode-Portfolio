@@ -1,5 +1,12 @@
 import { FolderInterface, Item } from '../@types/folder'
 
+const getIndex = (array: string[]): string => {
+  let index = ''
+  for (const file of array) {
+    index += file
+  }
+  return index
+}
 export class CreateFolder implements FolderInterface {
   private readonly files: Array<Item>
   private readonly folder: string
@@ -15,7 +22,7 @@ export class CreateFolder implements FolderInterface {
       this.files.push({
         type: 'file',
         value: item,
-        index: this.files.length + this.folder,
+        index: getIndex([...this.path, item]),
         path: [...this.path, item],
       })
     } else {
@@ -23,7 +30,7 @@ export class CreateFolder implements FolderInterface {
       this.files.push({
         type: 'folder',
         value: item,
-        index: this.files.length + this.folder,
+        index: getIndex([...this.path, item.folder]),
       })
     }
   }
