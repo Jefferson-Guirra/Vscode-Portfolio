@@ -7,6 +7,12 @@ interface Props {
 export const container = styled.section`
   display: flex;
   background-color: #252526;
+
+  &:hover {
+    article span {
+      display: initial;
+    }
+  }
 `
 
 export const file = styled.article(
@@ -22,6 +28,7 @@ font-size: 0.8rem;
 padding: 0.6rem;
 
     span {
+      display: ${isOpen ? 'initial' : 'none'};
         cursor: pointer;
         border-radius: 5px;
         &:hover {

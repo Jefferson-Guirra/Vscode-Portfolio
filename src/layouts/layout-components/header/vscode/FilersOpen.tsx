@@ -7,7 +7,7 @@ export const FilersOpen = () => {
   return (
     <C.container>
       {filersOpen.map((file) => (
-        <C.file isOpen={filerOpen.path === file.path} key={file.index}>
+        <C.file isOpen={filerOpen.index === file.index} key={file.index}>
           <p>{file.value}</p>
           <span>
             <VscClose size={20} color="#646464" />

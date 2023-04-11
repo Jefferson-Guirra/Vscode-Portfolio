@@ -39,17 +39,17 @@ export const VscodeProvider = ({ children }: PropsProvider) => {
     }
     close(item: File) {
       const newFilersOpen = filersOpen.filter(
-        (file) => file.value !== item.value
+        (file) => file.index !== item.index
       )
       setCookie(null, 'filersOpen', JSON.stringify(newFilersOpen))
       setFilersOpen(newFilersOpen)
     }
-
     updateFileOpen(file: File) {
       setCookie(null, 'filerOpen', JSON.stringify(file))
       setFilerOpen(file)
     }
   }
+
   const updateFilersOpen = new UpdateFilersOPen()
   useEffect(() => {
     const { foldersOpen, filersOpen, filerOpen } = parseCookies()
