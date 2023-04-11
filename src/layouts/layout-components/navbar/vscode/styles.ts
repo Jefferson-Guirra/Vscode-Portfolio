@@ -5,8 +5,6 @@ interface Props {
 
 export const navbar = styled.nav(
   ({ iconIsOpen }: Props) => `
-
- flex: 1;
  width: fit-content;
  background-color: #333333;
   .icons {

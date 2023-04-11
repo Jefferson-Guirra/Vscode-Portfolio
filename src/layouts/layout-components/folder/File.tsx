@@ -7,6 +7,7 @@ import {
   VscChevronDown,
 } from 'react-icons/vsc'
 import { useVscodeContext } from '@/context/vscode/vscode'
+import { UpdateFilersOpen } from '@/@types/updateFilersOpen'
 
 type HandleFolder = (value: string) => void
 type FoldersOpen = string[]
@@ -19,11 +20,18 @@ interface Props {
 const JsxElementLoop = (
   element: Element,
   updateFoldersOpen: HandleFolder,
-  foldersOpen: FoldersOpen
+  foldersOpen: FoldersOpen,
+  updateFilersOpen: UpdateFilersOpen
 ) => {
   if (typeof element.value === 'string') {
     return (
-      <C.file key={element.index}>
+      <C.file
+        key={element.index}
+        onClick={() => {
+          updateFilersOpen.add(element)
+          updateFilersOpen.updateFileOpen(element)
+        }}
+      >
         <Image
           src="/images/typescript-react.svg"
           width={17}
@@ -57,7 +65,12 @@ const JsxElementLoop = (
           element.value
             .elements()
             .map((element: any) =>
-              handleElement(element, updateFoldersOpen, foldersOpen)
+              handleElement(
+                element,
+                updateFoldersOpen,
+                foldersOpen,
+                updateFilersOpen
+              )
             )}
       </C.folderContainer>
     )
@@ -67,14 +80,20 @@ const JsxElementLoop = (
 const handleElement = (
   element: any,
   handleFunction: HandleFolder,
-  folderName: FoldersOpen
+  folderName: FoldersOpen,
+  updateFilersOPen: UpdateFilersOpen
 ) => {
-  return JsxElementLoop(element, handleFunction, folderName)
+  return JsxElementLoop(element, handleFunction, folderName, updateFilersOPen)
 }
 
 const File = ({ element }: Props) => {
-  const { foldersOpen, updateFoldersOpen } = useVscodeContext()
-  return <div>{handleElement(element, updateFoldersOpen, foldersOpen)}</div>
+  const { foldersOpen, updateFoldersOpen, updateFilersOpen } =
+    useVscodeContext()
+  return (
+    <div>
+      {handleElement(element, updateFoldersOpen, foldersOpen, updateFilersOpen)}
+    </div>
+  )
 }
 
 export default File
