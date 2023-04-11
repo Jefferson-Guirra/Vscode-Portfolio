@@ -7,12 +7,11 @@ import {
   VscChevronDown,
 } from 'react-icons/vsc'
 import { useVscodeContext } from '@/context/vscode/vscode'
-import { UpdateFilersOpen } from '@/@types/updateFilersOpen'
+import { UpdateFilersOpen, File } from '@/@types/updateFilersOpen'
 
 type HandleFolder = (value: string) => void
 type FoldersOpen = string[]
 type Element = any
-
 interface Props {
   element: any
 }
@@ -21,11 +20,13 @@ const JsxElementLoop = (
   element: Element,
   updateFoldersOpen: HandleFolder,
   foldersOpen: FoldersOpen,
-  updateFilersOpen: UpdateFilersOpen
+  updateFilersOpen: UpdateFilersOpen,
+  filerOpen: File
 ) => {
   if (typeof element.value === 'string') {
     return (
       <C.file
+        isOpen={element.index === filerOpen.index}
         key={element.index}
         onClick={() => {
           updateFilersOpen.add(element)
@@ -69,7 +70,8 @@ const JsxElementLoop = (
                 element,
                 updateFoldersOpen,
                 foldersOpen,
-                updateFilersOpen
+                updateFilersOpen,
+                filerOpen
               )
             )}
       </C.folderContainer>
@@ -81,17 +83,30 @@ const handleElement = (
   element: any,
   handleFunction: HandleFolder,
   folderName: FoldersOpen,
-  updateFilersOPen: UpdateFilersOpen
+  updateFilersOPen: UpdateFilersOpen,
+  filerOpen: File
 ) => {
-  return JsxElementLoop(element, handleFunction, folderName, updateFilersOPen)
+  return JsxElementLoop(
+    element,
+    handleFunction,
+    folderName,
+    updateFilersOPen,
+    filerOpen
+  )
 }
 
 const File = ({ element }: Props) => {
-  const { foldersOpen, updateFoldersOpen, updateFilersOpen } =
+  const { foldersOpen, updateFoldersOpen, updateFilersOpen, filerOpen } =
     useVscodeContext()
   return (
     <div>
-      {handleElement(element, updateFoldersOpen, foldersOpen, updateFilersOpen)}
+      {handleElement(
+        element,
+        updateFoldersOpen,
+        foldersOpen,
+        updateFilersOpen,
+        filerOpen
+      )}
     </div>
   )
 }
