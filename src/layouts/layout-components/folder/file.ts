@@ -1,5 +1,9 @@
 import styled from 'styled-components'
 
+interface Props {
+  isOpen: boolean
+}
+
 export const folderContainer = styled.div`
   color: #aaaaaa;
   font-size: 0.85rem;
@@ -16,8 +20,10 @@ export const folderContainer = styled.div`
     }
   }
 `
-export const file = styled.div`
+export const file = styled.div(
+  ({ isOpen }: Props) => `
   font-size: 0.85rem;
+  background-color: ${isOpen ? '#37373d' : 'none'};
   color: #aaaaaa;
   cursor: pointer;
   padding: 0.2rem;
@@ -31,3 +37,4 @@ export const file = styled.div`
     margin-inline: 2.4rem 0.5rem;
   }
 `
+)
