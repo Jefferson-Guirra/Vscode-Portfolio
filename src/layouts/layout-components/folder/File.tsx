@@ -1,5 +1,4 @@
 import * as C from './file'
-import Image from 'next/image'
 import {
   VscFolder,
   VscFolderOpened,
@@ -8,6 +7,7 @@ import {
 } from 'react-icons/vsc'
 import { useVscodeContext } from '@/context/vscode/vscode'
 import { UpdateFilersOpen, File } from '@/@types/updateFilersOpen'
+import { IconType } from '@/components'
 
 type HandleFolder = (value: string) => void
 type FoldersOpen = string[]
@@ -33,12 +33,7 @@ const JsxElementLoop = (
           updateFilersOpen.updateFileOpen(element)
         }}
       >
-        <Image
-          src="/images/typescript-react.svg"
-          width={17}
-          height={17}
-          alt="icon"
-        />
+        <IconType size={17} type={element.value.replace(/\w+\./g, '')} />
         <p className="file">{element.value}</p>
       </C.file>
     )
