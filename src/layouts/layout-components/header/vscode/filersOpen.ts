@@ -22,12 +22,14 @@ color: #aaaaaa;
 font-size: 0.8rem;
 padding: 0.6rem;
 &:hover {
-  span {
-    display:initial
+  button {
+    transition: all 0.5s;
+    opacity: initial
   }
 }
-    span {
-      display: ${isOpen ? 'initial' : 'none'};
+    button {
+      background-color: transparent;
+      opacity: ${isOpen ? 'initial' : '0'};
         cursor: pointer;
         border-radius: 5px;
         &:hover {

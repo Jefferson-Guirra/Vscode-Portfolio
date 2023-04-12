@@ -20,9 +20,9 @@ export const FilersOpen = () => {
         <C.file isOpen={filerOpen.index === file.index} key={file.index}>
           <IconType type={file.value.replace(/\w+\./g, '')} size={20} />
           <p>{file.value}</p>
-          <span onClick={() => handleFile(file)}>
+          <button onClick={() => handleFile(file)}>
             <VscClose size={20} color="#646464" />
-          </span>
+          </button>
         </C.file>
       ))}
     </C.container>
