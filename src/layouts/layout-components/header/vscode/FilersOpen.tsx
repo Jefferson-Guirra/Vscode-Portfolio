@@ -18,7 +18,7 @@ export const FilersOpen = () => {
     <C.container>
       {filersOpen.map((file) => (
         <C.file isOpen={filerOpen.index === file.index} key={file.index}>
-          <IconType type={file.value.replace(/\w+\./g, '')} size={20} />
+          <IconType type={file.value.replace(/\w+\./g, '')} size={19} />
           <p>{file.value}</p>
           <button onClick={() => handleFile(file)}>
             <VscClose size={20} color="#646464" />

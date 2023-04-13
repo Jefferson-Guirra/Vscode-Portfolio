@@ -15,11 +15,11 @@ display: flex;
 align-items: center;
 justify-content: space-between;
 height:43.20px;
-width: 150px;
+width: 130px;
 background-color:  ${isOpen ? '#1e1e1e' : '#2d2d2d'} ;
 border: 1px solid #252526;
 color: #aaaaaa;
-font-size: 0.8rem;
+font-size: 0.875rem;
 padding: 0.6rem;
 &:hover {
   button {
@@ -28,6 +28,9 @@ padding: 0.6rem;
   }
 }
     button {
+      display:flex;
+      align-items:center;
+      justify-content:center;
       background-color: transparent;
       opacity: ${isOpen ? 'initial' : '0'};
         cursor: pointer;
