@@ -5,7 +5,7 @@ export const container = styled.section`
   color: #aaaaaa;
   min-width: 225px;
 
-  .title {
+  .explorer {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -13,7 +13,18 @@ export const container = styled.section`
 
     h1 {
       font-weight: 400;
+      font-size: 0.875rem;
+    }
+  }
+
+  .title {
+    display: flex;
+    align-items: center;
+    padding: 0.4rem 0.8rem;
+    cursor: pointer;
+    h1 {
       font-size: 0.8rem;
+      font-weight: bold;
     }
   }
 `
