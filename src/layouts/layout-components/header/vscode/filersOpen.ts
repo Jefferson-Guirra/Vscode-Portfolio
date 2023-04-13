@@ -20,7 +20,6 @@ export const file = styled.article(
 display: flex;
 align-items: center;
 justify-content: space-between;
-height:43.20px;
 width: 130px;
 background-color:  ${isOpen ? '#1e1e1e' : '#2d2d2d'} ;
 border: 1px solid #252526;
