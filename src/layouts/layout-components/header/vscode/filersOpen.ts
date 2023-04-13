@@ -6,7 +6,13 @@ interface Props {
 
 export const container = styled.section`
   display: flex;
+  flex-direction: column;
+  color: #aaaaaa;
   background-color: #252526;
+
+  .filers {
+    display: flex;
+  }
 `
 
 export const file = styled.article(
@@ -18,7 +24,6 @@ height:43.20px;
 width: 130px;
 background-color:  ${isOpen ? '#1e1e1e' : '#2d2d2d'} ;
 border: 1px solid #252526;
-color: #aaaaaa;
 font-size: 0.875rem;
 padding: 0.6rem;
 &:hover {
@@ -41,3 +46,16 @@ padding: 0.6rem;
     }
 `
 )
+
+export const path = styled.div`
+  display: flex;
+  align-items: center;
+  padding: 0.4rem 1rem;
+  font-size: 0.8rem;
+
+  .pathname {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+  }
+`
