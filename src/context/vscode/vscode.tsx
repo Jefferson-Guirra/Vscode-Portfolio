@@ -4,10 +4,12 @@ import { parseCookies, setCookie } from 'nookies'
 
 interface VscodeProps {
   updateFoldersOpen: (value: string) => void
+  handleRootFolderIsOpen: () => void
   foldersOpen: string[]
   filersOpen: File[]
   filerOpen: File
   updateFilersOpen: UpdateFilersOpen
+  rootFolderIsOpen: boolean
 }
 
 const VscodeContext = createContext({} as VscodeProps)
@@ -19,6 +21,7 @@ export const VscodeProvider = ({ children }: PropsProvider) => {
   const [foldersOpen, setFoldersOpen] = useState<string[]>([])
   const [filersOpen, setFilersOpen] = useState<File[]>([])
   const [filerOpen, setFilerOpen] = useState<File>({} as File)
+  const [rootFolderIsOpen, setRootFolderIsOpen] = useState<boolean>(false)
   const updateFoldersOpen = (value: string) => {
     if (foldersOpen.includes(value)) {
       const newFolder = foldersOpen.filter((item) => item !== value)
@@ -50,7 +53,9 @@ export const VscodeProvider = ({ children }: PropsProvider) => {
     }
   }
 
-  const updateFilersOpen = new UpdateFilersOPen()
+  const handleRootFolderIsOpen = () => {
+    setRootFolderIsOpen((state) => !state)
+  }
   useEffect(() => {
     const { foldersOpen, filersOpen, filerOpen } = parseCookies()
 
@@ -70,7 +75,9 @@ export const VscodeProvider = ({ children }: PropsProvider) => {
         foldersOpen,
         updateFoldersOpen,
         filersOpen,
-        updateFilersOpen,
+        updateFilersOpen: new UpdateFilersOPen(),
+        rootFolderIsOpen,
+        handleRootFolderIsOpen,
         filerOpen,
       }}
     >
