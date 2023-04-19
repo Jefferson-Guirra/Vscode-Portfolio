@@ -6,7 +6,8 @@ import {
   VscChevronDown,
 } from 'react-icons/vsc'
 import { useVscodeContext } from '@/context/vscode/vscode'
-import { UpdateFilersOpen, File } from '@/@types/updateFilersOpen'
+import { UpdateFilersOpen, File } from '@/@types/update-filers-open'
+import { UpdateFile } from '@/@types/update-file'
 import { IconType } from '@/components'
 
 type HandleFolder = (value: string) => void
@@ -21,7 +22,8 @@ const JsxElementLoop = (
   updateFoldersOpen: HandleFolder,
   foldersOpen: FoldersOpen,
   updateFilersOpen: UpdateFilersOpen,
-  filerOpen: File
+  filerOpen: File,
+  handleUpdateFile: UpdateFile
 ) => {
   if (typeof element.value === 'string') {
     return (
@@ -30,7 +32,7 @@ const JsxElementLoop = (
         key={element.index}
         onClick={() => {
           updateFilersOpen.add(element)
-          updateFilersOpen.updateFileOpen(element)
+          handleUpdateFile.update(element)
         }}
       >
         <IconType size={17} type={element.value.replace(/\w+\./g, '')} />
@@ -66,7 +68,8 @@ const JsxElementLoop = (
                 updateFoldersOpen,
                 foldersOpen,
                 updateFilersOpen,
-                filerOpen
+                filerOpen,
+                handleUpdateFile
               )
             )}
       </C.folderContainer>
@@ -79,20 +82,27 @@ const handleElement = (
   handleFunction: HandleFolder,
   folderName: FoldersOpen,
   updateFilersOPen: UpdateFilersOpen,
-  filerOpen: File
+  filerOpen: File,
+  handleUpdateFile: UpdateFile
 ) => {
   return JsxElementLoop(
     element,
     handleFunction,
     folderName,
     updateFilersOPen,
-    filerOpen
+    filerOpen,
+    handleUpdateFile
   )
 }
 
 const File = ({ element }: Props) => {
-  const { foldersOpen, updateFoldersOpen, updateFilersOpen, filerOpen } =
-    useVscodeContext()
+  const {
+    foldersOpen,
+    updateFoldersOpen,
+    updateFilersOpen,
+    filerOpen,
+    handleUpdateFile,
+  } = useVscodeContext()
   return (
     <div>
       {handleElement(
@@ -100,7 +110,8 @@ const File = ({ element }: Props) => {
         updateFoldersOpen,
         foldersOpen,
         updateFilersOpen,
-        filerOpen
+        filerOpen,
+        handleUpdateFile
       )}
     </div>
   )
