@@ -7,5 +7,4 @@ export interface File {
 export interface UpdateFilersOpen {
   add: (file: File) => void
   close: (file: File) => void
-  updateFileOpen: (file: File) => void
 }
