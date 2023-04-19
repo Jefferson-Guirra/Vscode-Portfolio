@@ -5,11 +5,12 @@ import { File } from '@/@types'
 import * as C from './filersOpen'
 
 export const FilersOpen = () => {
-  const { filersOpen, filerOpen, updateFilersOpen } = useVscodeContext()
+  const { filersOpen, filerOpen, updateFilersOpen, handleUpdateFile } =
+    useVscodeContext()
 
   const handleFile = (file: File) => {
     if (filerOpen === file) {
-      updateFilersOpen.updateFileOpen({} as File)
+      handleUpdateFile.update({} as File)
       updateFilersOpen.close(file)
     }
     updateFilersOpen.close(file)
