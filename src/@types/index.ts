@@ -1,2 +1,2 @@
 export * from './folder'
-export * from './updateFilersOpen'
+export * from './update-filers-open'
