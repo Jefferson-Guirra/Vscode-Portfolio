@@ -1,13 +1,15 @@
 import { createContext, useState, useEffect, useContext } from 'react'
 import { UpdateFilersOpen, File } from '@/@types'
 import { parseCookies, setCookie } from 'nookies'
-
+import { UpdateFile } from '@/@types/update-file'
+import { handleCookie } from '../factories/handle-cookie'
 interface VscodeProps {
   updateFoldersOpen: (value: string) => void
   handleRootFolderIsOpen: () => void
   foldersOpen: string[]
   filersOpen: File[]
   filerOpen: File
+  handleUpdateFile: UpdateFile
   updateFilersOpen: UpdateFilersOpen
   rootFolderIsOpen: boolean
 }
@@ -22,10 +24,39 @@ export const VscodeProvider = ({ children }: PropsProvider) => {
   const [filersOpen, setFilersOpen] = useState<File[]>([])
   const [filerOpen, setFilerOpen] = useState<File>({} as File)
   const [rootFolderIsOpen, setRootFolderIsOpen] = useState<boolean>(false)
+
+  const { updateFile, updateFilers, insertCookie } = handleCookie()
+
+  const updateFileOpen = () => {
+    const update = (file: File) => {
+      const newOpenFile = updateFile.update(file)
+      if (newOpenFile.index !== file.index) {
+        setFilerOpen(newOpenFile)
+      }
+    }
+    return {
+      update,
+    }
+  }
+  const updateFilersOpen = () => {
+    const add = (file: File) => {
+      const newFilers = updateFilers.add(file, filersOpen)
+      setFilersOpen(newFilers)
+    }
+    const close = (file: File) => {
+      const newFilers = updateFilers.close(file, filersOpen)
+      setFilersOpen(newFilers)
+    }
+    return {
+      add,
+      close,
+    }
+  }
+
   const updateFoldersOpen = (value: string) => {
     if (foldersOpen.includes(value)) {
       const newFolder = foldersOpen.filter((item) => item !== value)
-      setCookie(null, 'foldersOpen', JSON.stringify(newFolder))
+      insertCookie.insert({ name: 'foldersOpen', value: newFolder })
       setFoldersOpen(newFolder)
     } else {
       setCookie(null, 'foldersOpen', JSON.stringify([...foldersOpen, value]))
@@ -33,31 +64,13 @@ export const VscodeProvider = ({ children }: PropsProvider) => {
     }
   }
 
-  class UpdateFilersOPen {
-    add(item: File) {
-      if (!filersOpen.find((file) => file.index === item.index)) {
-        setCookie(null, 'filersOpen', JSON.stringify([...filersOpen, item]))
-        setFilersOpen((state) => [...state, item])
-      }
-    }
-    close(item: File) {
-      const newFilersOpen = filersOpen.filter(
-        (file) => file.index !== item.index
-      )
-      setCookie(null, 'filersOpen', JSON.stringify(newFilersOpen))
-      setFilersOpen(newFilersOpen)
-    }
-    updateFileOpen(file: File) {
-      setCookie(null, 'filerOpen', JSON.stringify(file))
-      setFilerOpen(file)
-    }
-  }
-
   const handleRootFolderIsOpen = () => {
+    setCookie(null, 'rootFolderIsOpen', JSON.stringify(!rootFolderIsOpen))
     setRootFolderIsOpen((state) => !state)
   }
   useEffect(() => {
-    const { foldersOpen, filersOpen, filerOpen } = parseCookies()
+    const { foldersOpen, filersOpen, filerOpen, rootFolderIsOpen } =
+      parseCookies()
 
     if (foldersOpen) {
       setFoldersOpen(JSON.parse(foldersOpen))
@@ -68,6 +81,9 @@ export const VscodeProvider = ({ children }: PropsProvider) => {
     if (filerOpen) {
       setFilerOpen(JSON.parse(filerOpen))
     }
+    if (rootFolderIsOpen) {
+      setRootFolderIsOpen(JSON.parse(rootFolderIsOpen))
+    }
   }, [])
   return (
     <VscodeContext.Provider
@@ -75,7 +91,8 @@ export const VscodeProvider = ({ children }: PropsProvider) => {
         foldersOpen,
         updateFoldersOpen,
         filersOpen,
-        updateFilersOpen: new UpdateFilersOPen(),
+        handleUpdateFile: updateFileOpen(),
+        updateFilersOpen: updateFilersOpen(),
         rootFolderIsOpen,
         handleRootFolderIsOpen,
         filerOpen,
