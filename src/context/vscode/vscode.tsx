@@ -30,7 +30,7 @@ export const VscodeProvider = ({ children }: PropsProvider) => {
   const updateFileOpen = () => {
     const update = (file: File) => {
       const newOpenFile = updateFile.update(file)
-      if (newOpenFile.index !== file.index) {
+      if (newOpenFile.index !== filerOpen.index) {
         setFilerOpen(newOpenFile)
       }
     }
