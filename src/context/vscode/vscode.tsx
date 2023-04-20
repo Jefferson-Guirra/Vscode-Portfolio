@@ -3,8 +3,9 @@ import { UpdateFilersOpen, File } from '@/@types'
 import { parseCookies, setCookie } from 'nookies'
 import { UpdateFile } from '@/@types/update-file'
 import { handleCookie } from '../factories/handle-cookie'
+import { UpdateFoldersOpen } from '@/@types/update-folders-open'
 interface VscodeProps {
-  updateFoldersOpen: (value: string) => void
+  updateFoldersOpen: UpdateFoldersOpen
   handleRootFolderIsOpen: () => void
   foldersOpen: string[]
   filersOpen: File[]
@@ -25,7 +26,7 @@ export const VscodeProvider = ({ children }: PropsProvider) => {
   const [filerOpen, setFilerOpen] = useState<File>({} as File)
   const [rootFolderIsOpen, setRootFolderIsOpen] = useState<boolean>(false)
 
-  const { updateFile, updateFilers, insertCookie } = handleCookie()
+  const { updateFile, updateFilers, updateFolders } = handleCookie()
 
   const updateFileOpen = () => {
     const update = (file: File) => {
@@ -53,7 +54,7 @@ export const VscodeProvider = ({ children }: PropsProvider) => {
     }
   }
 
-  const updateFoldersOpen = (value: string) => {
+  /*const updateFoldersOpen = (value: string) => {
     if (foldersOpen.includes(value)) {
       const newFolder = foldersOpen.filter((item) => item !== value)
       insertCookie.insert({ name: 'foldersOpen', value: newFolder })
@@ -61,6 +62,16 @@ export const VscodeProvider = ({ children }: PropsProvider) => {
     } else {
       setCookie(null, 'foldersOpen', JSON.stringify([...foldersOpen, value]))
       setFoldersOpen([...foldersOpen, value])
+    }
+  }*/
+
+  const handleUpdateFolders = () => {
+    const update = (file: string) => {
+      const newFoldersOpen = updateFolders.update(file, foldersOpen)
+      setFoldersOpen(newFoldersOpen)
+    }
+    return {
+      update,
     }
   }
 
@@ -89,7 +100,7 @@ export const VscodeProvider = ({ children }: PropsProvider) => {
     <VscodeContext.Provider
       value={{
         foldersOpen,
-        updateFoldersOpen,
+        updateFoldersOpen: handleUpdateFolders(),
         filersOpen,
         handleUpdateFile: updateFileOpen(),
         updateFilersOpen: updateFilersOpen(),
