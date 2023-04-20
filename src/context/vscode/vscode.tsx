@@ -1,9 +1,7 @@
 import { createContext, useState, useEffect, useContext } from 'react'
-import { UpdateFilersOpen, File } from '@/@types'
 import { parseCookies } from 'nookies'
-import { UpdateFile } from '@/@types/update-file'
 import { handleCookie } from '../factories/handle-cookie'
-import { UpdateFoldersOpen } from '@/@types/update-folders-open'
+import { UpdateFoldersOpen, UpdateFile, UpdateFilersOpen, File } from '@/@types'
 interface VscodeProps {
   updateFoldersOpen: UpdateFoldersOpen
   handleRootFolderIsOpen: () => void
