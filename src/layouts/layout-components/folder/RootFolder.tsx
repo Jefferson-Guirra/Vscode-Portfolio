@@ -15,9 +15,9 @@ export const RootFolder = () => {
       </div>
       <div className="title" onClick={handleRootFolderIsOpen}>
         {rootFolderIsOpen ? (
-          <VscChevronRight size={17} />
-        ) : (
           <VscChevronDown size={17} />
+        ) : (
+          <VscChevronRight size={17} />
         )}
         <h1>PORTFOLIO-VSCODE</h1>
       </div>
