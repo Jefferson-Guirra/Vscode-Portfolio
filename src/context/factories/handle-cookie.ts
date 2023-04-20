@@ -1,7 +1,9 @@
-import { SetCookie } from '../cookies/insert-cookie'
-import { UpdateFilers } from '../cookies/update-filers-open-cookie'
-import { UpdateFile } from '../cookies/update-file-open'
-import { UpdateFolders } from '../cookies/update-folders-open-cookie'
+import {
+  UpdateFolders,
+  UpdateFile,
+  UpdateFilers,
+  SetCookie,
+} from './handle-cookie-protocols'
 
 interface HandleCookie {
   insertCookie: SetCookie
