@@ -1,6 +1,6 @@
 import { createContext, useState, useEffect, useContext } from 'react'
 import { UpdateFilersOpen, File } from '@/@types'
-import { parseCookies, setCookie } from 'nookies'
+import { parseCookies } from 'nookies'
 import { UpdateFile } from '@/@types/update-file'
 import { handleCookie } from '../factories/handle-cookie'
 import { UpdateFoldersOpen } from '@/@types/update-folders-open'
@@ -26,7 +26,8 @@ export const VscodeProvider = ({ children }: PropsProvider) => {
   const [filerOpen, setFilerOpen] = useState<File>({} as File)
   const [rootFolderIsOpen, setRootFolderIsOpen] = useState<boolean>(false)
 
-  const { updateFile, updateFilers, updateFolders } = handleCookie()
+  const { updateFile, updateFilers, updateFolders, insertCookie } =
+    handleCookie()
 
   const updateFileOpen = () => {
     const update = (file: File) => {
@@ -39,6 +40,7 @@ export const VscodeProvider = ({ children }: PropsProvider) => {
       update,
     }
   }
+
   const updateFilersOpen = () => {
     const add = (file: File) => {
       const newFilers = updateFilers.add(file, filersOpen)
@@ -54,17 +56,6 @@ export const VscodeProvider = ({ children }: PropsProvider) => {
     }
   }
 
-  /*const updateFoldersOpen = (value: string) => {
-    if (foldersOpen.includes(value)) {
-      const newFolder = foldersOpen.filter((item) => item !== value)
-      insertCookie.insert({ name: 'foldersOpen', value: newFolder })
-      setFoldersOpen(newFolder)
-    } else {
-      setCookie(null, 'foldersOpen', JSON.stringify([...foldersOpen, value]))
-      setFoldersOpen([...foldersOpen, value])
-    }
-  }*/
-
   const handleUpdateFolders = () => {
     const update = (file: string) => {
       const newFoldersOpen = updateFolders.update(file, foldersOpen)
@@ -76,7 +67,7 @@ export const VscodeProvider = ({ children }: PropsProvider) => {
   }
 
   const handleRootFolderIsOpen = () => {
-    setCookie(null, 'rootFolderIsOpen', JSON.stringify(!rootFolderIsOpen))
+    insertCookie.insert({ name: 'rootFolderIsOpen', value: !rootFolderIsOpen })
     setRootFolderIsOpen((state) => !state)
   }
   useEffect(() => {
