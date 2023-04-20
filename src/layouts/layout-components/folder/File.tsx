@@ -5,10 +5,8 @@ import {
   VscChevronRight,
   VscChevronDown,
 } from 'react-icons/vsc'
+import { UpdateFilersOpen, File, UpdateFoldersOpen, UpdateFile } from '@/@types'
 import { useVscodeContext } from '@/context/vscode/vscode'
-import { UpdateFilersOpen, File } from '@/@types/update-filers-open'
-import { UpdateFoldersOpen } from '@/@types/update-folders-open'
-import { UpdateFile } from '@/@types/update-file'
 import { IconType } from '@/components'
 
 type FoldersOpen = string[]
