@@ -7,10 +7,10 @@ import {
 } from 'react-icons/vsc'
 import { useVscodeContext } from '@/context/vscode/vscode'
 import { UpdateFilersOpen, File } from '@/@types/update-filers-open'
+import { UpdateFoldersOpen } from '@/@types/update-folders-open'
 import { UpdateFile } from '@/@types/update-file'
 import { IconType } from '@/components'
 
-type HandleFolder = (value: string) => void
 type FoldersOpen = string[]
 type Element = any
 interface Props {
@@ -19,7 +19,7 @@ interface Props {
 
 const JsxElementLoop = (
   element: Element,
-  updateFoldersOpen: HandleFolder,
+  updateFoldersOpen: UpdateFoldersOpen,
   foldersOpen: FoldersOpen,
   updateFilersOpen: UpdateFilersOpen,
   filerOpen: File,
@@ -44,7 +44,7 @@ const JsxElementLoop = (
       <C.folderContainer key={element.index}>
         <div
           className="folder"
-          onClick={() => updateFoldersOpen(element.index)}
+          onClick={() => updateFoldersOpen.update(element.index)}
         >
           {foldersOpen.includes(element.index) ? (
             <>
@@ -79,7 +79,7 @@ const JsxElementLoop = (
 
 const handleElement = (
   element: any,
-  handleFunction: HandleFolder,
+  updateFoldersOpen: UpdateFoldersOpen,
   folderName: FoldersOpen,
   updateFilersOPen: UpdateFilersOpen,
   filerOpen: File,
@@ -87,7 +87,7 @@ const handleElement = (
 ) => {
   return JsxElementLoop(
     element,
-    handleFunction,
+    updateFoldersOpen,
     folderName,
     updateFilersOPen,
     filerOpen,
