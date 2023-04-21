@@ -43,41 +43,42 @@ export const FilersOpen = () => {
       handleUpdateFile.update(file)
     }
   }
-  return (
-    <C.container>
-      <div className="filers">
-        {filersOpen.map((file) => (
-          <C.file
-            isOpen={filerOpen.index === file.index}
-            key={file.index}
-            onClick={(e) => UpdateFile(e, file)}
-          >
-            <IconType type={file.value.replace(/\w+\./g, '')} size={19} />
-            <p>{file.value}</p>
-            <button onClick={() => closeFile(file)}>
-              <VscClose size={20} color="#646464" />
-            </button>
-          </C.file>
-        ))}
-      </div>
-      {filerOpen.path && (
-        <C.path>
-          {filerOpen.path.map((pathname, index) => (
-            <div className="pathname" key={pathname}>
-              {pathname.includes('.') && (
-                <IconType
-                  size={15}
-                  type={`${pathname.replace(/\w+\./g, '')}`}
-                />
-              )}
-              <p>{pathname}</p>
-              {index !== (filerOpen.path?.length as number) - 1 && (
-                <VscChevronRight size={15} />
-              )}
-            </div>
+  if (filersOpen.length >= 1)
+    return (
+      <C.container>
+        <div className="filers">
+          {filersOpen.map((file) => (
+            <C.file
+              isOpen={filerOpen.index === file.index}
+              key={file.index}
+              onClick={(e) => UpdateFile(e, file)}
+            >
+              <IconType type={file.value.replace(/\w+\./g, '')} size={19} />
+              <p>{file.value}</p>
+              <button onClick={() => closeFile(file)}>
+                <VscClose size={20} color="#646464" />
+              </button>
+            </C.file>
           ))}
-        </C.path>
-      )}
-    </C.container>
-  )
+        </div>
+        {filerOpen.path && (
+          <C.path>
+            {filerOpen.path.map((pathname, index) => (
+              <div className="pathname" key={pathname}>
+                {pathname.includes('.') && (
+                  <IconType
+                    size={15}
+                    type={`${pathname.replace(/\w+\./g, '')}`}
+                  />
+                )}
+                <p>{pathname}</p>
+                {index !== (filerOpen.path?.length as number) - 1 && (
+                  <VscChevronRight size={15} />
+                )}
+              </div>
+            ))}
+          </C.path>
+        )}
+      </C.container>
+    )
 }
