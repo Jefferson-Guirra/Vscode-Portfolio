@@ -29,13 +29,19 @@ export const FilersOpen = () => {
     }
   }
 
-  const handleCloseFile = (file: File) => {
+  const closeFile = (file: File) => {
     if (file.index !== filerOpen.index) {
       handleUpdateFilersOpen.close(file)
       return
+    } else {
+      handleUpdateFilersOpen.close(file)
+      updateFileOpen(file)
     }
-    handleUpdateFilersOpen.close(file)
-    updateFileOpen(file)
+  }
+  const UpdateFile = (e: React.MouseEvent<HTMLElement>, file: File) => {
+    if (e.currentTarget === e.target) {
+      handleUpdateFile.update(file)
+    }
   }
   return (
     <C.container>
@@ -44,11 +50,11 @@ export const FilersOpen = () => {
           <C.file
             isOpen={filerOpen.index === file.index}
             key={file.index}
-            onClick={() => handleUpdateFile.update(file)}
+            onClick={(e) => UpdateFile(e, file)}
           >
             <IconType type={file.value.replace(/\w+\./g, '')} size={19} />
             <p>{file.value}</p>
-            <button onClick={() => handleCloseFile(file)}>
+            <button onClick={() => closeFile(file)}>
               <VscClose size={20} color="#646464" />
             </button>
           </C.file>
