@@ -60,9 +60,9 @@ export const FilersOpen = () => {
           </C.file>
         ))}
       </div>
-      {filerOpen && (
+      {filerOpen.path && (
         <C.path>
-          {filerOpen.path?.map((pathname, index) => (
+          {filerOpen.path.map((pathname, index) => (
             <div className="pathname" key={pathname}>
               {pathname.includes('.') && (
                 <IconType
