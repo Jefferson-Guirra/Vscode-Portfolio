@@ -3,13 +3,13 @@ import { parseCookies } from 'nookies'
 import { handleCookie } from '../factories/handle-cookie'
 import { UpdateFoldersOpen, UpdateFile, UpdateFilersOpen, File } from '@/@types'
 interface VscodeProps {
-  updateFoldersOpen: UpdateFoldersOpen
+  handleUpdateFoldersOpen: UpdateFoldersOpen
   handleRootFolderIsOpen: () => void
   foldersOpen: string[]
   filersOpen: File[]
   filerOpen: File
   handleUpdateFile: UpdateFile
-  updateFilersOpen: UpdateFilersOpen
+  handleUpdateFilersOpen: UpdateFilersOpen
   rootFolderIsOpen: boolean
 }
 
@@ -29,7 +29,7 @@ export const VscodeProvider = ({ children }: PropsProvider) => {
   const { updateFile, updateFilers, updateFolders, insertCookie } =
     handleCookie()
 
-  const updateFileOpen = () => {
+  const handleUpdateFileOpen = () => {
     const update = (file: File) => {
       const newOpenFile = updateFile.update(file)
       if (newOpenFile?.index !== filerOpen.index) {
@@ -41,7 +41,7 @@ export const VscodeProvider = ({ children }: PropsProvider) => {
     }
   }
 
-  const updateFilersOpen = () => {
+  const handleUpdateFilersOpen = () => {
     const add = (file: File) => {
       const newFilers = updateFilers.add(file, filersOpen)
       setFilersOpen(newFilers)
@@ -94,10 +94,10 @@ export const VscodeProvider = ({ children }: PropsProvider) => {
     <VscodeContext.Provider
       value={{
         foldersOpen,
-        updateFoldersOpen: handleUpdateFolders(),
+        handleUpdateFoldersOpen: handleUpdateFolders(),
         filersOpen,
-        handleUpdateFile: updateFileOpen(),
-        updateFilersOpen: updateFilersOpen(),
+        handleUpdateFile: handleUpdateFileOpen(),
+        handleUpdateFilersOpen: handleUpdateFilersOpen(),
         rootFolderIsOpen,
         handleRootFolderIsOpen,
         filerOpen,

@@ -96,8 +96,8 @@ const handleElement = (
 const File = ({ element }: Props) => {
   const {
     foldersOpen,
-    updateFoldersOpen,
-    updateFilersOpen,
+    handleUpdateFoldersOpen,
+    handleUpdateFilersOpen,
     filerOpen,
     handleUpdateFile,
   } = useVscodeContext()
@@ -105,9 +105,9 @@ const File = ({ element }: Props) => {
     <div>
       {handleElement(
         element,
-        updateFoldersOpen,
+        handleUpdateFoldersOpen,
         foldersOpen,
-        updateFilersOpen,
+        handleUpdateFilersOpen,
         filerOpen,
         handleUpdateFile
       )}

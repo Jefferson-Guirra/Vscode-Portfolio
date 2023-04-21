@@ -5,7 +5,7 @@ import { File } from '@/@types'
 import * as C from './filersOpen'
 
 export const FilersOpen = () => {
-  const { filersOpen, filerOpen, updateFilersOpen, handleUpdateFile } =
+  const { filersOpen, filerOpen, handleUpdateFilersOpen, handleUpdateFile } =
     useVscodeContext()
 
   const updateFileOpen = (file: File) => {
@@ -31,10 +31,10 @@ export const FilersOpen = () => {
 
   const handleCloseFile = (file: File) => {
     if (file.index !== filerOpen.index) {
-      updateFilersOpen.close(file)
+      handleUpdateFilersOpen.close(file)
       return
     }
-    updateFilersOpen.close(file)
+    handleUpdateFilersOpen.close(file)
     updateFileOpen(file)
   }
   return (
@@ -65,7 +65,7 @@ export const FilersOpen = () => {
                 />
               )}
               <p>{pathname}</p>
-              {index !== filerOpen.path?.length - 1 && (
+              {index !== (filerOpen.path?.length as number) - 1 && (
                 <VscChevronRight size={15} />
               )}
             </div>
