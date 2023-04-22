@@ -23,10 +23,14 @@ export const makeRootFolder = (): FolderComposite => {
 
   //CHILDREN OF ROOT  FOLDER FILES
   const src = new CreateFolder('src')
+  const pages = new CreateFolder('pages')
   portfolio.add(src)
-  makeFolder('presentation', ['home.tsx', 'test.tsx'], src)
-  const about = makeFolder('about', ['about.tsx', 'test.tsx'], src)
-  makeFolder('about2', ['about.tsx', 'test.tsx'], about)
+  src.add(pages)
+  src.add('package.json')
+  makeFolder('presentation', ['Presentation.tsx'], pages)
+  makeFolder('skills', ['Skills.tsx'], pages)
+  makeFolder('projects', ['Projects.tsx'], pages)
+  makeFolder('contact', ['Contact.tsx'], pages)
 
   return rootFolder
 }
