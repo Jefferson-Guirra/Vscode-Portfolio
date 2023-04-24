@@ -11,6 +11,8 @@ interface VscodeProps {
   handleUpdateFile: UpdateFile
   handleUpdateFilersOpen: UpdateFilersOpen
   rootFolderIsOpen: boolean
+  viewFilers: boolean
+  handleViewFilers: () => void
 }
 
 const VscodeContext = createContext({} as VscodeProps)
@@ -25,7 +27,12 @@ export const VscodeProvider = ({ children }: PropsProvider) => {
   const [filersOpen, setFilersOpen] = useState<File[]>([])
   const [filerOpen, setFilerOpen] = useState<File>({} as File)
   const [rootFolderIsOpen, setRootFolderIsOpen] = useState<boolean>(false)
+  const [viewFilers, setViewFilers] = useState(false)
 
+  const handleViewFilers = () => {
+    insertCookie.insert({ name: 'viewFilers', value: !viewFilers })
+    setViewFilers((state) => !state)
+  }
   const { updateFile, updateFilers, updateFolders, insertCookie } =
     handleCookie()
 
@@ -72,7 +79,8 @@ export const VscodeProvider = ({ children }: PropsProvider) => {
   }
 
   const handleCookies = (cookies: any) => {
-    const { foldersOpen, filersOpen, filerOpen, rootFolderIsOpen } = cookies
+    const { foldersOpen, filersOpen, filerOpen, rootFolderIsOpen, viewFilers } =
+      cookies
 
     if (foldersOpen) {
       setFoldersOpen(JSON.parse(foldersOpen))
@@ -85,6 +93,9 @@ export const VscodeProvider = ({ children }: PropsProvider) => {
     }
     if (rootFolderIsOpen) {
       setRootFolderIsOpen(JSON.parse(rootFolderIsOpen))
+    }
+    if (viewFilers) {
+      setViewFilers(JSON.parse(viewFilers))
     }
   }
   useEffect(() => {
@@ -101,6 +112,8 @@ export const VscodeProvider = ({ children }: PropsProvider) => {
         rootFolderIsOpen,
         handleRootFolderIsOpen,
         filerOpen,
+        viewFilers,
+        handleViewFilers,
       }}
     >
       {children}
