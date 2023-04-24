@@ -3,8 +3,10 @@ import { MdMinimize, MdClose } from 'react-icons/md'
 import { BiExpandAlt } from 'react-icons/bi'
 import Link from 'next/link'
 import { setCookie } from 'nookies'
+import { useVscodeContext } from '@/context/vscode/vscode'
 
 export const HeaderDesktopApplications = () => {
+  const { filerOpen } = useVscodeContext()
   const handleCloseVscode = () => {
     setCookie(null, 'vscodeIsOpen', 'false')
   }
@@ -26,7 +28,7 @@ export const HeaderDesktopApplications = () => {
         </Link>
       </article>
       <div className={styles.title}>
-        <h4>home-vscode-portfolio-Visual Studio Code</h4>
+        <h4>{filerOpen.value}-vscode-portfolio-Visual Studio Code</h4>
       </div>
     </header>
   )
