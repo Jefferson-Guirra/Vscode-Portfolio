@@ -39,6 +39,11 @@ export const FilersOpen = () => {
     }
   }
   const UpdateFile = (e: React.MouseEvent<HTMLElement>, file: File) => {
+    const attribute = e.currentTarget.getAttribute('data-file-name')
+    if (attribute === file.value) {
+      handleUpdateFile.update(file)
+      return
+    }
     if (e.currentTarget === e.target) {
       handleUpdateFile.update(file)
     }
@@ -53,10 +58,18 @@ export const FilersOpen = () => {
               key={file.index}
               onClick={(e) => UpdateFile(e, file)}
             >
-              <IconType type={file.value.replace(/\w+\./g, '')} size={19} />
-              <p>{file.value}</p>
+              <div
+                className="content-file"
+                data-file-name={file.value}
+                onClick={(e) => UpdateFile(e, file)}
+              >
+                <IconType type={file.value.replace(/\w+\./g, '')} size={19} />
+                <span className="file-name">
+                  <p>{file.value}</p>
+                </span>
+              </div>
               <button onClick={() => closeFile(file)}>
-                <VscClose size={20} color="#646464" />
+                <VscClose size={19} color="#646464" />
               </button>
             </C.file>
           ))}
