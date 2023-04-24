@@ -34,7 +34,7 @@ export const file = styled.div(
   }
 
   img {
-    margin-inline: 2.4rem 0.5rem;
+    margin-inline: 2rem 0.3rem;
   }
 `
 )
