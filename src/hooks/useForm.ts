@@ -29,16 +29,7 @@ const types: RegexProps = {
   },
 }
 
-interface Props {
-  type: string | boolean
-  inputProps: {
-    name: string
-    type: string
-    placeholder: string
-  }
-}
-
-const useForm = ({ type, inputProps }: Props): ReturnUseForm => {
+const useForm = (type: string | boolean): ReturnUseForm => {
   const [value, setValue] = React.useState('')
   const [erro, setError] = React.useState<string>('')
   function onChange({ target }: React.ChangeEvent<HTMLInputElement>) {
@@ -71,9 +62,6 @@ const useForm = ({ type, inputProps }: Props): ReturnUseForm => {
     erro,
     validate: () => validate(value),
     onBlur: () => validate(value),
-    name: inputProps.name,
-    placeholder: inputProps.placeholder,
-    type: inputProps.type,
   }
 }
 
