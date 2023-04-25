@@ -62,6 +62,7 @@ const useForm = (type: string | boolean): ReturnUseForm => {
     erro,
     validate: () => validate(value),
     onBlur: () => validate(value),
+    clearState: () => setValue(''),
   }
 }
 
