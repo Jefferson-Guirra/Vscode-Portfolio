@@ -7,7 +7,7 @@ export const container = styled.section`
   form {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1.5rem;
     .header-form {
       display: flex;
       gap: 1rem;
@@ -33,9 +33,9 @@ export const container = styled.section`
   }
 `
 
-export const formGroup = styled.form`
+export const formGroup = styled.div`
   label {
     display: block;
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.3rem;
   }
 `
