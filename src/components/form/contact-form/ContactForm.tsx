@@ -30,23 +30,23 @@ export const ContactForm = () => {
       <h2>Send email :</h2>
       <form onSubmit={handleSubmit}>
         <div className="header-form">
-          <C.inputContainer className="input-heder">
+          <C.formGroup className="input-heder">
             <label htmlFor="name">Name</label>
             <Input {...name} placeholder="" type="text" name="name" />
-          </C.inputContainer>
-          <C.inputContainer className="input-heder">
+          </C.formGroup>
+          <C.formGroup className="input-heder">
             <label htmlFor="email">Email</label>
             <Input {...email} placeholder="" type="text" name="email" />
-          </C.inputContainer>
+          </C.formGroup>
         </div>
-        <C.inputContainer>
+        <C.formGroup>
           <label htmlFor="subject">Subject</label>
           <Input {...subject} placeholder="" type="text" name="subject" />
-        </C.inputContainer>
-        <C.inputContainer>
+        </C.formGroup>
+        <C.formGroup>
           <label htmlFor="message">Message</label>
           <Textarea {...textArea} cols={30} rows={10} id="message" />
-        </C.inputContainer>
+        </C.formGroup>
         <button type="submit">Submit</button>
       </form>
     </C.container>

@@ -33,7 +33,7 @@ export const container = styled.section`
   }
 `
 
-export const inputContainer = styled.div`
+export const formGroup = styled.form`
   label {
     display: block;
     margin-bottom: 0.4rem;
