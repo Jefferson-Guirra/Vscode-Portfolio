@@ -1,4 +1,6 @@
-export * from './input/Input'
+export * from './form/input/Input'
 export * from './header/header-container'
 export * from './icon/IconType'
+export * from './helpers/Error'
 export * from './form/contact-form/ContactForm'
+export * from './form/textarea/Textarea'
