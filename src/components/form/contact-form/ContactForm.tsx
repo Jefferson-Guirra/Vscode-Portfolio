@@ -1,14 +1,34 @@
 import useForm from '@/hooks/useForm'
 import * as C from './contact'
-import { Input } from '@/components/input/Input'
+import { Input, Textarea } from '@/components'
+import useTextarea from '@/hooks/useTextarea'
 export const ContactForm = () => {
   const name = useForm('name')
   const email = useForm('email')
   const subject = useForm('subject')
+  const textArea = useTextarea()
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+    const validate =
+      name.validate() &&
+      email.validate() &&
+      subject.validate() &&
+      textArea.validate()
+
+    if (validate === true) {
+      name.clearState()
+      email.clearState()
+      subject.clearState()
+      textArea.clearState()
+      alert('Email enviado com sucesso.')
+    } else {
+      alert('por favor, preencha os campos obrigatórios.')
+    }
+  }
   return (
     <C.container>
       <h2>Send email :</h2>
-      <form>
+      <form onSubmit={handleSubmit}>
         <div className="header-form">
           <C.inputContainer className="input-heder">
             <label htmlFor="name">Name</label>
@@ -25,7 +45,7 @@ export const ContactForm = () => {
         </C.inputContainer>
         <C.inputContainer>
           <label htmlFor="message">Message</label>
-          <textarea name="message" id="message" cols={30} rows={10}></textarea>
+          <Textarea {...textArea} cols={30} rows={10} id="message" />
         </C.inputContainer>
         <button type="submit">Submit</button>
       </form>

@@ -38,18 +38,4 @@ export const inputContainer = styled.div`
     display: block;
     margin-bottom: 0.4rem;
   }
-  textarea {
-    border: 1px solid transparent;
-    resize: none;
-    background-color: #252526;
-    color: #fff;
-    padding: 0.7rem;
-    width: 100%;
-    transition: all 0.5s;
-
-    &:focus {
-      outline: none;
-      border: 1px solid #e64d33;
-    }
-  }
 `
