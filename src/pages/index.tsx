@@ -1,7 +1,22 @@
-import HomeContainer from '../features/home/containers/homeContainer'
+import { GetServerSideProps } from 'next'
+import DesktopContainer from '../features/desktop/containers/DesktopContainer'
+import nookies from 'nookies'
 
-const Home = () => {
-  return <HomeContainer description="software developer homepage portfolio" />
+interface Props {
+  vscodeIsOpen: string
+}
+
+const Home = ({ vscodeIsOpen }: Props) => {
+  return <DesktopContainer vscodeIsOpen={vscodeIsOpen} />
+}
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  const vscodeCookie = nookies.get(ctx).vscodeIsOpen
+
+  return {
+    props: {
+      vscodeIsOpen: vscodeCookie === 'true' ? 'true' : 'false',
+    },
+  }
 }
 
 export default Home
