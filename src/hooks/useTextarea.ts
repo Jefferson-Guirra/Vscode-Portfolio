@@ -17,7 +17,7 @@ const useTextarea = (): Props => {
   }
   const validate = (text: string): boolean => {
     if (text === '') {
-      setError('campo obrigatorio')
+      setError('campo obrigatório.')
       return false
     } else return true
   }
