@@ -1,4 +1,5 @@
 import dynamic from 'next/dynamic'
+import { memo } from 'react'
 interface Props {
   name: string
 }
@@ -15,4 +16,4 @@ const DynamicComponent = ({ name }: Props) => {
   return <Component />
 }
 
-export default DynamicComponent
+export default memo(DynamicComponent)
