@@ -31,7 +31,7 @@ export const Textarea = ({
         onBlur={onBlur}
         rows={rows}
       ></textarea>
-      {error && <Error error={error} />}
+      <Error error={error} />
     </>
   )
 }
