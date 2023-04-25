@@ -1,5 +1,10 @@
+import useForm from '@/hooks/useForm'
 import * as C from './contact'
+import { Input } from '@/components/input/Input'
 export const ContactForm = () => {
+  const name = useForm('name')
+  const email = useForm('email')
+  const subject = useForm('subject')
   return (
     <C.container>
       <h2>Send email :</h2>
@@ -7,16 +12,16 @@ export const ContactForm = () => {
         <div className="header-form">
           <C.inputContainer className="input-heder">
             <label htmlFor="name">Name</label>
-            <input type="text" id="name" />
+            <Input {...name} placeholder="" type="text" name="name" />
           </C.inputContainer>
           <C.inputContainer className="input-heder">
             <label htmlFor="email">Email</label>
-            <input type="text" id="email" />
+            <Input {...email} placeholder="" type="text" name="email" />
           </C.inputContainer>
         </div>
         <C.inputContainer>
           <label htmlFor="subject">Subject</label>
-          <input type="text" id="subject" />
+          <Input {...subject} placeholder="" type="text" name="subject" />
         </C.inputContainer>
         <C.inputContainer>
           <label htmlFor="message">Message</label>

@@ -22,8 +22,8 @@ export const Input = ({
   onBlur,
 }: Props) => {
   return (
-    <C.container>
-      <input
+    <>
+      <C.input
         placeholder={placeholder}
         className="input"
         id={name}
@@ -33,6 +33,6 @@ export const Input = ({
         onBlur={onBlur}
       />
       <Error error={erro} />
-    </C.container>
+    </>
   )
 }
