@@ -1,6 +1,6 @@
 import React from 'react'
 import * as C from './styles'
-import Error from '../helpers/Error'
+import { Error } from '@/components'
 
 interface Props {
   placeholder: string
