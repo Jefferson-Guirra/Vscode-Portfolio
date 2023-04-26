@@ -60,6 +60,7 @@ const PagesContactContact = () => {
         <p className={styles.line}></p>
         <p className={styles.line}></p>
         <p className={styles.line}></p>
+        <p className={styles.line}></p>
         <p className={styles.line}>&#125;</p>
       </div>
       <ContactForm />
