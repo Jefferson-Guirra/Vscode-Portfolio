@@ -2,29 +2,69 @@ import useForm from '@/hooks/useForm'
 import * as C from './contact'
 import { Input, Textarea } from '@/components'
 import useTextarea from '@/hooks/useTextarea'
+import { useState } from 'react'
+
+interface Props {
+  name: string
+  email: string
+  message: string
+}
+
+const postMessage = async (data: Props) => {
+  const promise = await fetch('/api/contact', {
+    method: 'POST',
+    headers: {
+      Accept: 'application/json, text/plain, */*',
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+  })
+  const response = await promise.json()
+  if (!response.ok) {
+    throw new Error(response.message)
+  }
+  return response
+}
+
 export const ContactForm = () => {
+  const [loading, setLoading] = useState(false)
   const name = useForm('name')
   const email = useForm('email')
   const subject = useForm('subject')
-  const textArea = useTextarea()
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault()
-    const validate =
-      name.validate() &&
-      email.validate() &&
-      subject.validate() &&
-      textArea.validate()
+  const message = useTextarea()
 
-    if (validate === true) {
-      name.clearState()
-      email.clearState()
-      subject.clearState()
-      textArea.clearState()
-      alert('Email enviado com sucesso.')
-    } else {
-      alert('por favor, preencha os campos obrigatórios.')
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+    try {
+      setLoading(true)
+      const validate =
+        name.validate() &&
+        email.validate() &&
+        subject.validate() &&
+        message.validate()
+
+      if (validate === true) {
+        await postMessage({
+          email: email.value,
+          name: name.value,
+          message: message.value,
+        })
+        name.clearState()
+        email.clearState()
+        subject.clearState()
+        message.clearState()
+        alert('Email enviado com sucesso.')
+      } else {
+        alert('por favor, preencha os campos obrigatórios.')
+      }
+    } catch (err) {
+      console.error(err)
+      alert('500: internal server Error')
+    } finally {
+      setLoading(false)
     }
   }
+  console.log(loading)
   return (
     <C.container>
       <h2>Send email :</h2>
@@ -45,9 +85,15 @@ export const ContactForm = () => {
         </C.formGroup>
         <C.formGroup>
           <label htmlFor="message">Message</label>
-          <Textarea {...textArea} cols={30} rows={10} id="message" />
+          <Textarea {...message} cols={30} rows={10} id="message" />
         </C.formGroup>
-        <button type="submit">Submit</button>
+        {loading ? (
+          <button disabled type="submit">
+            Submit
+          </button>
+        ) : (
+          <button type="submit">Submit</button>
+        )}
       </form>
     </C.container>
   )
