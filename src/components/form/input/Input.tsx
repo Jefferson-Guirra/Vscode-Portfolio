@@ -27,6 +27,7 @@ export const Input = ({
         placeholder={placeholder}
         className="input"
         id={name}
+        error={erro !== ''}
         type={type}
         onChange={onChange}
         value={value}
