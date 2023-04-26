@@ -9,7 +9,7 @@ interface Props {
   cols: number
   rows: number
   id: string
-  error: string
+  erro: string
 }
 export const Textarea = ({
   value,
@@ -18,7 +18,7 @@ export const Textarea = ({
   cols,
   rows,
   id,
-  error,
+  erro,
 }: Props) => {
   return (
     <>
@@ -26,12 +26,12 @@ export const Textarea = ({
         cols={cols}
         name={id}
         value={value}
-        error={error !== ''}
+        error={erro !== ''}
         onChange={onChange}
         onBlur={onBlur}
         rows={rows}
       ></C.textarea>
-      <Error error={error} />
+      <Error error={erro} />
     </>
   )
 }

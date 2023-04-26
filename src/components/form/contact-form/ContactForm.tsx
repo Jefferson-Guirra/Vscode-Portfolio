@@ -1,7 +1,6 @@
 import useForm from '@/hooks/useForm'
 import * as C from './contact'
 import { Input, Textarea } from '@/components'
-import useTextarea from '@/hooks/useTextarea'
 import { useState } from 'react'
 
 interface Props {
@@ -31,7 +30,7 @@ export const ContactForm = () => {
   const name = useForm('name')
   const email = useForm('email')
   const subject = useForm('subject')
-  const message = useTextarea()
+  const message = useForm('')
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
