@@ -50,17 +50,9 @@ const PagesContactContact = () => {
             ;
           </p>
         ))}
-        <p className={styles.line}></p>
-        <p className={styles.line}></p>
-        <p className={styles.line}></p>
-        <p className={styles.line}></p>
-        <p className={styles.line}></p>
-        <p className={styles.line}></p>
-        <p className={styles.line}></p>
-        <p className={styles.line}></p>
-        <p className={styles.line}></p>
-        <p className={styles.line}></p>
-        <p className={styles.line}></p>
+        {Object.keys(new Array(11).fill(null)).map((item) => (
+          <p key={item} className={styles.line}></p>
+        ))}
         <p className={styles.line}>&#125;</p>
       </div>
       <ContactForm />
