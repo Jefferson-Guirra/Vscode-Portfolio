@@ -1,7 +1,7 @@
 export type ReturnUseForm = {
   value: string
   setValue: React.Dispatch<React.SetStateAction<string>>
-  onChange: ({ target }: React.ChangeEvent<HTMLInputElement>) => void
+  onChange: ({ target }: React.ChangeEvent<HTMLElement>) => void
   erro: string
   clearState: () => void
   validate: () => boolean
