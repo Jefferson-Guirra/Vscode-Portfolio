@@ -1,5 +1,5 @@
 import { Error } from '@/components'
-import styles from './textarea.module.css'
+import * as C from './textarea'
 
 interface Props {
   value: string
@@ -22,15 +22,15 @@ export const Textarea = ({
 }: Props) => {
   return (
     <>
-      <textarea
-        className={styles.textarea}
+      <C.textarea
         cols={cols}
         name={id}
         value={value}
+        error={error !== ''}
         onChange={onChange}
         onBlur={onBlur}
         rows={rows}
-      ></textarea>
+      ></C.textarea>
       <Error error={error} />
     </>
   )
