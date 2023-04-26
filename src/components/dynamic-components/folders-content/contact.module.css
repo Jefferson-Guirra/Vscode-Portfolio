@@ -11,7 +11,7 @@
 }
 .container a {
   text-decoration: none;
-  color: #e64d33;
+  color: #f97b6f;
 }
 .links {
   position: relative;
@@ -20,14 +20,14 @@
   flex-direction: column;
   counter-reset: section;
   gap: 0.5rem;
-  /*border-right: 1px solid #e64d33;*/
+  /*border-right: 1px solid #f97b6f;*/
 }
 .links::after {
   content: '';
   width: 1px;
   height: 0;
   position: absolute;
-  background-color: #e64d33;
+  background-color: #f97b6f;
   right: 0;
   top: 0;
   animation: show-border forwards 2s;
@@ -36,7 +36,7 @@
   position: relative;
 }
 .line span:nth-child(1) {
-  color: #e64d33;
+  color: #f97b6f;
 }
 .line::before {
   content: counter(section);
@@ -58,7 +58,7 @@
 }
 .line a:hover::after {
   width: calc(100% + 10px);
-  background-color: #e64d33;
+  background-color: #f97b6f;
 }
 @keyframes show-border {
   to {
