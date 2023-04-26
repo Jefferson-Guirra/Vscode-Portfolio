@@ -21,15 +21,21 @@ export const container = styled.section`
       padding: 0.5rem 0.8rem;
       color: #1e1e1e;
       font-weight: bold;
-      background-color: #e64d33;
-      border: 1px solid #e64d33;
+      background-color: #f97b6f;
+      border: 1px solid #f97b6f;
       width: fit-content;
+      font-size: 1rem;
       transition: all 0.5s;
       &:hover {
         color: #fff;
         background-color: transparent;
       }
     }
+  }
+
+  button:disabled {
+    opacity: 0.5;
+    cursor: wait;
   }
 `
 
