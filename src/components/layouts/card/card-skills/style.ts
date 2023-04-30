@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 interface CardProps {
   flip: boolean
+  hoverIconColor: string
 }
 
 interface ContainerProps {
@@ -16,7 +17,7 @@ export const cardContainer = styled.section(
 `
 )
 export const card = styled.article(
-  ({ flip }: CardProps) => `
+  ({ flip, hoverIconColor }: CardProps) => `
   display: flex; 
   gap: 3rem;
   position: relative;
@@ -26,7 +27,7 @@ export const card = styled.article(
   transform-style: preserve-3d;
   background-color: #252526;
   border-radius: 5px;
-  border: 1px solid ${flip ? '#f97b6f' : '#2d2d2d'};
+  border: 2px solid ${flip ? '#f97b6f' : '#2d2d2d'};
   transform: ${flip ? 'rotateY(180deg)' : 'initial'};
   .card-front,
   .card-back {
@@ -39,7 +40,18 @@ export const card = styled.article(
   }
 
   .card-front {
+    display: flex;
+    position: relative;
+    &:hover {
+      svg {
+        fill: ${hoverIconColor};
+      }
+    }
 
+    svg {
+      opacity: 0.5;
+      transition: all 1s;
+    }
     h2 {
         text-align: center;
         cursor: pointer;
@@ -57,6 +69,14 @@ export const card = styled.article(
             padding: 0.3rem 0.5rem;
             cursor: pointer;
         }
+    }
+
+    svg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate3d(-50%, -50%, 0);
+      z-index: -1;
     }
   }
 

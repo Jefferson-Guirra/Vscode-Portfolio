@@ -1,5 +1,7 @@
 import { SkillCard } from '../card/card-skills/SkillCard'
 import styles from './back-end.module.css'
+import { DiNodejsSmall } from 'react-icons/di'
+import { VscTools } from 'react-icons/vsc'
 
 export const BackEndContainer = () => {
   return (
@@ -14,12 +16,16 @@ export const BackEndContainer = () => {
         <SkillCard
           title="Nodejs"
           techs={['Express', 'Autenticação-JWT']}
+          Icon={DiNodejsSmall}
+          hoverIconColor="#84cc29"
           width={270}
           height={230}
         />
         <SkillCard
           title="Tolls"
           techs={['Postman', 'Insomnia']}
+          hoverIconColor="#fff"
+          Icon={VscTools}
           width={220}
           height={200}
         />

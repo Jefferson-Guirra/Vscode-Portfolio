@@ -1,4 +1,6 @@
 import { SkillCard } from '@/components'
+import { DiJavascript1, DiCss3Full } from 'react-icons/di'
+import { VscGear } from 'react-icons/vsc'
 import styles from './front-end.module.css'
 
 export const FrontEndContainer = () => {
@@ -26,15 +28,27 @@ export const FrontEndContainer = () => {
           width={300}
           height={200}
           title="Css"
+          Icon={DiCss3Full}
+          hoverIconColor="#33a8da"
           techs={['Saas', 'Styled-components', 'Bootstrap']}
         />
         <SkillCard
           width={300}
+          Icon={DiJavascript1}
           height={230}
           title="JavaScript"
+          hoverIconColor="#f7df1e"
           techs={['Typescript', 'React', 'Redux', 'Next']}
         />
-        <SkillCard width={300} height={200} title="CMS" techs={['Prismic']} />
+
+        <SkillCard
+          Icon={VscGear}
+          width={300}
+          height={200}
+          title="CMS"
+          hoverIconColor="#eee"
+          techs={['Prismic']}
+        />
       </article>
     </section>
   )
