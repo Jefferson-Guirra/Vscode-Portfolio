@@ -1,0 +1,32 @@
+.container {
+  padding: 2rem;
+}
+
+.container .button {
+  display: flex;
+  margin-left: auto;
+  transition: 0.5s;
+  background-color: transparent;
+}
+
+.container .button svg {
+  transition: 0.7s;
+  overflow: visible;
+}
+
+.container .button:hover svg {
+  stroke: #fff;
+}
+
+.container .button svg {
+  transition: 1s;
+}
+
+@keyframes show-icon-top {
+  50% {
+    transform: translateX(-20px);
+  }
+  100% {
+    transform: translateX(0px) rotate(45deg);
+  }
+}
