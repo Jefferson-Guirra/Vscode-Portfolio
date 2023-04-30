@@ -26,4 +26,6 @@ export const dataTechs: any = {
     'Insomnia é uma ferramenta de teste de API e gerenciamento de solicitações HTTP.',
   'Autenticação-JWT':
     'JWT (JSON Web Token) é um padrão para criação de tokens de autenticação em aplicativos web. A autenticação JWT é baseada em token e é usada para autenticar e autorizar usuários. ',
+  Express:
+    'Express é um framework para desenvolvimento web em Node.js que facilita a criação de aplicações com recursos para gerenciamento de rotas, middleware e manipulação de requisições e respostas HTTP.',
 }
