@@ -7,6 +7,8 @@
   margin-left: auto;
   transition: 0.5s;
   background-color: transparent;
+  opacity: 0;
+  animation: show-opacity 0.5s forwards;
 }
 
 .container .button svg {
@@ -22,11 +24,8 @@
   transition: 1s;
 }
 
-@keyframes show-icon-top {
-  50% {
-    transform: translateX(-20px);
-  }
-  100% {
-    transform: translateX(0px) rotate(45deg);
+@keyframes show-opacity {
+  to {
+    opacity: initial;
   }
 }
