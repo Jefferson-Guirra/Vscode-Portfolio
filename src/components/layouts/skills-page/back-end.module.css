@@ -1,0 +1,115 @@
+.container {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  flex-direction: column;
+}
+
+.container .title {
+  opacity: 0;
+  animation: show-opacity 0.3s forwards;
+}
+
+/*.container .line {
+    display: block;
+    width: 3px;
+    border-radius: 3px;
+    height: 80px;
+    margin-block: 0.5rem;
+    background-color: #f97b6f;
+}*/
+.container .node {
+  position: relative;
+  height: 100px;
+  width: 100%;
+}
+
+.container .node .line {
+  background-color: transparent;
+  border: 3px solid transparent;
+}
+.container .node.back-end-node .line {
+  height: 0px;
+  width: 0px;
+  top: 0;
+  position: absolute;
+  right: 50%;
+  animation: show-back-end-node-line-hight 0.3s forwards,
+    show-back-end-node-line-width 0.3s forwards 0.3s;
+}
+.container .back-end-node .line::before {
+  content: '';
+  display: block;
+  width: 3px;
+  height: 0px;
+  position: relative;
+  top: 100%;
+  right: calc(0% + 3px);
+  border-radius: 3px;
+  background-color: transparent;
+  animation: show-back-end-node-line-before 0.3s forwards 0.6s;
+}
+.container .child {
+  width: 100%;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+.container .child.back-end-child section:nth-child(1) {
+  opacity: 0;
+  animation: show-opacity 0.3s forwards 0.6s;
+}
+.container .child.back-end-child section:nth-child(1)::before {
+  content: '';
+  display: block;
+  width: 0px;
+  height: 3px;
+  border-radius: 3px;
+  position: absolute;
+  animation: show-child-node-right 0.3s forwards 0.9s;
+  top: 50%;
+  left: calc(100% + 7px);
+  background-color: transparent;
+}
+
+.container .child.back-end-child section:nth-child(2) {
+  opacity: 0;
+  animation: show-opacity 0.3s forwards 1.2s;
+}
+
+@keyframes show-opacity {
+  to {
+    opacity: initial;
+  }
+}
+@keyframes show-back-end-node-line-hight {
+  to {
+    border-right-color: #f97b6f;
+    height: 80px;
+  }
+}
+
+@keyframes show-back-end-node-line-width {
+  to {
+    border-bottom-color: #f97b6f;
+    width: 120px;
+    right: 50%;
+  }
+}
+
+@keyframes show-back-end-node-line-before {
+  to {
+    height: 15px;
+    background-color: #f97b6f;
+  }
+}
+
+@keyframes show-child-node-right {
+  to {
+    width: 35px;
+    background-color: #f97b6f;
+  }
+}
