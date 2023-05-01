@@ -13,7 +13,11 @@ const DynamicComponent = ({ name }: Props) => {
       return import(`./${name}`).then((mod) => mod.default)
     }
   })
-  return <Component />
+  return (
+    <section style={{ height: 'calc(100vh - 120px)', overflow: 'auto' }}>
+      <Component />
+    </section>
+  )
 }
 
 export default memo(DynamicComponent)
