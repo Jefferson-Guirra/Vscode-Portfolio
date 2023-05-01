@@ -1,5 +1,5 @@
 import { ProjectCardProps } from '../@types'
-import * as C from './project-card'
+import * as C from './project-card-style'
 import Link from 'next/link'
 
 export const ProjectCard = ({
