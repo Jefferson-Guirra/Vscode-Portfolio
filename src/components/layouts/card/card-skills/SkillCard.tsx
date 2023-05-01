@@ -1,15 +1,8 @@
-import { IconType } from 'react-icons/lib'
-import { dataTechs } from '../../constants/data-skills-page'
+import { SkillCardProps } from '../@types/skill-card'
+import { dataTechs } from '../../../constants/data-skills-page'
 import * as C from './style'
 import { useState } from 'react'
-interface Props {
-  title: string
-  width: number
-  height: number
-  techs?: string[]
-  Icon: IconType
-  hoverIconColor: string
-}
+
 export const SkillCard = ({
   title,
   techs,
@@ -17,7 +10,7 @@ export const SkillCard = ({
   height,
   Icon,
   hoverIconColor,
-}: Props) => {
+}: SkillCardProps) => {
   const [text, setText] = useState('')
   const handleFrontClick = (value: string) => {
     setText(value)
