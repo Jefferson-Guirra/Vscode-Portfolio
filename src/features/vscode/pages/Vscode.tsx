@@ -15,7 +15,7 @@ const getComponentName = (path: string[]): string => {
     for (const name of filtered) {
       componentName += name[0].toUpperCase() + name.substr(1)
     }
-    return componentName
+    return componentName.replace(/\.\w+/g, '')
   }
   return 'UndefinedFile'
 }
