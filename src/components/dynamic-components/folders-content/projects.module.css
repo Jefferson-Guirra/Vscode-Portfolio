@@ -41,38 +41,36 @@
 }
 
 .container .content article:nth-child(2) {
-  animation: show-card 0.7s forwards .2s;
+  animation: show-card 0.7s forwards 0.2s;
 }
 
 .container .content article:nth-child(3) {
-  animation: show-card 0.7s forwards .3s;
+  animation: show-card 0.7s forwards 0.3s;
 }
 
 .container .content article:nth-child(4) {
-  animation: show-card 0.7s forwards .4s;
+  animation: show-card 0.7s forwards 0.4s;
 }
 
 .container .content article:nth-child(5) {
-  animation: show-card 0.7s forwards .5s;
+  animation: show-card 0.7s forwards 0.5s;
 }
 
 .container .content article:nth-child(6) {
-  animation: show-card 0.7s forwards .6s;
+  animation: show-card 0.7s forwards 0.6s;
 }
 
 .container .content article:nth-child(7) {
-  animation: show-card 0.7s forwards .7s;
+  animation: show-card 0.7s forwards 0.7s;
 }
 
 .container .content article:nth-child(8) {
-  animation: show-card 0.7s forwards .8s;
+  animation: show-card 0.7s forwards 0.8s;
 }
-
 
 @keyframes show-card {
   to {
     opacity: initial;
     transform: initial;
   }
-  
 }
