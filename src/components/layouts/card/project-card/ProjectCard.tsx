@@ -1,11 +1,11 @@
 import { ProjectCardProps } from '../@types'
 import * as C from './project-card-style'
 import Link from 'next/link'
-
+import Image from 'next/image'
 export const ProjectCard = ({
   colorLeft,
   colorRight,
-  Icon,
+  iconName,
   title,
   contentText,
   techs,
@@ -18,7 +18,12 @@ export const ProjectCard = ({
 
         <div className="background-right"></div>
         <div className="icon-container">
-          <Icon size={70} />
+          <Image
+            src={`/images/${iconName}.svg`}
+            width={70}
+            height={70}
+            alt={`${iconName} icon`}
+          />
         </div>
       </div>
       <C.contentCard>

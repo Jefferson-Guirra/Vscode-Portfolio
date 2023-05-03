@@ -1,8 +1,7 @@
-import { IconType } from 'react-icons'
 export interface ProjectCardProps {
   colorLeft: string
   colorRight: string
-  Icon: IconType
+  iconName: string
   title: string
   contentText: string
   techs: {

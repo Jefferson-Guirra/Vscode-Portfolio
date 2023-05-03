@@ -1,5 +1,5 @@
 import { ProjectCardProps } from '../layouts/card/@types'
-import { SiVisualstudiocode } from 'react-icons/si'
+/*import { SiVisualstudiocode } from 'react-icons/si'
 import { BiMoviePlay, BiTrip } from 'react-icons/bi'
 import { GiBookshelf } from 'react-icons/gi'
 import { MdFoundation } from 'react-icons/md'
@@ -7,12 +7,12 @@ import { TbDog } from 'react-icons/tb'
 import { IoClipboardOutline } from 'react-icons/io5'
 import { RiStethoscopeLine, RiTodoLine } from 'react-icons/ri'
 import { GiFox } from 'react-icons/gi'
-import { AiOutlineRocket } from 'react-icons/ai'
+import { AiOutlineRocket } from 'react-icons/ai'*/
 export const projectData: ProjectCardProps[] = [
   {
     colorLeft: '#e4be38',
     colorRight: '#f7d354',
-    Icon: BiMoviePlay,
+    iconName: 'movie',
     title: 'Movies Net',
     contentText: 'website de informações de filmes',
     techs: [
@@ -33,7 +33,7 @@ export const projectData: ProjectCardProps[] = [
   {
     colorLeft: '#001f3f',
     colorRight: '#001f3f98',
-    Icon: GiBookshelf,
+    iconName: 'book',
     title: 'Literando',
     contentText: 'E-commerce de livros',
     techs: [
@@ -54,7 +54,7 @@ export const projectData: ProjectCardProps[] = [
   {
     colorLeft: '#1fa4e5',
     colorRight: '#1fa3e58f',
-    Icon: MdFoundation,
+    iconName: 'foundation',
     title: 'Fundação Dev',
     contentText: 'Website corporativo',
     techs: [
@@ -76,7 +76,7 @@ export const projectData: ProjectCardProps[] = [
   {
     colorLeft: '#ffbb11',
     colorRight: '#ffbc11c4',
-    Icon: TbDog,
+    iconName: 'dog',
     title: 'Dogs',
     contentText: 'Rede social para cachorros.',
     techs: [
@@ -99,7 +99,7 @@ export const projectData: ProjectCardProps[] = [
   {
     colorLeft: '#17181f',
     colorRight: '#17181fa6',
-    Icon: RiTodoLine,
+    iconName: 'list',
     title: 'Todo List',
     contentText: 'Lista de tarefas interativa.',
     techs: [
@@ -122,7 +122,7 @@ export const projectData: ProjectCardProps[] = [
   {
     colorRight: '#3493ce',
     colorLeft: '#2fa7f3',
-    Icon: SiVisualstudiocode,
+    iconName: 'visual-studio-code',
     title: 'Vscode Portfolio',
     contentText: 'projeto de portfolio baseado no Vscode',
     techs: [
@@ -141,7 +141,7 @@ export const projectData: ProjectCardProps[] = [
   {
     colorLeft: '#141a29',
     colorRight: '#141a29c2',
-    Icon: IoClipboardOutline,
+    iconName: 'board-list',
     title: 'Meu Board',
     contentText: 'Lista de tarfas',
     techs: [
@@ -162,7 +162,7 @@ export const projectData: ProjectCardProps[] = [
   {
     colorLeft: '#37216a',
     colorRight: '#37216abb',
-    Icon: AiOutlineRocket,
+    iconName: 'space',
     title: 'Portofolio',
     contentText: 'Landing Page',
     techs: [
@@ -185,7 +185,7 @@ export const projectData: ProjectCardProps[] = [
   {
     colorLeft: '#00856e',
     colorRight: '#00856fb4',
-    Icon: RiStethoscopeLine,
+    iconName: 'doctor',
     title: 'Doctor Care',
     contentText: 'Landing Page',
     techs: [
@@ -205,7 +205,7 @@ export const projectData: ProjectCardProps[] = [
   {
     colorLeft: '#ffbb55',
     colorRight: '#ffbb55c7',
-    Icon: GiFox,
+    iconName: 'frog',
     title: 'Animais fantásticos',
     contentText: 'Landing Page',
     techs: [
@@ -225,7 +225,7 @@ export const projectData: ProjectCardProps[] = [
   {
     colorLeft: '#212529',
     colorRight: '#2125298f',
-    Icon: BiTrip,
+    iconName: 'bus',
     title: 'Caravan',
     contentText: 'Landing Page',
     techs: [
