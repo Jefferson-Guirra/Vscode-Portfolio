@@ -33,7 +33,7 @@ const PagesProjectsProjects = () => {
     <main className={styles.container}>
       <section className={styles.content}>
         {list.length > 0 &&
-          list.map((props) => <ProjectCard key={Math.random()} {...props} />)}
+          list.map((props) => <ProjectCard key={props.title} {...props} />)}
       </section>
       <section className={styles.actions}>
         <button onClick={handlePrevPage}>
