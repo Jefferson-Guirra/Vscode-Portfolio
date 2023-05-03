@@ -41,7 +41,6 @@ export const ProjectCard = ({
             </Link>
           ))}
         </div>
-        <Icon />
       </C.contentCard>
     </C.card>
   )
