@@ -158,6 +158,7 @@ export const projectData: ProjectCardProps[] = [
       { title: 'LiveDemo', href: 'https://meu-board-three.vercel.app/' },
     ],
   },
+
   {
     colorLeft: '#37216a',
     colorRight: '#37216abb',
@@ -180,6 +181,7 @@ export const projectData: ProjectCardProps[] = [
       },
     ],
   },
+
   {
     colorLeft: '#00856e',
     colorRight: '#00856fb4',
@@ -219,6 +221,7 @@ export const projectData: ProjectCardProps[] = [
       { title: 'LiveDemo', href: 'https://doctor-care-clinica.netlify.app/' },
     ],
   },
+
   {
     colorLeft: '#212529',
     colorRight: '#2125298f',
