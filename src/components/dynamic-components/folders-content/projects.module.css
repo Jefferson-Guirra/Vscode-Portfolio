@@ -8,3 +8,25 @@
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 2rem;
 }
+
+.container .actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  gap: 1rem;
+}
+
+.container .actions button {
+  display: flex;
+  justify-content: center;
+  background-color: transparent;
+  padding: 0.5rem;
+}
+.container .actions button svg {
+  transition: all 0.7s;
+}
+.container .actions button:hover svg {
+  fill: #fff;
+  stroke: #ffff;
+}
