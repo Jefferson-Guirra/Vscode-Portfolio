@@ -14,7 +14,7 @@ const validateItems = (
   return false
 }
 
-export class GetProjectData implements Pagination {
+export class HandlePagination implements Pagination {
   constructor(
     private readonly data: any[],
     private readonly numberItemsPerPage: number
