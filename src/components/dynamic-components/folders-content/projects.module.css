@@ -70,6 +70,22 @@
   animation: show-card 0.7s forwards 0.8s;
 }
 
+@media (max-width: 1300px) {
+  .content {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media (max-width: 1000px) {
+  .content {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 650px) {
+  .content {
+    grid-template-columns: 1fr;
+  }
+}
 @keyframes show-card {
   to {
     opacity: initial;
