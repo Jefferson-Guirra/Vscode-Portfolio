@@ -1,5 +1,7 @@
 .container {
   padding: 2rem;
+  flex: 1;
+  overflow: auto;
 }
 
 .container .button {
