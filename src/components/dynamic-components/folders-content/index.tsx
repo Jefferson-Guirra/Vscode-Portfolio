@@ -8,11 +8,7 @@ const DynamicComponent = ({ name }: Props) => {
   const Component = dynamic(() => import(`./${name}`), {
     loading: () => <p>...loading</p>,
   })
-  return (
-    <section style={{ height: 'calc(100vh - 120px)', overflow: 'auto' }}>
-      <Component />
-    </section>
-  )
+  return <Component />
 }
 
 export default memo(DynamicComponent)
