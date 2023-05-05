@@ -32,7 +32,9 @@ const types: RegexProps = {
 const useForm = (type: string | boolean): ReturnUseForm => {
   const [value, setValue] = React.useState('')
   const [erro, setError] = React.useState<string>('')
-  function onChange({ target }: React.ChangeEvent<HTMLInputElement>) {
+  function onChange({
+    target,
+  }: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
     setValue(target.value)
     if (erro) validate(target.value)
   }
