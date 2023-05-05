@@ -63,7 +63,7 @@ export const ContactForm = () => {
       setLoading(false)
     }
   }
-  console.log(loading)
+
   return (
     <C.container>
       <h2>Send email :</h2>
