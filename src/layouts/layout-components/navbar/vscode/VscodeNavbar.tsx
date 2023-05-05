@@ -3,12 +3,19 @@ import * as C from './styles'
 import { VscSettingsGear, VscFiles, VscAccount } from 'react-icons/vsc'
 import { useVscodeContext } from '@/context/vscode/vscode'
 
+const validateIcon = (icon: string, state: string): string => {
+  if (icon === state) {
+    return ''
+  } else {
+    return icon
+  }
+}
 export const VscodeNavbar = () => {
   const { handleViewFilers } = useVscodeContext()
   const [iconIsOpen, setIconIsOpen] = useState('')
 
   const handleIcon = (icon: string) => {
-    setIconIsOpen(icon)
+    setIconIsOpen((state) => validateIcon(icon, state))
   }
 
   return (
