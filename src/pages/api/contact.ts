@@ -13,17 +13,17 @@ export default async function handler(
     const email = req.body.email
     const message = req.body.message
     const smtpTransport = createTransport({
-      host: 'smtp.gmail.com',
+      host: process.env.SMTP_HOST || 'smtp.gmail.com',
       port: 465,
       secure: true, //SSL/TLS
       auth: {
-        user: 'sendingservicejefferson@gmail.com',
-        pass: 'ghtucjuqvmcpatz',
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASSWORD,
       },
     })
     const mailData = {
-      from: 'sendingservicejefferson@gmail.com',
-      to: 'jeffersonguirra8@gmail.com',
+      from: process.env.SMTP_USER,
+      to: process.env.MAIN_USER,
       subject: `Message From ${name}`,
       html: `<div>
                 <h3> Email automático não responda</h3>
