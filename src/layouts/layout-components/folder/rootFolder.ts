@@ -4,7 +4,13 @@ export const container = styled.section`
   background-color: #252526;
   color: #aaaaaa;
   min-width: 225px;
-
+  @media (max-width: 1300px) {
+    position: absolute;
+    left: calc(0% + 50px);
+    top: 0;
+    height: 100%;
+    z-index: 100;
+  }
   .explorer {
     display: flex;
     align-items: center;

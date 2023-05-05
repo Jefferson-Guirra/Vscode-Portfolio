@@ -7,6 +7,7 @@ export const container = styled.main`
   overflow: hidden;
   flex-direction: column;
   .content-box {
+    position: relative;
     flex: 1;
     display: flex;
     overflow: hidden;
