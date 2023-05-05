@@ -12,7 +12,21 @@ export const container = styled.section`
   box-shadow: 0px 3px 5px 0px rgba(23, 23, 23, 0.75);
   -webkit-box-shadow: 0px 3px 5px 0px rgba(23, 23, 23, 0.75);
   -moz-box-shadow: 0px 3px 5px 0px rgba(23, 23, 23, 0.75);
+  overflow-x: auto;
+  width: 100%;
+  &::-webkit-scrollbar {
+    height: 10px; /* width of the entire scrollbar */
+  }
 
+  &::-webkit-scrollbar-track {
+    background: transparent; /* color of the tracking area */
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #464647; /* color of the scroll thumb */
+    width: 3px; /* roundness of the scroll thumb */
+    border: 3px solid #464647; /* creates padding around scroll thumb */
+  }
   .filers {
     display: flex;
   }
@@ -69,7 +83,7 @@ export const path = styled.div`
   align-items: center;
   padding: 0.4rem 1rem;
   font-size: 0.8rem;
-  background-color: #1e1e1e;
+  width: 100%;
 
   .pathname {
     display: flex;
