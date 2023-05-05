@@ -2,6 +2,7 @@ import { SkillCard } from '../card/card-skills/SkillCard'
 import styles from './back-end.module.css'
 import { DiNodejsSmall } from 'react-icons/di'
 import { VscTools } from 'react-icons/vsc'
+import { SiJest } from 'react-icons/si'
 
 export const BackEndContainer = () => {
   return (
@@ -13,6 +14,14 @@ export const BackEndContainer = () => {
         <span className={styles.line}></span>
       </div>
       <section className={`${styles.child} ${styles['back-end-child']}`}>
+        <SkillCard
+          title="TDD"
+          techs={['Jest']}
+          width={270}
+          hoverIconColor="#99425b"
+          height={230}
+          Icon={SiJest}
+        />
         <SkillCard
           title="Nodejs"
           techs={['Express', 'Autenticação-JWT']}

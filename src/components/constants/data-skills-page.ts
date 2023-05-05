@@ -28,4 +28,6 @@ export const dataTechs: any = {
     'JWT (JSON Web Token) é um padrão para criação de tokens de autenticação em aplicativos web. A autenticação JWT é baseada em token e é usada para autenticar e autorizar usuários. ',
   Express:
     'Express é um framework para desenvolvimento web em Node.js que facilita a criação de aplicações com recursos para gerenciamento de rotas, middleware e manipulação de requisições e respostas HTTP.',
+  TDD: 'TDD é uma técnica de desenvolvimento de software em que os testes são escritos antes do código de produção, afim de garantir que o software atenda aos requisitos e funcione corretamente.',
+  Jest: 'Jest é um framework de teste de JavaScript, que permite escrever e executar testes de unidade, integração e snapshot em projetos JavaScript de forma simples e eficiente.',
 }
