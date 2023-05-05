@@ -7,6 +7,7 @@ const UndefinedFile = () => {
         src={'/images/cover-vscode.svg'}
         width={200}
         height={200}
+        priority
         alt="vscode-icon"
       />
     </div>
