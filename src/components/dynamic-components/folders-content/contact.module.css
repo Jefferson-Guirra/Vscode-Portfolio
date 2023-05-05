@@ -3,35 +3,61 @@
   color: #ffff;
   font-size: 1.2rem;
   display: flex;
+  flex: 1;
+  overflow: auto;
 }
 
 .container h2 {
   font-weight: bold;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 .container a {
   text-decoration: none;
   color: #f97b6f;
 }
+.container .links p {
+  margin-left: -1rem !important;
+}
 .links {
   position: relative;
+  transform: translate3d(0, -70px, 0);
   width: 50%;
   display: flex;
+  opacity: 0;
   flex-direction: column;
   counter-reset: section;
+  border-radius: 3px;
   gap: 0.5rem;
-  /*border-right: 1px solid #f97b6f;*/
+  padding: 1rem;
+  height: fit-content;
+  background-color: #252526;
+  animation: show-transform-down 1s forwards;
 }
 .links::after {
   content: '';
-  width: 1px;
-  height: 0;
+  display: block;
+  height: 2px;
   position: absolute;
   background-color: #f97b6f;
-  right: 0;
-  top: 0;
-  animation: show-border forwards 2s;
+  left: 0%;
+  width: 0px;
+  top: 100%;
+  animation: show-border-bottom 1s forwards 0.5s;
 }
+
+.container .links::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: calc(0%);
+  display: block;
+  width: 2px;
+  height: 0px;
+  border-radius: 10px;
+  background-color: #f97b6f;
+  animation: show-border-right 1s forwards 0.5s;
+}
+
 .line a {
   position: relative;
 }
@@ -60,8 +86,75 @@
   width: calc(100% + 10px);
   background-color: #f97b6f;
 }
-@keyframes show-border {
+
+.container section {
+  opacity: 0;
+  transform: translate3d(0, -70px, 0);
+  animation: show-transform-down 1s forwards 0.3s;
+}
+
+@keyframes show-transform-down {
+  to {
+    transform: initial;
+    opacity: initial;
+  }
+}
+
+@media (max-width: 950px) {
+  .container {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .container .links {
+    width: 100%;
+  }
+
+  .container .links::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    display: block;
+    width: 1px;
+    height: 0px;
+    background-color: #f97b6f;
+    animation: show-border-right 1s forwards;
+  }
+  .container .links::after {
+    border-radius: 10px;
+    top: 100%;
+    right: initial;
+    left: 0;
+    height: 1px;
+    width: 0px;
+    background-color: #f97b6f;
+    animation: show-border-bottom 1s forwards;
+  }
+
+  .container section {
+    padding: 0;
+  }
+  .container section h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .container section button {
+    padding: 0.8rem 1rem;
+    margin: 0 auto;
+  }
+}
+
+@keyframes show-border-bottom {
+  to {
+    width: 100%;
+    background-color: #2d2d2d;
+  }
+}
+
+@keyframes show-border-right {
   to {
     height: 100%;
+    background-color: #2d2d2d;
   }
 }
