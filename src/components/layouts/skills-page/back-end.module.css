@@ -86,20 +86,20 @@
 }
 @keyframes show-back-end-node-line {
   to {
-    background-color: #f97b6f;
+    background-color: #f97a6fb2;
     height: 100%;
   }
 }
 @keyframes show-back-end-node-line-hight {
   to {
-    border-right-color: #f97b6f;
+    border-right-color: #f97a6fb2;
     height: 80px;
   }
 }
 
 @keyframes show-back-end-node-line-width {
   to {
-    border-bottom-color: #f97b6f;
+    border-bottom-color: #f97a6fb2;
     width: 120px;
     right: 50%;
   }
@@ -108,14 +108,14 @@
 @keyframes show-back-end-node-line-before {
   to {
     height: 15px;
-    background-color: #f97b6f;
+    background-color: #f97a6fb2;
   }
 }
 
 @keyframes show-child-node-right {
   to {
     width: 35px;
-    background-color: #f97b6f;
+    background-color: #f97a6fb2;
   }
 }
 
@@ -176,6 +176,6 @@
 @keyframes show-back-end-node-line-before {
   to {
     height: 50px;
-    background-color: #f97b6f;
+    background-color: #f97a6fb2;
   }
 }

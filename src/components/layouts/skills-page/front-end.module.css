@@ -39,8 +39,8 @@
   display: block;
   background-color: transparent;
   width: 80px;
-  border-left: 3px solid #f97b6f;
-  border-bottom: 3px solid #f97b6f;
+  border-left: 3px solid #f97a6fb2;
+  border-bottom: 3px solid #f97a6fb2;
 }
 
 .container .node.html-node .line {
@@ -143,21 +143,21 @@
   }
   100% {
     height: 80px;
-    background-color: #f97b6f;
+    background-color: #f97a6fb2;
   }
 }
 
 @keyframes show-html-node-left-height {
   to {
     height: 80px;
-    border-right-color: #f97b6f;
+    border-right-color: #f97a6fb2;
   }
 }
 
 @keyframes show-html-node-left-width {
   to {
     width: 300px;
-    border-bottom-color: #f97b6f;
+    border-bottom-color: #f97a6fb2;
     right: calc(50% + 15px);
   }
 }
@@ -165,35 +165,35 @@
 @keyframes show-line-html-node-before {
   to {
     height: 15px;
-    background-color: #f97b6f;
+    background-color: #f97a6fb2;
   }
 }
 
 @keyframes show-html-node-right-height {
   to {
     height: 80px;
-    border-left-color: #f97b6f;
+    border-left-color: #f97a6fb2;
   }
 }
 
 @keyframes show-html-node-right-height {
   to {
     height: 80px;
-    border-left-color: #f97b6f;
+    border-left-color: #f97a6fb2;
   }
 }
 
 @keyframes show-html-node-right-width {
   to {
     width: 80px;
-    border-bottom-color: #f97b6f;
+    border-bottom-color: #f97a6fb2;
   }
 }
 
 @keyframes show-child-node-right {
   to {
     width: 35px;
-    background-color: #f97b6f;
+    background-color: #f97a6fb2;
   }
 }
 
@@ -252,7 +252,7 @@
     left: inherit;
     height: 50px !important;
     transform: initial;
-    background-color: #f97b6f;
+    background-color: #f97a6fb2;
     display: block;
     border-radius: 3px;
     position: absolute;
@@ -268,7 +268,7 @@
   }
   100% {
     height: 65px;
-    background-color: #f97b6f;
+    background-color: #f97a6fb2;
   }
 }
 
