@@ -113,6 +113,7 @@
   }
 }
 
+/*-------------------------------------------------MEDIA-QUERY----------------------------------------------------------------------------------*/
 @media (max-width: 950px) {
   .container {
     flex-direction: column;
@@ -169,5 +170,12 @@
   to {
     height: 100%;
     background-color: #2d2d2d;
+  }
+}
+
+@media (max-width: 475px) {
+  .container {
+    font-size: 1rem;
+    padding: 2rem 0.5rem;
   }
 }
