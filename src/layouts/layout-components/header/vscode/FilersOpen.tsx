@@ -48,50 +48,50 @@ export const FilersOpen = () => {
       handleUpdateFile.update(file)
     }
   }
-  if (filersOpen.length >= 1)
-    return (
-      <C.container>
-        <div className="filers">
-          {filersOpen.map((file) => (
-            <C.file
-              isOpen={filerOpen.index === file.index}
-              key={file.index}
+
+  return (
+    <C.container>
+      <div className="filers">
+        {filersOpen.map((file) => (
+          <C.file
+            isOpen={filerOpen.index === file.index}
+            key={file.index}
+            onClick={(e) => UpdateFile(e, file)}
+          >
+            <div
+              className="content-file"
+              data-file-name={file.value}
               onClick={(e) => UpdateFile(e, file)}
             >
-              <div
-                className="content-file"
-                data-file-name={file.value}
-                onClick={(e) => UpdateFile(e, file)}
-              >
-                <IconType type={file.value.replace(/\w+\./g, '')} size={19} />
-                <span className="file-name">
-                  <p>{file.value}</p>
-                </span>
-              </div>
-              <button onClick={() => closeFile(file)}>
-                <VscClose size={19} color="#646464" />
-              </button>
-            </C.file>
+              <IconType type={file.value.replace(/\w+\./g, '')} size={19} />
+              <span className="file-name">
+                <p>{file.value}</p>
+              </span>
+            </div>
+            <button onClick={() => closeFile(file)}>
+              <VscClose size={19} color="#646464" />
+            </button>
+          </C.file>
+        ))}
+      </div>
+      {filerOpen.path && (
+        <C.path>
+          {filerOpen.path.map((pathname, index) => (
+            <div className="pathname" key={pathname}>
+              {pathname.includes('.') && (
+                <IconType
+                  size={15}
+                  type={`${pathname.replace(/\w+\./g, '')}`}
+                />
+              )}
+              <p>{pathname}</p>
+              {index !== (filerOpen.path?.length as number) - 1 && (
+                <VscChevronRight size={15} />
+              )}
+            </div>
           ))}
-        </div>
-        {filerOpen.path && (
-          <C.path>
-            {filerOpen.path.map((pathname, index) => (
-              <div className="pathname" key={pathname}>
-                {pathname.includes('.') && (
-                  <IconType
-                    size={15}
-                    type={`${pathname.replace(/\w+\./g, '')}`}
-                  />
-                )}
-                <p>{pathname}</p>
-                {index !== (filerOpen.path?.length as number) - 1 && (
-                  <VscChevronRight size={15} />
-                )}
-              </div>
-            ))}
-          </C.path>
-        )}
-      </C.container>
-    )
+        </C.path>
+      )}
+    </C.container>
+  )
 }
