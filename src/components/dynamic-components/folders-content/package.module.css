@@ -1,0 +1,101 @@
+.container {
+  padding-block: 2rem;
+  padding-inline: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.content {
+  counter-reset: section;
+}
+.content .line::before {
+  content: counter(section);
+  counter-increment: section;
+  margin-right: 1rem;
+  color: grey;
+}
+
+.line {
+  color: grey;
+}
+
+.line .text,
+.line .object {
+  color: #c6c500;
+}
+.line .comma,
+.line .colon {
+  color: #fff;
+}
+.content .line {
+  opacity: 0;
+}
+.content .line:nth-child(1) {
+  transform: translate3d(-70px, 0, 0);
+  animation: show-transform-left 0.7s forwards;
+}
+.content .line:nth-child(2) {
+  transform: translate3d(-70px, 0, 0);
+  animation: show-transform-left 0.7s forwards 0.1s;
+}
+
+.content .line:nth-child(3) {
+  transform: translate3d(-70px, 0, 0);
+  animation: show-transform-left 0.7s forwards 0.3s;
+}
+.content .line:nth-child(4) {
+  transform: translate3d(-70px, 0, 0);
+  animation: show-transform-left 0.7s forwards 0.4s;
+}
+
+.content .line:nth-child(5) {
+  transform: translate3d(-70px, 0, 0);
+  animation: show-transform-left 0.7s forwards 0.5s;
+}
+
+.content .line:nth-child(6) {
+  transform: translate3d(-70px, 0, 0);
+  animation: show-transform-left 0.7s forwards 0.6s;
+}
+.content .line:nth-child(7) {
+  transform: translate3d(-70px, 0, 0);
+  animation: show-transform-left 0.7s forwards 0.7s;
+}
+.content .line:nth-child(8) {
+  transform: translate3d(-70px, 0, 0);
+  animation: show-transform-left 0.7s forwards 0.8s;
+}
+.content .line:nth-child(9) {
+  transform: translate3d(-70px, 0, 0);
+  animation: show-transform-left 0.7s forwards 0.9s;
+}
+.content .line:nth-child(10) {
+  transform: translate3d(-70px, 0, 0);
+  animation: show-transform-left 0.7s forwards 1s;
+}
+.content .line:nth-child(11) {
+  transform: translate3d(-70px, 0, 0);
+  animation: show-transform-left 0.7s forwards 1.1s;
+}
+.content .line:nth-child(12) {
+  transform: translate3d(-70px, 0, 0);
+  animation: show-transform-left 0.7s forwards 1.2s;
+}
+.content .line:nth-child(13) {
+  transform: translate3d(-70px, 0, 0);
+  animation: show-transform-left 0.7s forwards 1.3s;
+}
+.content .line:nth-child(14) {
+  transform: translate3d(-70px, 0, 0);
+  animation: show-transform-left 0.7s forwards 1.4s;
+}
+.content .line:nth-child(15) {
+  transform: translate3d(-70px, 0, 0);
+  animation: show-transform-left 0.7s forwards 1.5s;
+}
+
+@keyframes show-transform-left {
+  to {
+    opacity: initial;
+    transform: initial;
+  }
+}
