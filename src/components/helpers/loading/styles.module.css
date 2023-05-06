@@ -1,0 +1,16 @@
+.container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container svg {
+    animation: show-rotate 1s infinite linear;
+}
+
+@keyframes show-rotate {
+    to{
+        transform: rotate(360deg);
+    }
+}
