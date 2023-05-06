@@ -8,6 +8,7 @@ export const container = styled.main`
   .content-box {
     position: relative;
     display: flex;
+    flex: 1;
   }
   .content-box .nav {
     display: flex;
@@ -17,6 +18,7 @@ export const container = styled.main`
     position: relative;
     flex: 1;
     display: flex;
+    overflow: hidden;
     flex-direction: column;
   }
 `
