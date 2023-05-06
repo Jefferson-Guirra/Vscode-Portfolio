@@ -13,7 +13,6 @@ export const container = styled.main`
   .content {
     color: #fff;
     padding-top: 5rem;
-
     max-width: 600px;
     gap: 2rem;
     position: relative;
@@ -48,7 +47,8 @@ export const nav = styled.nav(
   width: 100%;
   background-color: #1e1e1e;
   border-top: 2px solid #2d2d2d;
-  margin-top: auto;
+  position: absolute;
+  bottom: 0;
 
 
   a {
