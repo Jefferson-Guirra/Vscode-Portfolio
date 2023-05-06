@@ -19,7 +19,8 @@ export const container = styled.main`
   .content {
     position: relative;
     overflow: hidden;
-    flex: 1;
+    width: calc(100% - 50px);
+    height: 100%;
     display: flex;
     flex-direction: column;
   }
