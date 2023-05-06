@@ -6,6 +6,8 @@ interface Props {
 export const container = styled.main`
   flex: 1;
   display: flex;
+  overflow: hidden;
+  overflow-y: auto;
   flex-direction: column;
   justify-content: space-between;
   .content {
