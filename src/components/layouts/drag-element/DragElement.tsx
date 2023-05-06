@@ -28,6 +28,7 @@ export const DragElement = ({ children, width, height }: Props) => {
         }`,
         left: `${drag.x}px`,
         top: `${drag.y}px`,
+        zIndex: '50',
         width: `${width}px`,
         height: `${height}px`,
       }}

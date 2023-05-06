@@ -43,7 +43,7 @@ export const nav = styled.nav(
   (props: Props) => `
   width: 100%;
   background-color: #1e1e1e;
-  border: 2px solid #2d2d2d;
+  border-top: 2px solid #2d2d2d;
   position: absolute;
   bottom:0;
 
