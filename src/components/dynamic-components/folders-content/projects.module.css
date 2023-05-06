@@ -2,7 +2,7 @@
   padding: 2rem;
   color: #fff;
   flex: 1;
-  height: calc(100vh - 144px);
+  height: calc(100vh - 174px);
   overflow: auto;
 }
 .container::-webkit-scrollbar {
