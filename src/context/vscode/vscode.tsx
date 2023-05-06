@@ -26,7 +26,7 @@ export const VscodeProvider = ({ children }: PropsProvider) => {
   const [foldersOpen, setFoldersOpen] = useState<string[]>([])
   const [filersOpen, setFilersOpen] = useState<File[]>([])
   const [filerOpen, setFilerOpen] = useState<File>({} as File)
-  const [rootFolderIsOpen, setRootFolderIsOpen] = useState<boolean>(false)
+  const [rootFolderIsOpen, setRootFolderIsOpen] = useState<boolean>(true)
   const [viewFilers, setViewFilers] = useState(false)
 
   const handleViewFilers = () => {
