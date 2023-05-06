@@ -5,6 +5,7 @@
   flex: 1;
   overflow: hidden;
   overflow-y: auto;
+  position: relative;
   display: flex;
   flex-direction: column;
 }

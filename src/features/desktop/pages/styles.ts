@@ -7,7 +7,6 @@ export const container = styled.main`
   flex: 1;
   display: flex;
   flex-direction: column;
-  position: relative;
   gap: 1rem;
 
   .content {
@@ -47,7 +46,8 @@ export const nav = styled.nav(
   width: 100%;
   background-color: #1e1e1e;
   border-top: 2px solid #2d2d2d;
-  position: absolute;
+  position: sticky;
+  z-index:1000;
   bottom: 0;
 
 
