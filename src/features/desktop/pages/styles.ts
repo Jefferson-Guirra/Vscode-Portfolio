@@ -46,7 +46,7 @@ export const nav = styled.nav(
   width: 100%;
   background-color: #1e1e1e;
   border-top: 2px solid #2d2d2d;
-  position: sticky;
+  position: absolute;
   z-index:1000;
   bottom: 0;
 
