@@ -10,7 +10,7 @@ export const container = styled.main`
   justify-content: space-between;
   .content {
     color: #fff;
-    padding-block: 5rem;
+    padding-top: 5rem;
     max-width: 600px;
     gap: 2rem;
     position: relative;
@@ -35,7 +35,7 @@ export const container = styled.main`
     .content {
       justify-items: center;
       grid-template-columns: 1fr 1fr;
-      padding-block: 2rem;
+      padding-top: 2rem;
       gap: 1.3rem;
     }
   }
