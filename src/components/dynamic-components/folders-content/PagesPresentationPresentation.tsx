@@ -26,13 +26,19 @@ const PagesPresentationPresentation = () => {
           </article>
 
           <article className={styles.social}>
-            <Link href="https://www.linkedin.com/in/jefferson-guirra-developer/">
+            <Link
+              href="https://www.linkedin.com/in/jefferson-guirra-developer/"
+              target="_blank"
+            >
               <BsLinkedin size={25} />
             </Link>
-            <Link href="https://github.com/Jefferson-Guirra">
+            <Link href="https://github.com/Jefferson-Guirra" target="_blank">
               <BsGithub size={25} />
             </Link>
-            <Link href="https://api.whatsapp.com/send?phone=557491941581">
+            <Link
+              href="https://api.whatsapp.com/send?phone=557491941581"
+              target="_blank"
+            >
               <BsWhatsapp size={25} />
             </Link>
           </article>
