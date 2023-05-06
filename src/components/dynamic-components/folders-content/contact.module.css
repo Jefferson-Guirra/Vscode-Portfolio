@@ -1,10 +1,10 @@
 .container {
-  padding: 2rem 2rem 0rem 2rem;
+  padding: 2rem;
   color: #ffff;
   font-size: 1.2rem;
   display: flex;
   flex: 1;
-  overflow: auto;
+  overflow-y: scroll;
 }
 
 .container::-webkit-scrollbar {
