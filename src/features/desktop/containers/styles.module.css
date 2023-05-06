@@ -3,7 +3,23 @@
   background-repeat: no-repeat;
   background-size: cover;
   flex: 1;
-  overflow: auto;
+  overflow: hidden;
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
+}
+
+.container::-webkit-scrollbar {
+  width: 7px; /* width of the entire scrollbar */
+}
+
+.container::-webkit-scrollbar-track {
+  background: transparent; /* color of the tracking area */
+}
+
+.container::-webkit-scrollbar-thumb {
+  background-color: #464647; /* color of the scroll thumb */
+  width: 3px; /* roundness of the scroll thumb */
+  border: 3px solid #464647; /* creates padding around scroll thumb */
+  border-radius: 20px;
 }
