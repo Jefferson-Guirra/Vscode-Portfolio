@@ -3,8 +3,8 @@
   color: #ffff;
   font-size: 1.2rem;
   display: flex;
-  height: calc(100% - 72px);
-  overflow-y: scroll;
+  height: calc(100vh - 110px);
+  overflow: auto;
 }
 
 .container::-webkit-scrollbar {
