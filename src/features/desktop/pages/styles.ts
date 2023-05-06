@@ -4,6 +4,10 @@ interface Props {
 }
 
 export const container = styled.main`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   .content {
     color: #fff;
     padding-block: 5rem;
@@ -38,29 +42,23 @@ export const container = styled.main`
 `
 export const nav = styled.nav(
   (props: Props) => `
-  border: 1px solid #eee;
   width: 100%;
-  max-width: 200px;
-  border-radius: 25px;
-  padding: 10px;
-  margin-bottom: 2rem;
-  position: absolute;
-  bottom: 0;
-  left:calc(50% - 100px);
-  align-self: center;
+  background-color: #1e1e1e;
+  border: 2px solid #2d2d2d;
+
 
   a {
     position: relative;
     display: block;
+    padding: 10px;
     width: fit-content;
-    padding: 5px;
-    border-radius: 12px;
+    background-color: ${props.vscodeIsOpen ? '#2d2d2d' : 'transparent'};
     cursor: pointer;
     transition: 0.5s;
   }
 
   a:hover {
-    background-color: var(--login-secondary-color);
+    background-color: #333333;
   }
 
   a::after {
