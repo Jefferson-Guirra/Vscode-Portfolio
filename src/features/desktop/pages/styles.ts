@@ -46,7 +46,6 @@ export const nav = styled.nav(
   background-color: #1e1e1e;
   border: 2px solid #2d2d2d;
 
-
   a {
     position: relative;
     display: block;
