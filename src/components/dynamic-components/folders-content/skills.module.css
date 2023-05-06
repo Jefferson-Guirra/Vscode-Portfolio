@@ -2,6 +2,8 @@
   padding: 2rem;
   flex: 1;
   overflow: auto;
+  height: calc(100vh - 180px);
+
 }
 
 .container .button {

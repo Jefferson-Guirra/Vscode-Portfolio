@@ -3,6 +3,7 @@
   color: #fff;
   flex: 1;
   overflow: auto;
+  height: calc(100vh - 180px);
 }
 
 .content {
