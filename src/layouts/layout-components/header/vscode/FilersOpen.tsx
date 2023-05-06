@@ -74,7 +74,7 @@ export const FilersOpen = () => {
           </C.file>
         ))}
       </div>
-      {filerOpen.path && (
+      {filerOpen.path?.length > 0 && (
         <C.path>
           {filerOpen.path.map((pathname, index) => (
             <div className="pathname" key={pathname}>
