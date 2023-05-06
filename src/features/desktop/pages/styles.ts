@@ -8,7 +8,7 @@ export const container = styled.main`
   display: flex;
   flex-direction: column;
   position: relative;
-  justify-content: space-between;
+  gap: 1rem;
 
   .content {
     color: #fff;
@@ -48,8 +48,8 @@ export const nav = styled.nav(
   width: 100%;
   background-color: #1e1e1e;
   border-top: 2px solid #2d2d2d;
-  position:absolute;
-  top:calc( 100% + 1rem);
+  margin-top: auto;
+
 
   a {
     position: relative;
