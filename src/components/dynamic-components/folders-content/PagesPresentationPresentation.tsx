@@ -3,12 +3,7 @@ import { BsGithub, BsLinkedin, BsWhatsapp } from 'react-icons/bs'
 import styles from './presentation.module.css'
 import Link from 'next/link'
 import programming from '../../../../public/images/programming-computer.json'
-/*const data = [
-  {name: 'linkedin', href: 'https://www.linkedin.com/in/jefferson-guirra-developer/'},
-  {name: 'github', href: 'https://github.com/Jefferson-Guirra'},
-  {name: 'discord', href: 'discord'},
-  {name: 'whatsapp', href: 'https://api.whatsapp.com/send?phone=557491941581'}
-]*/
+
 const PagesPresentationPresentation = () => {
   return (
     <main className={styles.container}>
