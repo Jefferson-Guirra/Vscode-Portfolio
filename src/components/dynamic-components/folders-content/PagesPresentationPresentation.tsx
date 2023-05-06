@@ -17,11 +17,11 @@ const PagesPresentationPresentation = () => {
             <h2>Jefferson Guirra</h2>
             <p className={styles.work}>Frontend Developer</p>
             <p className={styles['about-me']}>
-              Meu nome é Iuri Silva, ou “iuricode” (é como me chamam agora) sou
-              o criador do eFront, um material de ensino de frontend pela
-              internet. Atualmente sou freelancer como Front-end developer e UI
-              Designer. Desenvolvo interfaces modernas e de alta qualidade,
-              concentrado em performance, animações, responsividade e SEO.
+              Meu nome é Jefferson Guirra, ex-estudante de bacharelado em física
+              de 23 anos. Sou desenvolvedor Front-end, crio interfaces
+              responsivas modernas e de alta qualidade buscando sempre uma ótima
+              performance, responsividade e SEO, para me encontrar LinkedIn,
+              para obter mais informações sobre os meus projetos Github.
             </p>
           </article>
 
