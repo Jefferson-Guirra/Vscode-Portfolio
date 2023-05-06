@@ -12,7 +12,6 @@ const Desktop = ({ vscodeIsOpen }: Props) => {
   const handleOpenVscode = () => {
     setCookie(null, 'vscodeIsOpen', 'true')
   }
-  console.log(vscodeIsOpen)
   return (
     <C.container>
       <section className="content">
