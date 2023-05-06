@@ -3,6 +3,39 @@ interface Props {
   vscodeIsOpen: boolean
 }
 
+export const container = styled.main`
+  .content {
+    color: #fff;
+    padding-block: 5rem;
+    max-width: 600px;
+    gap: 2rem;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    .project {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      color: currentColor;
+      width: 100%;
+    }
+
+    .project img {
+      pointer-events: none;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .content {
+      justify-items: center;
+      grid-template-columns: 1fr 1fr;
+      padding-block: 2rem;
+      gap: 1.3rem;
+    }
+  }
+`
 export const nav = styled.nav(
   (props: Props) => `
   border: 1px solid #eee;
@@ -13,6 +46,7 @@ export const nav = styled.nav(
   margin-bottom: 2rem;
   position: absolute;
   bottom: 0;
+  left:calc(50% - 100px);
   align-self: center;
 
   a {
