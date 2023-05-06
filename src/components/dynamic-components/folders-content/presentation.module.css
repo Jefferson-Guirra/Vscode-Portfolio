@@ -64,6 +64,10 @@
   animation: show-content forwards 1s 0.7s;
 }
 
+.content .about .about-me a {
+  color: #f97b6f;
+}
+
 .content .social {
   display: flex;
   gap: 1.5rem;

@@ -20,8 +20,18 @@ const PagesPresentationPresentation = () => {
               Meu nome é Jefferson Guirra, ex-estudante de bacharelado em física
               de 23 anos. Sou desenvolvedor Front-end, crio interfaces
               responsivas modernas e de alta qualidade buscando sempre uma ótima
-              performance, responsividade e SEO, para me encontrar LinkedIn,
-              para obter mais informações sobre os meus projetos Github.
+              performance, responsividade e SEO, para me encontrar{' '}
+              <Link
+                href="https://www.linkedin.com/in/jefferson-guirra-developer/"
+                target="_blank"
+              >
+                LinkedIn
+              </Link>
+              , para obter mais informações sobre os meus projetos{' '}
+              <Link href="https://github.com/Jefferson-Guirra" target="_blank">
+                Github
+              </Link>
+              .
             </p>
           </article>
 
