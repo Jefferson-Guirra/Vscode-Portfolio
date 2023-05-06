@@ -8,7 +8,7 @@ export const container = styled.main`
   flex-direction: column;
   .content-box {
     position: relative;
-    flex: 1;
+    height: calc(100% - 23px);
     display: flex;
     overflow: hidden;
   }
@@ -19,8 +19,7 @@ export const container = styled.main`
   .content {
     position: relative;
     overflow: hidden;
-    width: calc(100% - 50px);
-    height: 100%;
+    flex: 1;
     display: flex;
     flex-direction: column;
   }
