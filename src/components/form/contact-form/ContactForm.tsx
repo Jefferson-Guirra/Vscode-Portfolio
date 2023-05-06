@@ -66,7 +66,7 @@ export const ContactForm = () => {
 
   return (
     <C.container>
-      <h2>Send email :</h2>
+      <h2>Enviar Email :</h2>
       <form onSubmit={handleSubmit}>
         <div className="header-form">
           <C.formGroup className="input-heder">

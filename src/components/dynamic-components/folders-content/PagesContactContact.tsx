@@ -34,7 +34,7 @@ const PagesContactContact = () => {
   return (
     <div className={styles.container}>
       <div className={styles.links}>
-        <h2>Socials Media</h2>
+        <h2>Redes Sociais</h2>
         <p className={styles.line}>
           <span>const </span>
           <span>socials =</span> &#123;
