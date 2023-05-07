@@ -2,9 +2,5 @@
   background-image: url('../../../../public/images/background.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  flex: 1;
-  overflow: hidden;
-  overflow-y: auto;
-  display: flex;
-  flex-direction: column;
+  height: calc(100vh - 23px);
 }
