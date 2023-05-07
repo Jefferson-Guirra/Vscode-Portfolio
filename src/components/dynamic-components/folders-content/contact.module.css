@@ -3,24 +3,8 @@
   color: #ffff;
   font-size: 1.2rem;
   display: flex;
-  flex: 1;
-  height: calc(100vh - 174px);
-  overflow: auto;
 }
 
-.container::-webkit-scrollbar {
-  height: 10px;
-}
-
-.container::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.container::-webkit-scrollbar-thumb {
-  background-color: #464647;
-  width: 3px;
-  border: 3px solid #464647;
-}
 .container h2 {
   font-weight: bold;
   margin-bottom: 1rem;
