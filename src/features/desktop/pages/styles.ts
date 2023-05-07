@@ -4,10 +4,10 @@ interface Props {
 }
 
 export const container = styled.main`
-  flex: 1;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  justify-content: space-between;
 
   .content {
     color: #fff;
@@ -46,9 +46,6 @@ export const nav = styled.nav(
   width: 100%;
   background-color: #1e1e1e;
   border-top: 2px solid #2d2d2d;
-  position: absolute;
-  z-index:1000;
-  bottom: 0;
 
 
   a {
