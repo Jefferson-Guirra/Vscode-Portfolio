@@ -2,8 +2,8 @@ import styled from 'styled-components'
 
 export const container = styled.main`
   background-color: #1e1e1e;
+  height: calc(100vh - 23px);
   display: flex;
-  flex: 1;
   flex-direction: column;
   .content-box {
     position: relative;
@@ -15,7 +15,6 @@ export const container = styled.main`
   }
 
   .content {
-    position: relative;
     flex: 1;
     display: flex;
     overflow: hidden;
