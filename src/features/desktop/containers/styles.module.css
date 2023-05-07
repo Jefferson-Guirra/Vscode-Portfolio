@@ -2,5 +2,7 @@
   background-image: url('../../../../public/images/background.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  height: calc(100vh - 23px);
+  position: absolute;
+  height: calc(100% - 23px);
+  width: 100%;
 }
