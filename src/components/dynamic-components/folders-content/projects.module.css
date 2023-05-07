@@ -1,23 +1,8 @@
 .container {
   padding: 2rem;
   color: #fff;
-  flex: 1;
-  height: calc(100vh - 164px);
-  overflow: auto;
-}
-.container::-webkit-scrollbar {
-  height: 10px;
 }
 
-.container::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.container::-webkit-scrollbar-thumb {
-  background-color: #464647;
-  width: 3px;
-  border: 3px solid #464647;
-}
 .content {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
