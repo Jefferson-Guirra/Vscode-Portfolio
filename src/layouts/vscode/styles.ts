@@ -2,12 +2,16 @@ import styled from 'styled-components'
 
 export const container = styled.main`
   background-color: #1e1e1e;
-  height: calc(100vh - 23px);
+  position: absolute;
+  height: calc(100% - 23px);
+  width: 100%;
   display: flex;
   flex-direction: column;
   .content-box {
     position: relative;
     display: flex;
+    height: calc(100% - 25px);
+    overflow: hidden;
     flex: 1;
   }
   .content-box .nav {
@@ -16,8 +20,8 @@ export const container = styled.main`
 
   .content {
     flex: 1;
-    display: flex;
     overflow: hidden;
+    display: flex;
     flex-direction: column;
   }
 `
