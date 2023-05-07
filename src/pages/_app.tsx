@@ -14,13 +14,13 @@ export default function App({ Component, pageProps }: AppLayoutProps) {
   const Layout = Component.layout ? Component.layout : React.Fragment
 
   return (
-    <main className="global-container">
+    <>
       <HeaderContainer />
       <AppProvider>
         <Layout>
           <Component {...pageProps} />
         </Layout>
       </AppProvider>
-    </main>
+    </>
   )
 }

@@ -9,12 +9,7 @@
   margin: 0;
   box-sizing: border-box;
 }
-.global-container {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
+
 body {
   font-family: 'Ubuntu', sans-serif;
   overflow: hidden;
