@@ -4,6 +4,7 @@ import {
   UpdateFilers,
   SetCookie,
   UpdateVscodeMinimize,
+  UpdateVscodeOpen,
 } from './handle-cookie-protocols'
 
 interface HandleCookie {
@@ -12,6 +13,7 @@ interface HandleCookie {
   updateFilers: UpdateFilers
   updateFolders: UpdateFolders
   vscodeMinimize: UpdateVscodeMinimize
+  updateVscodeOpen: UpdateVscodeOpen
 }
 
 export const handleCookie = (): HandleCookie => {
@@ -20,11 +22,13 @@ export const handleCookie = (): HandleCookie => {
   const updateFilers = new UpdateFilers(insertCookie)
   const updateFolders = new UpdateFolders(insertCookie)
   const vscodeMinimize = new UpdateVscodeMinimize(insertCookie)
+  const updateVscodeOpen = new UpdateVscodeOpen(insertCookie)
   return {
     insertCookie,
     updateFile,
     updateFilers,
     updateFolders,
     vscodeMinimize,
+    updateVscodeOpen,
   }
 }
