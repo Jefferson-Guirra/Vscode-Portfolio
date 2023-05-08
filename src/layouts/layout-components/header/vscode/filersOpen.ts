@@ -12,6 +12,7 @@ export const container = styled.section`
   box-shadow: 0px 3px 5px 0px rgba(23, 23, 23, 0.75);
   -webkit-box-shadow: 0px 3px 5px 0px rgba(23, 23, 23, 0.75);
   -moz-box-shadow: 0px 3px 5px 0px rgba(23, 23, 23, 0.75);
+  overflow-y: hidden;
   overflow-x: auto;
   &::-webkit-scrollbar {
     height: 10px; /* width of the entire scrollbar */
