@@ -6,11 +6,8 @@ import { projectData } from '@/components/constants/project-data'
 import { DragElement, VscodeBox } from '@/components'
 import { useVscodeContext } from '@/context/vscode/vscode'
 
-interface Props {
-  vscodeIsOpen: string
-}
-const Desktop = ({ vscodeIsOpen }: Props) => {
-  const { vscodeIsMinimize } = useVscodeContext()
+const Desktop = () => {
+  const { vscodeIsMinimize, vscodeIsOpen } = useVscodeContext()
   const handleOpenVscode = () => {
     setCookie(null, 'vscodeIsOpen', 'true')
   }
@@ -37,7 +34,7 @@ const Desktop = ({ vscodeIsOpen }: Props) => {
         ))}
       </section>
       {vscodeIsMinimize && <VscodeBox />}
-      <C.nav vscodeIsOpen={vscodeIsOpen === 'true'}>
+      <C.nav vscodeIsOpen={vscodeIsOpen}>
         <Link href="/vscode" onClick={handleOpenVscode}>
           <Image
             src="/images/vscode.svg"
