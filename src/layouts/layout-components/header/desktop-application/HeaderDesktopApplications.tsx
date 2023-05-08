@@ -4,9 +4,12 @@ import { BiExpandAlt } from 'react-icons/bi'
 import Link from 'next/link'
 import { setCookie } from 'nookies'
 import { useVscodeContext } from '@/context/vscode/vscode'
+import { useRouter } from 'next/router'
 
 export const HeaderDesktopApplications = () => {
+  const { handleVscodeMinimize } = useVscodeContext()
   const { filerOpen } = useVscodeContext()
+  const pathName = useRouter().asPath
   const handleCloseVscode = () => {
     setCookie(null, 'vscodeIsOpen', 'false')
   }
@@ -16,10 +19,18 @@ export const HeaderDesktopApplications = () => {
         <Link onClick={handleCloseVscode} href="/" className={styles.icons}>
           <MdClose size={15} color="#000000" />
         </Link>
-        <Link href="/" className={styles.icons}>
+        <Link
+          href="/"
+          className={styles.icons}
+          onClick={handleVscodeMinimize.update}
+        >
           <MdMinimize size={15} color="#000000" />
         </Link>
-        <Link href="/" className={styles.icons}>
+        <Link
+          href={pathName === '/vscode' ? '/' : 'vscode'}
+          className={styles.icons}
+          onClick={handleVscodeMinimize.update}
+        >
           <BiExpandAlt size={15} color="#000000" />
         </Link>
       </article>
