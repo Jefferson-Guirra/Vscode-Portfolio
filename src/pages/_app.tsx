@@ -4,6 +4,7 @@ import PageWithLayoutType from '@/layouts/@types'
 import HeaderContainer from '../components/header/header-container'
 import React from 'react'
 import { AppProvider } from '@/context'
+import { VscodeFooter } from '@/components/footer/VscodeFooter'
 
 type AppLayoutProps = {
   Component: PageWithLayoutType
@@ -21,6 +22,7 @@ export default function App({ Component, pageProps }: AppLayoutProps) {
           <Component {...pageProps} />
         </Layout>
       </AppProvider>
+      <VscodeFooter />
     </>
   )
 }
