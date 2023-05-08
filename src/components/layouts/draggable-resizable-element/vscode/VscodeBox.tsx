@@ -16,12 +16,14 @@ export const VscodeBox = () => {
       default={{
         x: 50,
         y: 300,
-        width: '50%',
-        height: 400,
+        width: '80%',
+        height: '50%',
       }}
-      minWidth={500}
+      maxWidth={'100%'}
+      minWidth={'30%'}
       minHeight={400}
       bounds="window"
+      cancel="cancel"
       className="modal"
     >
       <C.container>
