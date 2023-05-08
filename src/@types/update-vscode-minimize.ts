@@ -1,3 +1,3 @@
 export interface VscodeMinimize {
-  update: () => void
+  update: (vscodeMinimize: boolean) => void
 }

@@ -14,6 +14,7 @@ interface HandleCookie {
   updateFolders: UpdateFolders
   vscodeMinimize: UpdateVscodeMinimize
   updateVscodeOpen: UpdateVscodeOpen
+  setCookie: SetCookie
 }
 
 export const handleCookie = (): HandleCookie => {
@@ -30,5 +31,6 @@ export const handleCookie = (): HandleCookie => {
     updateFolders,
     vscodeMinimize,
     updateVscodeOpen,
+    setCookie: insertCookie,
   }
 }

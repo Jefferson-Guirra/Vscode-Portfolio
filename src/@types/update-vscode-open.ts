@@ -1,3 +1,3 @@
 export interface VscodeOpen {
-  update: () => void
+  update: (vscodeOpen: boolean) => void
 }

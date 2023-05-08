@@ -5,6 +5,6 @@ export class UpdateVscodeMinimize implements VscodeMinimize {
   constructor(private readonly insertCookie: InsertCookie) {}
 
   update(state: boolean) {
-    this.insertCookie.insert({ name: 'vscodeIsMinimize', value: !state })
+    this.insertCookie.insert({ name: 'vscodeIsMinimize', value: state })
   }
 }
