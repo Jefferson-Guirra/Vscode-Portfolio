@@ -1,15 +1,19 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import * as C from './styles'
-import { setCookie } from 'nookies'
 import { projectData } from '@/components/constants/project-data'
 import { DragElement, VscodeBox } from '@/components'
 import { useVscodeContext } from '@/context/vscode/vscode'
+import { parseCookies } from 'nookies'
 
 const Desktop = () => {
-  const { vscodeIsMinimize, vscodeIsOpen } = useVscodeContext()
+  const { vscodeIsMinimize, insertCookie } = useVscodeContext()
+  const vscodeOpenCookie = parseCookies().vscodeIsOpen
+    ? JSON.parse(parseCookies().vscodeIsOpen)
+    : false
+
   const handleOpenVscode = () => {
-    setCookie(null, 'vscodeIsOpen', 'true')
+    insertCookie.insert({ name: 'vscodeIsOpen', value: true })
   }
   return (
     <C.container>
@@ -34,7 +38,7 @@ const Desktop = () => {
         ))}
       </section>
       {vscodeIsMinimize && <VscodeBox />}
-      <C.nav vscodeIsOpen={vscodeIsOpen}>
+      <C.nav vscodeIsOpen={vscodeOpenCookie}>
         <Link href="/vscode" onClick={handleOpenVscode}>
           <Image
             src="/images/vscode.svg"
