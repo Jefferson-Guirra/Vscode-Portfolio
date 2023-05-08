@@ -103,7 +103,6 @@ export const VscodeProvider = ({ children }: PropsProvider) => {
 
   const handleVscodeMinimize = () => {
     const update = (minimize: boolean) => {
-      console.log(minimize)
       vscodeMinimize.update(minimize)
       setVscodeIsMinimize(minimize)
     }
