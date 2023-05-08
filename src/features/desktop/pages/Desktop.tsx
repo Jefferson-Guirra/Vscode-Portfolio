@@ -33,6 +33,7 @@ const Desktop = () => {
                 alt={`${project.iconName} icon`}
                 width={50}
                 height={50}
+                priority
               />
               <p key={project.title}>{project.title}</p>
             </Link>
