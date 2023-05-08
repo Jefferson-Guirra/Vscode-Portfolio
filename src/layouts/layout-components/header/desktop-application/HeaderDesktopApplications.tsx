@@ -9,8 +9,16 @@ export const HeaderDesktopApplications = () => {
   const { handleVscodeMinimize, handleUpdateVscodeOpen } = useVscodeContext()
   const { filerOpen } = useVscodeContext()
   const pathName = useRouter().asPath
+
   const handleCloseVscode = () => {
-    handleUpdateVscodeOpen.update()
+    handleUpdateVscodeOpen.update(false)
+  }
+
+  const handleExpand = () => {
+    handleVscodeMinimize.update(true)
+  }
+  const handleMinimize = () => {
+    handleVscodeMinimize.update(false)
   }
   return (
     <header className={styles.header}>
@@ -18,17 +26,15 @@ export const HeaderDesktopApplications = () => {
         <Link onClick={handleCloseVscode} href="/" className={styles.icons}>
           <MdClose size={15} color="#000000" />
         </Link>
-        <Link
-          href="/"
-          className={styles.icons}
-          onClick={handleVscodeMinimize.update}
-        >
+
+        <Link href="/" className={styles.icons} onClick={handleMinimize}>
           <MdMinimize size={15} color="#000000" />
         </Link>
+
         <Link
           href={pathName === '/vscode' ? '/' : 'vscode'}
           className={styles.icons}
-          onClick={handleVscodeMinimize.update}
+          onClick={handleExpand}
         >
           <BiExpandAlt size={15} color="#000000" />
         </Link>
