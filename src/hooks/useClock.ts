@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { ClockProps } from '../components/header/clock/types'
 import { HandleDate } from './@types/handle-date-type'
 
@@ -17,9 +17,7 @@ const useClock = ({
   language,
   dateTimeFormatOptions,
 }: ClockProps): UseClock => {
-  const [dateFormat, setDateFormat] = useState<string>(
-    getDate({ language, dateTimeFormatOptions })
-  )
+  const [dateFormat, setDateFormat] = useState<string>('')
 
   class HandleDate implements HandleDate {
     changeDate() {
@@ -34,6 +32,9 @@ const useClock = ({
       clearInterval(interval)
     }
   }
+  useEffect(() => {
+    setDateFormat(getDate({ language, dateTimeFormatOptions }))
+  }, [language, dateTimeFormatOptions])
   return {
     dateFormat,
     handleDate: new HandleDate(),
