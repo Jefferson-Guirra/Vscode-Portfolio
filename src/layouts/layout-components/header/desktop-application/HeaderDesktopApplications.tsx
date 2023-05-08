@@ -2,16 +2,15 @@ import styles from './styles.module.css'
 import { MdMinimize, MdClose } from 'react-icons/md'
 import { BiExpandAlt } from 'react-icons/bi'
 import Link from 'next/link'
-import { setCookie } from 'nookies'
 import { useVscodeContext } from '@/context/vscode/vscode'
 import { useRouter } from 'next/router'
 
 export const HeaderDesktopApplications = () => {
-  const { handleVscodeMinimize } = useVscodeContext()
+  const { handleVscodeMinimize, handleUpdateVscodeOpen } = useVscodeContext()
   const { filerOpen } = useVscodeContext()
   const pathName = useRouter().asPath
   const handleCloseVscode = () => {
-    setCookie(null, 'vscodeIsOpen', 'false')
+    handleUpdateVscodeOpen.update()
   }
   return (
     <header className={styles.header}>
