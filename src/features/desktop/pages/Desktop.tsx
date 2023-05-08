@@ -7,12 +7,14 @@ import { useVscodeContext } from '@/context/vscode/vscode'
 import { parseCookies } from 'nookies'
 
 const Desktop = () => {
-  const { vscodeIsMinimize, insertCookie } = useVscodeContext()
+  const { vscodeIsMinimize, insertCookie, handleVscodeMinimize } =
+    useVscodeContext()
   const vscodeOpenCookie = parseCookies().vscodeIsOpen
     ? JSON.parse(parseCookies().vscodeIsOpen)
     : false
 
   const handleOpenVscode = () => {
+    handleVscodeMinimize.update(false)
     insertCookie.insert({ name: 'vscodeIsOpen', value: true })
   }
   return (
