@@ -7,6 +7,7 @@ import {
   UpdateFilersOpen,
   File,
   VscodeMinimize,
+  VscodeOpen,
 } from '@/@types'
 interface VscodeProps {
   handleUpdateFoldersOpen: UpdateFoldersOpen
@@ -18,6 +19,8 @@ interface VscodeProps {
   handleUpdateFile: UpdateFile
   handleUpdateFilersOpen: UpdateFilersOpen
   handleVscodeMinimize: VscodeMinimize
+  handleUpdateVscodeOpen: VscodeOpen
+  vscodeIsOpen: boolean
   rootFolderIsOpen: boolean
   viewFilers: boolean
   handleViewFilers: () => void
@@ -36,6 +39,7 @@ export const VscodeProvider = ({ children }: PropsProvider) => {
   const [filerOpen, setFilerOpen] = useState<File>({} as File)
   const [rootFolderIsOpen, setRootFolderIsOpen] = useState<boolean>(true)
   const [viewFilers, setViewFilers] = useState(false)
+  const [vscodeIsOpen, setVscodeIsOpen] = useState(false)
   const [vscodeIsMinimize, setVscodeIsMinimize] = useState(false)
 
   const handleViewFilers = () => {
@@ -48,6 +52,7 @@ export const VscodeProvider = ({ children }: PropsProvider) => {
     updateFolders,
     insertCookie,
     vscodeMinimize,
+    updateVscodeOpen,
   } = handleCookie()
 
   const handleUpdateFileOpen = () => {
@@ -102,6 +107,18 @@ export const VscodeProvider = ({ children }: PropsProvider) => {
     }
   }
 
+  const handleUpdateVscodeOpen = () => {
+    const update = () => {
+      updateVscodeOpen.update(false)
+      setVscodeIsMinimize(false)
+      insertCookie.insert({ name: 'vscodeIsMinimize', value: false })
+      setVscodeIsOpen(false)
+    }
+
+    return {
+      update,
+    }
+  }
   const handleCookies = (cookies: any) => {
     const {
       foldersOpen,
@@ -110,6 +127,7 @@ export const VscodeProvider = ({ children }: PropsProvider) => {
       rootFolderIsOpen,
       viewFilers,
       vscodeIsMinimize,
+      vscodeIsOpen,
     } = cookies
 
     if (foldersOpen) {
@@ -130,6 +148,9 @@ export const VscodeProvider = ({ children }: PropsProvider) => {
     if (vscodeIsMinimize) {
       setVscodeIsMinimize(JSON.parse(vscodeIsMinimize))
     }
+    if (vscodeIsOpen) {
+      setVscodeIsOpen(JSON.parse(vscodeIsOpen))
+    }
   }
   useEffect(() => {
     handleCookies(getCookies())
@@ -149,6 +170,8 @@ export const VscodeProvider = ({ children }: PropsProvider) => {
         handleViewFilers,
         vscodeIsMinimize,
         handleVscodeMinimize: handleVscodeMinimize(),
+        vscodeIsOpen,
+        handleUpdateVscodeOpen: handleUpdateVscodeOpen(),
       }}
     >
       {children}
