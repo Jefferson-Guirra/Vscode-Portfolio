@@ -1,15 +1,23 @@
 import { createContext, useState, useEffect, useContext } from 'react'
 import { parseCookies } from 'nookies'
 import { handleCookie } from '../factories/handle-cookie'
-import { UpdateFoldersOpen, UpdateFile, UpdateFilersOpen, File } from '@/@types'
+import {
+  UpdateFoldersOpen,
+  UpdateFile,
+  UpdateFilersOpen,
+  File,
+  VscodeMinimize,
+} from '@/@types'
 interface VscodeProps {
   handleUpdateFoldersOpen: UpdateFoldersOpen
   handleRootFolderIsOpen: () => void
   foldersOpen: string[]
   filersOpen: File[]
   filerOpen: File
+  vscodeIsMinimize: boolean
   handleUpdateFile: UpdateFile
   handleUpdateFilersOpen: UpdateFilersOpen
+  handleVscodeMinimize: VscodeMinimize
   rootFolderIsOpen: boolean
   viewFilers: boolean
   handleViewFilers: () => void
@@ -28,13 +36,19 @@ export const VscodeProvider = ({ children }: PropsProvider) => {
   const [filerOpen, setFilerOpen] = useState<File>({} as File)
   const [rootFolderIsOpen, setRootFolderIsOpen] = useState<boolean>(true)
   const [viewFilers, setViewFilers] = useState(false)
+  const [vscodeIsMinimize, setVscodeIsMinimize] = useState(false)
 
   const handleViewFilers = () => {
     insertCookie.insert({ name: 'viewFilers', value: !viewFilers })
     setViewFilers((state) => !state)
   }
-  const { updateFile, updateFilers, updateFolders, insertCookie } =
-    handleCookie()
+  const {
+    updateFile,
+    updateFilers,
+    updateFolders,
+    insertCookie,
+    vscodeMinimize,
+  } = handleCookie()
 
   const handleUpdateFileOpen = () => {
     const update = (file: File) => {
@@ -78,9 +92,25 @@ export const VscodeProvider = ({ children }: PropsProvider) => {
     setRootFolderIsOpen((state) => !state)
   }
 
+  const handleVscodeMinimize = () => {
+    const update = () => {
+      vscodeMinimize.update(vscodeIsMinimize)
+      setVscodeIsMinimize((state) => !state)
+    }
+    return {
+      update,
+    }
+  }
+
   const handleCookies = (cookies: any) => {
-    const { foldersOpen, filersOpen, filerOpen, rootFolderIsOpen, viewFilers } =
-      cookies
+    const {
+      foldersOpen,
+      filersOpen,
+      filerOpen,
+      rootFolderIsOpen,
+      viewFilers,
+      vscodeIsMinimize,
+    } = cookies
 
     if (foldersOpen) {
       setFoldersOpen(JSON.parse(foldersOpen))
@@ -96,6 +126,9 @@ export const VscodeProvider = ({ children }: PropsProvider) => {
     }
     if (viewFilers) {
       setViewFilers(JSON.parse(viewFilers))
+    }
+    if (vscodeIsMinimize) {
+      setVscodeIsMinimize(JSON.parse(vscodeIsMinimize))
     }
   }
   useEffect(() => {
@@ -114,6 +147,8 @@ export const VscodeProvider = ({ children }: PropsProvider) => {
         filerOpen,
         viewFilers,
         handleViewFilers,
+        vscodeIsMinimize,
+        handleVscodeMinimize: handleVscodeMinimize(),
       }}
     >
       {children}
