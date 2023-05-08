@@ -3,12 +3,14 @@ import Image from 'next/image'
 import * as C from './styles'
 import { setCookie } from 'nookies'
 import { projectData } from '@/components/constants/project-data'
-import { DragElement } from '@/components/layouts/drag-element/DragElement'
+import { DragElement, VscodeBox } from '@/components'
+import { useVscodeContext } from '@/context/vscode/vscode'
 
 interface Props {
   vscodeIsOpen: string
 }
 const Desktop = ({ vscodeIsOpen }: Props) => {
+  const { vscodeIsMinimize } = useVscodeContext()
   const handleOpenVscode = () => {
     setCookie(null, 'vscodeIsOpen', 'true')
   }
@@ -34,6 +36,7 @@ const Desktop = ({ vscodeIsOpen }: Props) => {
           </DragElement>
         ))}
       </section>
+      {vscodeIsMinimize && <VscodeBox />}
       <C.nav vscodeIsOpen={vscodeIsOpen === 'true'}>
         <Link href="/vscode" onClick={handleOpenVscode}>
           <Image

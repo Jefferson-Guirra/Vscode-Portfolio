@@ -40,6 +40,9 @@ export const container = styled.main`
       gap: 1.3rem;
     }
   }
+  .modal {
+    z-index: 50;
+  }
 `
 export const nav = styled.nav(
   (props: Props) => `
