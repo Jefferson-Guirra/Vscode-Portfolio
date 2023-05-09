@@ -3,7 +3,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   position: absolute;
-  height: calc(100% - 23px);
+  height: calc(100% - 80px);
   width: 100%;
   overflow: hidden;
 }
