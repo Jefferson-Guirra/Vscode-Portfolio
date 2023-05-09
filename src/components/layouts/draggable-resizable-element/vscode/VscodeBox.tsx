@@ -31,12 +31,13 @@ export const VscodeBox = () => {
       window.removeEventListener('resize', debounceResizeWindow)
     }
   }, [debounceResizeWindow])
+  console.log(document.body.getBoundingClientRect().height)
 
   return (
     <Rnd
       default={{
-        x: 50,
-        y: 50,
+        x: document.body.getBoundingClientRect().width * 0.1,
+        y: (window.innerHeight - 23) * 0.25,
         width: '80%',
         height: '50%',
       }}
