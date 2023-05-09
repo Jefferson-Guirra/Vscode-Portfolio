@@ -32,6 +32,7 @@ export const container = styled.main`
     }
     .contents {
       display: flex;
+      flex: 1;
       flex-direction: column;
     }
   }
