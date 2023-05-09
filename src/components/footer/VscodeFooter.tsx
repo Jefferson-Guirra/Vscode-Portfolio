@@ -6,6 +6,7 @@ import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 export const VscodeFooter = () => {
   const [vscodeOpen, setVscodeOpen] = useState(false)
+  const { vscodeIsOpen } = parseCookies()
   const router = useRouter().asPath
   const handleOpenVscode = () => {
     setCookie(null, 'vscodeIsOpen', JSON.stringify(true), {
@@ -19,13 +20,11 @@ export const VscodeFooter = () => {
   }
 
   useEffect(() => {
-    const vscodeOpenCookie = parseCookies().vscodeIsOpen
-      ? JSON.parse(parseCookies().vscodeIsOpen)
-      : false
-    if (vscodeOpenCookie !== vscodeOpen) {
-      setVscodeOpen(vscodeOpenCookie)
+    if (vscodeIsOpen !== undefined) {
+      setVscodeOpen(JSON.parse(vscodeIsOpen))
     }
-  })
+  }, [vscodeIsOpen])
+
   return (
     <C.nav vscodeIsOpen={vscodeOpen}>
       <Link
