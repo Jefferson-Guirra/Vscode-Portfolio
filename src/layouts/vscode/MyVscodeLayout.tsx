@@ -4,6 +4,7 @@ import {
   VscodeNavbar,
   RootFolder,
   FilersOpen,
+  Terminal,
 } from '../layout-components'
 import { useVscodeContext } from '@/context/vscode/vscode'
 interface Props {
@@ -20,6 +21,7 @@ const MyVscodeLayout = ({ children }: Props) => {
         <article className="content">
           <FilersOpen />
           {children}
+          <Terminal />
         </article>
       </section>
     </C.container>
