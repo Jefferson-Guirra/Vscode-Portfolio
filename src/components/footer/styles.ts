@@ -17,7 +17,7 @@ export const nav = styled.nav(
     a {
       position: relative;
       display: block;
-      padding: 10px;
+      padding: 10px 9px;
       width: fit-content;
       background-color: ${props.vscodeIsOpen ? '#2d2d2d' : 'transparent'};
       cursor: pointer;
