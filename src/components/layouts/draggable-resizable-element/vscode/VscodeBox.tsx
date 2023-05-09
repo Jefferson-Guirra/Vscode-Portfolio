@@ -8,40 +8,36 @@ import {
 import { useVscodeContext } from '@/context/vscode/vscode'
 import Vscode from '../../../../features/vscode/pages/Vscode'
 import { Rnd } from 'react-rnd'
-import { useEffect, useState } from 'react'
+import { useLayoutEffect, useState, useMemo } from 'react'
 import { debounce } from '@/utils/debounce'
 
 export const VscodeBox = () => {
-  const [width, setWidth] = useState('80%')
-  const [height, setHeight] = useState('50%')
-  const [drag, setDrag] = useState(false)
+  const [drag, setDrag] = useState(
+    document.body.getBoundingClientRect().width <= 800
+  )
   const { viewFilers } = useVscodeContext()
 
   const handleResize = () => {
-    if (window.innerWidth < 800) {
-      setDrag(true)
-    } else {
-      setDrag(false)
-    }
-    setHeight(window.innerHeight * 0.5 + 'px')
-    setWidth(window.innerWidth * 0.8 + 'px')
+    setDrag(window.innerWidth <= 800)
   }
 
-  const debounceResizeWindow = debounce(handleResize, 200)
+  const debounceResizeWindow = useMemo(() => debounce(handleResize, 200), [])
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     window.addEventListener('resize', debounceResizeWindow)
+
     return () => {
       window.removeEventListener('resize', debounceResizeWindow)
     }
-  }, [])
+  }, [debounceResizeWindow])
+
   return (
     <Rnd
       default={{
         x: 50,
         y: 50,
-        width,
-        height,
+        width: '80%',
+        height: '50%',
       }}
       maxWidth={'100%'}
       minWidth={'40%'}
