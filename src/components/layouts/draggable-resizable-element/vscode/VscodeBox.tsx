@@ -4,6 +4,7 @@ import {
   VscodeNavbar,
   RootFolder,
   FilersOpen,
+  Terminal,
 } from '@/layouts/layout-components'
 import { useVscodeContext } from '@/context/vscode/vscode'
 import Vscode from '../../../../features/vscode/pages/Vscode'
@@ -55,6 +56,7 @@ export const VscodeBox = () => {
           <article className="contents">
             <FilersOpen />
             <Vscode />
+            <Terminal />
           </article>
         </section>
       </C.container>
