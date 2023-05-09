@@ -134,7 +134,10 @@ export const projectData: ProjectCardProps[] = [
         title: 'SourceDemo',
         href: 'https://github.com/Jefferson-Guirra/Vscode-Portfolio',
       },
-      { title: 'LiveDemo', href: 'https://movies-net.netlify.app/' },
+      {
+        title: 'LiveDemo',
+        href: 'https://vscode-portfolio-developer.vercel.app/',
+      },
     ],
   },
 
@@ -163,7 +166,7 @@ export const projectData: ProjectCardProps[] = [
     colorLeft: '#37216a',
     colorRight: '#37216abb',
     iconName: 'space',
-    title: 'Portofolio',
+    title: 'Portfolio',
     contentText: 'Landing Page',
     techs: [
       { name: 'Html', borderColor: '#e44d26' },
@@ -177,7 +180,7 @@ export const projectData: ProjectCardProps[] = [
       },
       {
         title: 'LiveDemo',
-        href: 'https://my-storage-jefferson.netlify.app/#project',
+        href: 'https://my-storage-jefferson.netlify.app/',
       },
     ],
   },
@@ -218,7 +221,10 @@ export const projectData: ProjectCardProps[] = [
         title: 'SourceDemo',
         href: 'https://github.com/Jefferson-Guirra/Doctor-Care',
       },
-      { title: 'LiveDemo', href: 'https://doctor-care-clinica.netlify.app/' },
+      {
+        title: 'LiveDemo',
+        href: 'https://jefferson-guirra.github.io/-Projetos/projeto-02/',
+      },
     ],
   },
 
