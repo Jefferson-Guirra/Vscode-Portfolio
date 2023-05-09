@@ -1,0 +1,117 @@
+.container {
+  background-color: #1e1e1e;
+  border-top: 2px solid #414141;
+  color: #7b7b7b;
+  padding: 0.7rem;
+  font-size: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-inline: 1rem;
+}
+
+.container .actions {
+  display: flex;
+  justify-content: space-between;
+}
+.container .actions .titles {
+  display: flex;
+  gap: 1rem;
+}
+
+.container .actions .titles h5:nth-child(4) {
+  position: relative;
+  color: #eee;
+}
+.container .actions .titles h5:nth-child(4)::after {
+  content: '';
+  position: absolute;
+  height: 2px;
+  width: calc(100% + 3px);
+  background-color: #414141;
+  left: 0;
+  top: calc(100% + 2px);
+}
+.container .actions .icons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.container .actions .icons p:nth-child(1) {
+  font-size: 0.8rem;
+  color: #eee;
+  gap: 0.2rem;
+  display: flex;
+  align-items: center;
+}
+
+.container .actions .icons p:nth-child(2) {
+  font-size: 0.8rem;
+  color: #eee;
+  gap: 0.2rem;
+  display: flex;
+  align-items: center;
+}
+
+.container .link {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.container .link p:nth-child(1) {
+  color: #00d300;
+}
+
+.container .link a {
+  color: #eee;
+  position: relative;
+  display: block;
+}
+
+.container .link a::after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: #eee;
+}
+
+.container .link a:hover::after {
+  animation: show-width 0.7s forwards;
+}
+
+@keyframes show-width {
+  to {
+    opacity: initial;
+    width: calc(100% + 3px);
+  }
+}
+
+@media (max-width: 850px) {
+  .container .actions .titles h5:not(:nth-child(4)) {
+    display: none;
+  }
+}
+
+@media (max-width: 750px) {
+  .container .link p:nth-child(3) {
+    display: none;
+  }
+}
+
+@media (max-width: 520px) {
+  .container .actions .icons p:nth-child(1) {
+    display: none;
+  }
+}
+
+@media (max-width: 450px) {
+  .container .link {
+    font-size: 1rem;
+    flex-direction: column;
+  }
+  .container .link p:nth-child(2) {
+    display: none;
+  }
+}
