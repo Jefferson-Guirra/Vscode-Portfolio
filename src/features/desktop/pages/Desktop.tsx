@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import * as C from './styles'
-import { projectData } from '@/components/constants/project-data'
+import { iconProjectData } from '@/constants'
 import { DragElement, VscodeBox } from '@/components'
 import { useVscodeContext } from '@/context/vscode/vscode'
 
@@ -12,22 +12,16 @@ const Desktop = () => {
     <>
       <C.container>
         <section className="content">
-          {projectData.map((project) => (
-            <DragElement key={project.title} width={180} height={68}>
-              <Link
-                target="_blank"
-                href={project.links[1].href}
-                className="project"
-                key={project.title}
-              >
+          {iconProjectData.map((icon) => (
+            <DragElement key={icon.name} width={180} height={180}>
+              <Link href={icon.href} target="_blank" className="project">
                 <Image
-                  src={`/images/desktop/${project.iconName}.svg`}
-                  alt={`${project.iconName} icon`}
+                  src={`/images/desktop/${icon.icon}.svg`}
                   width={50}
                   height={50}
-                  priority
+                  alt={icon + 'icon'}
                 />
-                <p key={project.title}>{project.title}</p>
+                <p>{icon.name}</p>
               </Link>
             </DragElement>
           ))}
