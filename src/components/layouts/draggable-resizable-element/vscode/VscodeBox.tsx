@@ -14,9 +14,15 @@ import { debounce } from '@/utils/debounce'
 export const VscodeBox = () => {
   const [width, setWidth] = useState('80%')
   const [height, setHeight] = useState('50%')
+  const [drag, setDrag] = useState(false)
   const { viewFilers } = useVscodeContext()
 
   const handleResize = () => {
+    if (window.innerWidth < 800) {
+      setDrag(true)
+    } else {
+      setDrag(false)
+    }
     setHeight(window.innerHeight * 0.5 + 'px')
     setWidth(window.innerWidth * 0.8 + 'px')
   }
@@ -40,9 +46,10 @@ export const VscodeBox = () => {
       maxWidth={'100%'}
       minWidth={'40%'}
       minHeight={'40%'}
-      bounds="window"
+      bounds="parent"
       cancel="cancel"
       className="modal"
+      disableDragging={drag}
     >
       <C.container>
         <HeaderDesktopApplications />
