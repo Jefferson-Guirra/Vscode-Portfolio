@@ -43,6 +43,7 @@ export const VscodeProvider = ({ children }: PropsProvider) => {
   const [viewFilers, setViewFilers] = useState(false)
   const [vscodeIsOpen, setVscodeIsOpen] = useState(false)
   const [vscodeIsMinimize, setVscodeIsMinimize] = useState(false)
+  const { vscodeIsMinimize: minimize } = parseCookies()
 
   const {
     updateFile,
@@ -130,7 +131,6 @@ export const VscodeProvider = ({ children }: PropsProvider) => {
       filerOpen,
       rootFolderIsOpen,
       viewFilers,
-      vscodeIsMinimize,
       vscodeIsOpen,
     } = cookies
 
@@ -149,13 +149,16 @@ export const VscodeProvider = ({ children }: PropsProvider) => {
     if (viewFilers) {
       setViewFilers(JSON.parse(viewFilers))
     }
-    if (vscodeIsMinimize) {
-      setVscodeIsMinimize(JSON.parse(vscodeIsMinimize))
-    }
     if (vscodeIsOpen) {
       setVscodeIsOpen(JSON.parse(vscodeIsOpen))
     }
   }
+  useEffect(() => {
+    if (minimize !== undefined) {
+      setVscodeIsMinimize(JSON.parse(minimize))
+    }
+  }, [minimize])
+
   useEffect(() => {
     handleCookies(getCookies())
   }, [])
