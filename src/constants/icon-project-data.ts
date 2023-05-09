@@ -7,6 +7,11 @@ export const iconProjectData = [
     icon: 'foundation',
   },
   {
+    name: 'Dogs',
+    href: 'https://fundacao-dev.vercel.app/',
+    icon: 'dog',
+  },
+  {
     name: 'Todo List',
     href: 'https://projeto-06-lista-de-tarefas.netlify.app/',
     icon: 'list',
@@ -32,13 +37,13 @@ export const iconProjectData = [
     icon: 'doctor',
   },
   {
-    name: 'Animais fantásticos',
-    href: 'https://jefferson-guirra.github.io/-Projetos/projeto-02/',
-    icon: 'frog',
-  },
-  {
     name: 'Caravan',
     href: 'https://caravan-viagens-empresa.netlify.app/',
     icon: 'bus',
+  },
+  {
+    name: 'Animais fantásticos',
+    href: 'https://jefferson-guirra.github.io/-Projetos/projeto-02/',
+    icon: 'frog',
   },
 ]
