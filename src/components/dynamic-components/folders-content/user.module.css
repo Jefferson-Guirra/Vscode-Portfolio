@@ -1,0 +1,146 @@
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.2rem;
+  gap: 3rem;
+  padding: 2rem;
+  color: #fff;
+}
+
+.container .header {
+  display: flex;
+  align-items: center;
+  padding-block: 1rem;
+  gap: 1rem;
+  border-radius: 3px;
+  justify-content: center;
+  background-color: #2d2d2d;
+  width: 100%;
+}
+
+.container .header p:nth-child(2) {
+  position: relative;
+}
+
+.container .header p:nth-child(2):after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: calc(100% + 10px);
+  height: 2px;
+  opacity: 0;
+  width: 0px;
+  animation: show-width 0.7s forwards;
+}
+
+.container .header p:nth-child(3) {
+  position: relative;
+}
+
+.container .header p:nth-child(3):after {
+  content: '';
+  display: block;
+  right: 0;
+  position: absolute;
+  bottom: calc(100% + 10px);
+  height: 2px;
+  opacity: 0;
+  width: 0px;
+  animation: show-width 0.7s forwards 0.3s;
+}
+.container .repos {
+  gap: 3rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  justify-content: center;
+}
+
+.container .repos .repo {
+  padding: 1rem;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+  background-color: #2d2d2d;
+}
+
+.container .repos .repo h4 {
+  color: #f97b6f;
+}
+
+.container .repos .repo .links {
+  margin-top: auto;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+}
+
+.container .repos .repo .links a:hover svg {
+  animation: show-pop 0.7s infinite linear;
+}
+
+@keyframes show-width {
+  to {
+    opacity: initial;
+    background-color: #f97b6f;
+    width: 100%;
+  }
+}
+
+@keyframes show-pop {
+  0% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1.1, 1.1);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+@media (max-width: 1370px) {
+  .container .repos {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media (max-width: 920px) {
+  .container .repos {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .container .repos {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .container .header {
+    flex-direction: column;
+  }
+
+  .container .header p:nth-child(3):after {
+    bottom: calc(0% - 10px);
+  }
+
+  .container .contributions article footer > div {
+    font-size: 0.875rem !important;
+  }
+  .container .contributions article footer > div span {
+    display: none;
+  }
+  .container .contributions article footer > div svg {
+    width: 7px;
+    height: 7px;
+  }
+}
+
+@media (max-width: 370px) {
+  .container .contributions article footer div:nth-child(2) {
+    display: none;
+  }
+}
