@@ -38,7 +38,12 @@ const getCookies = () => parseCookies()
 export const VscodeProvider = ({ children }: PropsProvider) => {
   const [foldersOpen, setFoldersOpen] = useState<string[]>([])
   const [filersOpen, setFilersOpen] = useState<File[]>([])
-  const [filerOpen, setFilerOpen] = useState<File>({} as File)
+  const [filerOpen, setFilerOpen] = useState<File>({
+    index: 'UndefinedFile',
+    value: 'undefined',
+    type: 'file',
+    path: [],
+  })
   const [rootFolderIsOpen, setRootFolderIsOpen] = useState<boolean>(true)
   const [viewFilers, setViewFilers] = useState(false)
   const [vscodeIsOpen, setVscodeIsOpen] = useState(false)
