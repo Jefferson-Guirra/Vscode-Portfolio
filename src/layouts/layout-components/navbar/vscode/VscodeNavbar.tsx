@@ -11,13 +11,21 @@ const validateIcon = (icon: string, state: string): string => {
   }
 }
 export const VscodeNavbar = () => {
-  const { handleViewFilers } = useVscodeContext()
+  const { handleViewFilers, handleUpdateFile } = useVscodeContext()
   const [iconIsOpen, setIconIsOpen] = useState('')
 
   const handleIcon = (icon: string) => {
     setIconIsOpen((state) => validateIcon(icon, state))
   }
-
+  const handleUser = (icon: string) => {
+    handleIcon(icon)
+    handleUpdateFile.update({
+      index: 'User',
+      value: 'user',
+      type: 'file',
+      path: [],
+    })
+  }
   return (
     <C.navbar iconIsOpen={iconIsOpen}>
       <article className="icons">
@@ -33,7 +41,7 @@ export const VscodeNavbar = () => {
         <div className="icon" onClick={() => handleIcon('config')}>
           <VscSettingsGear size={25} color="#7b7d7e" />
         </div>
-        <div className="icon" onClick={() => handleIcon('account')}>
+        <div className="icon" onClick={() => handleUser('account')}>
           <VscAccount size={25} color="#7b7d7e" />
         </div>
       </article>
