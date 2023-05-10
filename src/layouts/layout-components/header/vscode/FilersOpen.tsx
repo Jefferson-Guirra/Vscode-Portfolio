@@ -12,7 +12,7 @@ export const FilersOpen = () => {
     const index = filersOpen.findIndex((item) => item.index === file.index)
     if (index === 0 && filersOpen.length === 1) {
       handleUpdateFile.update({
-        index: 'undefined',
+        index: 'UndefinedFile',
         value: 'undefined',
         type: 'file',
         path: [],
