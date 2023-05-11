@@ -14,7 +14,6 @@ interface User {
 const User = () => {
   const [loading, setLoading] = useState(false)
   const [user, setUser] = useState({} as User)
-  //console.log(Object.keys(user).length === 0)
 
   const getData = async () => {
     const promise = await fetch('/api/user')
@@ -50,6 +49,7 @@ const User = () => {
               overflow: 'hidden',
               width: '60px',
               height: '60px',
+              border: '2px solid #2d2d2d',
             }}
           >
             <Image
