@@ -28,7 +28,7 @@ interface VscodeProps {
   vscodeIsOpen: boolean
   rootFolderIsOpen: boolean
   viewFilers: boolean
-  handleViewFilers: () => void
+  handleViewFilers: (state: boolean) => void
 }
 
 const VscodeContext = createContext({} as VscodeProps)
@@ -72,9 +72,9 @@ export const VscodeProvider = ({ children }: PropsProvider) => {
       update,
     }
   }
-  const handleViewFilers = () => {
+  const handleViewFilers = (state: boolean) => {
     setCookie.insert({ name: 'viewFilers', value: !viewFilers })
-    setViewFilers((state) => !state)
+    setViewFilers(state)
   }
 
   const handleUpdateFileOpen = () => {
