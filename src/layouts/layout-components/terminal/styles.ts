@@ -55,8 +55,12 @@ export const Terminal = styled.section(
     align-items: center;
   }
   .arrow {
+    cursor: pointer;
     transition: 0.5s;
     transform: ${terminal ? 'rotate(180deg)' : 'initial'}
+  }
+  .close {
+    cursor:pointer;
   }
 }
 
