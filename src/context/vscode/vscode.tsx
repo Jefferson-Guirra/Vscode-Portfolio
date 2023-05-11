@@ -8,6 +8,7 @@ import {
   File,
   VscodeMinimize,
   VscodeOpen,
+  UpdateTerminal,
 } from '@/@types'
 import { InsertCookie } from '../@types/insert-cookie'
 interface VscodeProps {
@@ -22,6 +23,8 @@ interface VscodeProps {
   handleUpdateFilersOpen: UpdateFilersOpen
   handleVscodeMinimize: VscodeMinimize
   handleUpdateVscodeOpen: VscodeOpen
+  handleUpdateTerminal: UpdateTerminal
+  terminal: boolean
   vscodeIsOpen: boolean
   rootFolderIsOpen: boolean
   viewFilers: boolean
@@ -48,6 +51,7 @@ export const VscodeProvider = ({ children }: PropsProvider) => {
   const [viewFilers, setViewFilers] = useState(false)
   const [vscodeIsOpen, setVscodeIsOpen] = useState(false)
   const [vscodeIsMinimize, setVscodeIsMinimize] = useState(false)
+  const [terminal, setTerminal] = useState(true)
   const { vscodeIsMinimize: minimize } = parseCookies()
 
   const {
@@ -60,6 +64,14 @@ export const VscodeProvider = ({ children }: PropsProvider) => {
     setCookie,
   } = handleCookie()
 
+  const handleUpdateTerminal = () => {
+    const update = (state: boolean) => {
+      setTerminal(state)
+    }
+    return {
+      update,
+    }
+  }
   const handleViewFilers = () => {
     setCookie.insert({ name: 'viewFilers', value: !viewFilers })
     setViewFilers((state) => !state)
@@ -185,6 +197,8 @@ export const VscodeProvider = ({ children }: PropsProvider) => {
         vscodeIsOpen,
         insertCookie: setCookie,
         handleUpdateVscodeOpen: handleUpdateVscodeOpen(),
+        handleUpdateTerminal: handleUpdateTerminal(),
+        terminal,
       }}
     >
       {children}
