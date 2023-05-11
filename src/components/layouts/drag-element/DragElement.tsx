@@ -23,6 +23,7 @@ export const DragElement = ({ children, width, height }: Props) => {
       onDragEnd={handleDragElement}
       style={{
         position: `${drag.x !== 0 || drag.y !== 0 ? 'absolute' : 'relative'}`,
+        margin: `${drag.x !== 0 || drag.y !== 0 ? '0 0' : '0 auto'}`,
         transform: `${
           drag.x !== 0 || drag.y !== 0 ? 'translate3d(-50%,-100%,0)' : 'initial'
         }`,

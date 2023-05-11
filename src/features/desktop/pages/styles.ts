@@ -19,11 +19,17 @@ export const container = styled.main`
       display: flex;
       align-items: center;
       justify-content: center;
-      flex-direction: column;
+      background-color: rgba(128, 128, 128, 0.144);
+      border: 1px solid #80808025;
       color: currentColor;
-      width: 100%;
+      padding: 0.7rem;
+      border-radius: 7px;
+      margin: 0 auto;
+      width: fit-content;
     }
-
+    .project:hover {
+      animation: show-pop 1s infinite backwards;
+    }
     .project img {
       pointer-events: none;
     }
@@ -39,5 +45,17 @@ export const container = styled.main`
   }
   .modal {
     z-index: 50;
+  }
+
+  @keyframes show-pop {
+    0% {
+      transform: scale(1, 1);
+    }
+    50% {
+      transform: scale(1.1, 1.1);
+    }
+    100% {
+      transform: scale(1, 1);
+    }
   }
 `

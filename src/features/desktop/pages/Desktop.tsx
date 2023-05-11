@@ -13,15 +13,14 @@ const Desktop = () => {
       <C.container>
         <section className="content">
           {iconProjectData.map((icon) => (
-            <DragElement key={icon.name} width={180} height={66}>
+            <DragElement key={icon.name} width={64.38} height={64.38}>
               <Link href={icon.href} target="_blank" className="project">
                 <Image
                   src={`/images/desktop/${icon.icon}.svg`}
-                  width={50}
-                  height={50}
+                  width={40}
+                  height={40}
                   alt={icon + 'icon'}
                 />
-                <p>{icon.name}</p>
               </Link>
             </DragElement>
           ))}
