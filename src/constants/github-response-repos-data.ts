@@ -3,7 +3,7 @@ import { GithubRepositories } from '@/@types'
 export const githubRepositories: GithubRepositories = [
   {
     name: 'Movies Net',
-    description: 'website iformativo de filmes',
+    description: 'website informativo de filmes',
     linkUrl: 'https://movies-net.netlify.app/',
     GithubUrl: 'https://github.com/Jefferson-Guirra/movies_net',
   },
