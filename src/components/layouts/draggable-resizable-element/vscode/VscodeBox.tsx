@@ -56,7 +56,9 @@ export const VscodeBox = () => {
           {viewFilers && <RootFolder />}
           <article className="contents">
             <FilersOpen />
-            <Vscode />
+            <div className="vscode-container">
+              <Vscode />
+            </div>
             <Terminal />
           </article>
         </section>

@@ -34,6 +34,10 @@ export const container = styled.main`
       display: flex;
       flex: 1;
       flex-direction: column;
+
+      .vscode-container {
+        height: calc(100% - 139.6px);
+      }
     }
   }
 `
