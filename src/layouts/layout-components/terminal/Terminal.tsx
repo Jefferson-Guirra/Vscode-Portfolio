@@ -37,10 +37,13 @@ export const Terminal = () => {
           <VscEllipsis size={17} />
           <VscChevronUp
             size={17}
+            color="#fff"
             onClick={() => handleUpdateTerminal.update(!terminal)}
             className="arrow"
           />
           <VscChromeClose
+            color="#fff"
+            className="close"
             onClick={() => handleUpdateTerminal.update(false)}
             size={15}
           />
