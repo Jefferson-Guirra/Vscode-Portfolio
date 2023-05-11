@@ -16,7 +16,14 @@ export const VscodeNavbar = () => {
     useVscodeContext()
   const [iconIsOpen, setIconIsOpen] = useState('')
 
-  const handleFile = (icon: string) => {
+  const handleIcon = (icon: string) => {
+    insertCookie.insert({
+      name: 'iconOpen',
+      value: validateIcon(icon, iconIsOpen),
+    })
+    setIconIsOpen((state) => validateIcon(icon, state))
+  }
+  const handleFileIcon = (icon: string) => {
     if (iconIsOpen === icon) {
       handleViewFilers(false)
       handleIcon('files')
@@ -25,11 +32,7 @@ export const VscodeNavbar = () => {
       handleIcon('files')
     }
   }
-  const handleIcon = (icon: string) => {
-    setIconIsOpen((state) => validateIcon(icon, state))
-    insertCookie.insert({ name: 'iconOpen', value: icon })
-  }
-  const handleUser = (icon: string) => {
+  const handleUserIcon = (icon: string) => {
     handleIcon(icon)
     handleUpdateFile.update({
       index: 'User',
@@ -37,7 +40,6 @@ export const VscodeNavbar = () => {
       type: 'file',
       path: [],
     })
-    insertCookie.insert({ name: 'iconOpen', value: icon })
   }
 
   useEffect(() => {
@@ -49,7 +51,7 @@ export const VscodeNavbar = () => {
   return (
     <C.navbar iconIsOpen={iconIsOpen}>
       <article className="icons">
-        <div className="icon" onClick={() => handleFile('files')}>
+        <div className="icon" onClick={() => handleFileIcon('files')}>
           <VscFiles size={25} color="#7b7d7e" />
         </div>
         <div
@@ -59,7 +61,7 @@ export const VscodeNavbar = () => {
         >
           <VscSettingsGear size={25} color="#7b7d7e" />
         </div>
-        <div className="icon" onClick={() => handleUser('account')}>
+        <div className="icon" onClick={() => handleUserIcon('account')}>
           <VscAccount size={25} color="#7b7d7e" />
         </div>
       </article>
