@@ -73,7 +73,7 @@ export const VscodeProvider = ({ children }: PropsProvider) => {
     }
   }
   const handleViewFilers = (state: boolean) => {
-    setCookie.insert({ name: 'viewFilers', value: !viewFilers })
+    setCookie.insert({ name: 'viewFilers', value: state })
     setViewFilers(state)
   }
 
