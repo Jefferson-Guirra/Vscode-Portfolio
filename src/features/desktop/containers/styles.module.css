@@ -11,7 +11,7 @@
   position: absolute;
   z-index: -1;
   width: 100%;
-  background-color: #173540;
+  background-color: #1e1e1e;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -27,71 +27,69 @@
   gap: 1rem;
 }
 .cover-img .cover-content p {
-  text-shadow: 2px 2px 2px  #000000;
+  text-shadow: 2px 2px 2px #000000;
 }
 .cover-img .cover-content .svg {
   width: 90px;
   height: 104px;
   position: relative;
   perspective: 800px;
-} 
+}
 
 .cover-img .cover-content .svg::after {
   content: '';
   display: block;
   position: absolute;
-animation: show-liquid 2s forwards;
+  animation: show-liquid 2s forwards;
 }
 
-.cover-img .cover-content svg line:nth-child(3){
+.cover-img .cover-content svg line:nth-child(3) {
   opacity: 0;
-  transform: scale(-1,0.7);
+  transform: scale(-1, 0.7);
   transform-origin: 25% 50%;
-  animation: show-svg 3s infinite backwards .5s;
+  animation: show-svg 3s infinite backwards 0.5s;
 }
 
-.cover-img .cover-content svg line:nth-child(4){
+.cover-img .cover-content svg line:nth-child(4) {
   opacity: 0;
-  transform: scale(-1,0.7);
+  transform: scale(-1, 0.7);
   transform-origin: 42% 50%;
-  animation: show-svg 3s infinite backwards .7s;
+  animation: show-svg 3s infinite backwards 0.7s;
 }
 
-.cover-img .cover-content svg line:nth-child(5){
+.cover-img .cover-content svg line:nth-child(5) {
   opacity: 0;
-  transform: scale(-1,0.7);
+  transform: scale(-1, 0.7);
   transform-origin: 59% 50%;
-  animation: show-svg 3s infinite backwards .9s;
+  animation: show-svg 3s infinite backwards 0.9s;
 }
 
 @keyframes show-svg {
   to {
     opacity: initial;
-    transform: scale(-1,1);
+    transform: scale(-1, 1);
   }
-  
 }
 
 @keyframes show-liquid {
   0% {
-  bottom: 28px;
-  left: 10px;
-  height: 0px;
-  width: 55px;
-  background-color: transparent;
+    bottom: 28px;
+    left: 10px;
+    height: 0px;
+    width: 55px;
+    background-color: transparent;
   }
-  100%{
-  bottom: 28px;
-  left: 10px;
-  height: 20px;
-  width: 55px;
-  background-color: #eee;
+  100% {
+    bottom: 28px;
+    left: 10px;
+    height: 20px;
+    width: 55px;
+    background-color: #eee;
   }
-  
 }
 
-@media (max-width:1000px) {
-  .cover-img .cover-content  {
+@media (max-width: 1000px) {
+  .cover-img .cover-content {
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -105,5 +103,4 @@ animation: show-liquid 2s forwards;
   .cover-img .cover-content .svg {
     order: 0;
   }
-  
 }

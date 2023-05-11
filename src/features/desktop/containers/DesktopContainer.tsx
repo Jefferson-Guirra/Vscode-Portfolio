@@ -17,7 +17,6 @@ const DesktopContainer = () => {
       </main>
       <div className={styles['cover-img']}>
         <div className={styles['cover-content']}>
-          <p>Hello World</p>
           <div className={styles.svg}>
             <FiCoffee size={90} />
           </div>
