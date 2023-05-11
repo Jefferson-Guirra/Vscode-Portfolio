@@ -23,10 +23,10 @@ export const projectData: ProjectCardProps[] = [
     ],
     links: [
       {
-        title: 'SourceDemo',
+        title: 'Github',
         href: 'https://github.com/Jefferson-Guirra/movies_net',
       },
-      { title: 'LiveDemo', href: 'https://movies-net.netlify.app/' },
+      { title: 'Link', href: 'https://movies-net.netlify.app/' },
     ],
   },
 
@@ -44,10 +44,10 @@ export const projectData: ProjectCardProps[] = [
     ],
     links: [
       {
-        title: 'SourceDemo',
+        title: 'Github',
         href: 'https://github.com/Jefferson-Guirra/e-commerce',
       },
-      { title: 'LiveDemo', href: 'https://literando.vercel.app/' },
+      { title: 'Link', href: 'https://literando.vercel.app/' },
     ],
   },
 
@@ -66,10 +66,10 @@ export const projectData: ProjectCardProps[] = [
     ],
     links: [
       {
-        title: 'SourceDemo',
+        title: 'Github',
         href: 'https://github.com/Jefferson-Guirra/Fundacao-Dev',
       },
-      { title: 'LiveDemo', href: 'https://fundacao-dev.vercel.app/' },
+      { title: 'Link', href: 'https://fundacao-dev.vercel.app/' },
     ],
   },
 
@@ -86,11 +86,11 @@ export const projectData: ProjectCardProps[] = [
     ],
     links: [
       {
-        title: 'SourceDemo',
+        title: 'Github',
         href: 'https://github.com/Jefferson-Guirra/Dogs',
       },
       {
-        title: 'LiveDemo',
+        title: 'Link',
         href: 'https://dogs-rede-social-cachorro.netlify.app/login',
       },
     ],
@@ -109,11 +109,11 @@ export const projectData: ProjectCardProps[] = [
     ],
     links: [
       {
-        title: 'SourceDemo',
+        title: 'Github',
         href: 'https://github.com/Jefferson-Guirra/Lista-de-Tarefas',
       },
       {
-        title: 'LiveDemo',
+        title: 'Link',
         href: 'https://projeto-06-lista-de-tarefas.netlify.app/',
       },
     ],
@@ -131,11 +131,11 @@ export const projectData: ProjectCardProps[] = [
     ],
     links: [
       {
-        title: 'SourceDemo',
+        title: 'Github',
         href: 'https://github.com/Jefferson-Guirra/Vscode-Portfolio',
       },
       {
-        title: 'LiveDemo',
+        title: 'Link',
         href: 'https://vscode-portfolio-developer.vercel.app/',
       },
     ],
@@ -155,10 +155,10 @@ export const projectData: ProjectCardProps[] = [
     ],
     links: [
       {
-        title: 'SourceDemo',
+        title: 'Github',
         href: 'https://github.com/Jefferson-Guirra/Meu-Board',
       },
-      { title: 'LiveDemo', href: 'https://meu-board-three.vercel.app/' },
+      { title: 'Link', href: 'https://meu-board-three.vercel.app/' },
     ],
   },
 
@@ -175,11 +175,11 @@ export const projectData: ProjectCardProps[] = [
     ],
     links: [
       {
-        title: 'SourceDemo',
+        title: 'Github',
         href: 'https://github.com/Jefferson-Guirra/Portfolio',
       },
       {
-        title: 'LiveDemo',
+        title: 'Link',
         href: 'https://my-storage-jefferson.netlify.app/',
       },
     ],
@@ -198,10 +198,10 @@ export const projectData: ProjectCardProps[] = [
     ],
     links: [
       {
-        title: 'SourceDemo',
+        title: 'Github',
         href: 'https://github.com/Jefferson-Guirra/Doctor-Care',
       },
-      { title: 'LiveDemo', href: 'https://doctor-care-clinica.netlify.app/' },
+      { title: 'Link', href: 'https://doctor-care-clinica.netlify.app/' },
     ],
   },
 
@@ -218,11 +218,11 @@ export const projectData: ProjectCardProps[] = [
     ],
     links: [
       {
-        title: 'SourceDemo',
+        title: 'Github',
         href: 'https://github.com/Jefferson-Guirra/Doctor-Care',
       },
       {
-        title: 'LiveDemo',
+        title: 'Link',
         href: 'https://jefferson-guirra.github.io/-Projetos/projeto-02/',
       },
     ],
@@ -241,11 +241,11 @@ export const projectData: ProjectCardProps[] = [
     ],
     links: [
       {
-        title: 'SourceDemo',
+        title: 'Github',
         href: 'https://github.com/Jefferson-Guirra/Caravan',
       },
       {
-        title: 'LiveDemo',
+        title: 'Link',
         href: 'https://caravan-viagens-empresa.netlify.app/',
       },
     ],
