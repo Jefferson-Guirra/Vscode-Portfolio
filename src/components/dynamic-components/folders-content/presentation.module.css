@@ -124,9 +124,6 @@
     width: 100%;
   }
 }
-
-
-
 @media (max-width: 550px) {
   .container {
     padding: 1.5rem;
@@ -152,7 +149,6 @@
     font-size: 0.9rem;
   }
 }
-
 
 @keyframes show-container {
   to {
