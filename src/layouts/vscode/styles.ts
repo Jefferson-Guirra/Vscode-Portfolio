@@ -10,7 +10,6 @@ export const container = styled.main`
   .content-box {
     position: relative;
     display: flex;
-    height: calc(100% - 25px);
     overflow: hidden;
     flex: 1;
   }

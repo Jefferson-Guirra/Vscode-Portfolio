@@ -1,5 +1,5 @@
 .container {
-  height: calc(100% - 139.6px);
+  flex: 1;
   position: relative;
   overflow-x: hidden;
   overflow-y: auto;
@@ -17,10 +17,4 @@
   background-color: #464647;
   width: 3px;
   border: 3px solid #464647;
-}
-
-@media (max-width: 450px) {
-  .container {
-    height: calc(100% - 161.6px);
-  }
 }
