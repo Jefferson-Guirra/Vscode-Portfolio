@@ -1,6 +1,6 @@
 import React from 'react'
-import styles from './styles.module.css'
 import Link from 'next/link'
+import * as C from './styles'
 import {
   VscTerminalBash,
   VscAdd,
@@ -11,17 +11,19 @@ import {
   VscChevronUp,
   VscChromeClose,
 } from 'react-icons/vsc'
+import { useVscodeContext } from '@/context/vscode/vscode'
 export const Terminal = () => {
+  const { terminal, handleUpdateTerminal } = useVscodeContext()
   return (
-    <section className={styles.container}>
-      <article className={styles.actions}>
-        <div className={styles.titles}>
+    <C.Terminal terminal={terminal}>
+      <article className="actions">
+        <div className="titles">
           <h5>PROBLEMAS</h5>
           <h5>SAÍDA</h5>
           <h5>CONSOLE DE DEPURAÇÃO</h5>
           <h5>TERMINAL</h5>
         </div>
-        <div className={styles.icons}>
+        <div className="icons">
           <p>
             <VscTerminalBash size={15} color="#eee" />
             npm-Vscode-Portfolio
@@ -33,11 +35,18 @@ export const Terminal = () => {
           <VscLayoutCentered size={17} />
           <VscTrash size={17} />
           <VscEllipsis size={17} />
-          <VscChevronUp size={17} />
-          <VscChromeClose size={15} />
+          <VscChevronUp
+            size={17}
+            onClick={() => handleUpdateTerminal.update(!terminal)}
+            className="arrow"
+          />
+          <VscChromeClose
+            onClick={() => handleUpdateTerminal.update(false)}
+            size={15}
+          />
         </div>
       </article>
-      <article className={styles.link}>
+      <article className="link">
         <p>ready</p>
         <p>-</p>
         <p>started server on 0.0.0.0:3000, </p>
@@ -45,6 +54,6 @@ export const Terminal = () => {
           url: https://my-storage-jefferson.netlify.app
         </Link>
       </article>
-    </section>
+    </C.Terminal>
   )
 }
