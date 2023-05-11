@@ -8,7 +8,7 @@ export const iconProjectData = [
   },
   {
     name: 'Dogs',
-    href: 'https://fundacao-dev.vercel.app/',
+    href: 'https://dogs-rede-social-cachorro.netlify.app/login',
     icon: 'dog',
   },
   {
