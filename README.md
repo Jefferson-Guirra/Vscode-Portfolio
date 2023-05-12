@@ -6,8 +6,6 @@
 
 <h4 align="center"><a href="https://my-storage-jefferson.netlify.app/">Clique para visitar o projeto</a></h4>
 
-```bash
-
 ## 📚 Seções
 
 O site é composto por duas seções:
@@ -18,7 +16,6 @@ O site é composto por duas seções:
 ```
 
 ---
-```bash
 
 ## 💼 Tecnologias utilizadas
 
@@ -32,6 +29,4 @@ Para o desenvolvimento do website utilizei as seguintes tecnologias:
 - Nodemailer;
 - Nookies
 ---
-
-```
 
