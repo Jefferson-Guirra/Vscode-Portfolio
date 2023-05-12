@@ -31,7 +31,6 @@ export const VscodeBox = () => {
       window.removeEventListener('resize', debounceResizeWindow)
     }
   }, [debounceResizeWindow])
-  console.log(document.body.getBoundingClientRect().height)
 
   return (
     <Rnd
