@@ -19,7 +19,6 @@ export default async function user(
         },
       }
     )
-    console.log(promise)
     const { avatar_url, bios, name, url, public_repos } =
       (await promise.json()) as GithubApi
     const data: DataApiUser = {

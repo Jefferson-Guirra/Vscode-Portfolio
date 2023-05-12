@@ -12,7 +12,7 @@
   display: flex;
   align-items: center;
   opacity: 0;
-  transform: translate3d(0,-30px,0);
+  transform: translate3d(0, -30px, 0);
   animation: show-down 0.7s forwards;
   padding-block: 1rem;
   gap: 1rem;
@@ -72,19 +72,19 @@
 }
 .container .repos .repo:nth-child(1) {
   opacity: 0;
-  transform: translate3d(0,-30px,0);
-  animation: show-down 0.7s forwards .3s;
+  transform: translate3d(0, -30px, 0);
+  animation: show-down 0.7s forwards 0.3s;
 }
 
 .container .repos .repo:nth-child(2) {
   opacity: 0;
-  transform: translate3d(0,-30px,0);
-  animation: show-down 0.7s forwards .45s;
+  transform: translate3d(0, -30px, 0);
+  animation: show-down 0.7s forwards 0.45s;
 }
 .container .repos .repo:nth-child(3) {
   opacity: 0;
-  transform: translate3d(0,-30px,0);
-  animation: show-down 0.7s forwards .6s;
+  transform: translate3d(0, -30px, 0);
+  animation: show-down 0.7s forwards 0.6s;
 }
 
 .container .repos .repo h4 {
@@ -147,7 +147,6 @@
   }
 }
 
-
 /*----------------------------------------------------------ANIMATIONS-------------------------------------------------------------------------*/
 
 @keyframes show-width {
@@ -175,5 +174,4 @@
     opacity: initial;
     transform: initial;
   }
-  
 }
