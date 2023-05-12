@@ -2,7 +2,7 @@
   💻<br>Portfólio - Jefferson Guirra
 </h1>
 
-![Resultado final do projeto](public/vscode-portfolio-read-me.JPG)
+![Resultado final do projeto](public/vscode-portfolio-read-me.png)
 
 <h4 align="center"><a href="https://vscode-portfolio-developer.vercel.app/">Clique para visitar o projeto</a></h4>
 
