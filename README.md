@@ -13,8 +13,6 @@ O site é composto por duas seções:
 - **Home:** Simulando a área de trabalho no computador aqui é apresentado meus projetos pessoais;
 - **Vscode:** Esta seção é produzida com base na interface do vscode contendo um pouco sobre mim, projetos pessoais, habilidades, contato e informações do github;
 
-```
-
 ---
 
 ## 💼 Tecnologias utilizadas
