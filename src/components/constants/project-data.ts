@@ -14,7 +14,7 @@ export const projectData: ProjectCardProps[] = [
     colorRight: '#f7d354',
     iconName: 'movie',
     title: 'Movies Net',
-    contentText: 'website de informações de filmes',
+    contentText: 'website de informações de filmes.',
     techs: [
       { name: 'React', borderColor: '#00d6ff' },
       { name: 'Redux', borderColor: '#764abd' },
@@ -35,7 +35,7 @@ export const projectData: ProjectCardProps[] = [
     colorRight: '#001f3f98',
     iconName: 'book',
     title: 'Literando',
-    contentText: 'E-commerce de livros',
+    contentText: 'E-commerce de livros.',
     techs: [
       { name: 'Typescript', borderColor: '#007acd' },
       { name: 'Next', borderColor: '#00d6ff' },
@@ -58,7 +58,7 @@ export const projectData: ProjectCardProps[] = [
     colorRight: '#1fa3e58f',
     iconName: 'foundation',
     title: 'Fundação Dev',
-    contentText: 'Website corporativo',
+    contentText: 'Website corporativo.',
     techs: [
       { name: 'Typescript', borderColor: '#007acd' },
       { name: 'Next', borderColor: '#00d6ff' },
@@ -126,7 +126,7 @@ export const projectData: ProjectCardProps[] = [
     colorLeft: '#2fa7f3',
     iconName: 'visual-studio-code',
     title: 'Vscode Portfolio',
-    contentText: 'projeto de portfolio baseado no Vscode',
+    contentText: 'projeto de portfolio baseado no Vscode.',
     techs: [
       { name: 'next', borderColor: '#2fa7f3' },
       { name: 'styled-components', borderColor: '#3493ce' },
@@ -148,7 +148,7 @@ export const projectData: ProjectCardProps[] = [
     colorRight: '#141a29c2',
     iconName: 'board-list',
     title: 'Meu Board',
-    contentText: 'Lista de tarfas',
+    contentText: 'Lista de tarfas.',
     techs: [
       { name: 'Next', borderColor: '#00d6ff' },
       { name: 'Typescript', borderColor: '#007acd' },
@@ -169,7 +169,7 @@ export const projectData: ProjectCardProps[] = [
     colorRight: '#37216abb',
     iconName: 'space',
     title: 'Portfolio',
-    contentText: 'Landing Page',
+    contentText: 'Landing Page.',
     techs: [
       { name: 'Html', borderColor: '#e44d26' },
       { name: 'Javascript', borderColor: '#007acd' },
@@ -192,7 +192,7 @@ export const projectData: ProjectCardProps[] = [
     colorRight: '#00856fb4',
     iconName: 'doctor',
     title: 'Doctor Care',
-    contentText: 'Landing Page',
+    contentText: 'Landing Page.',
     techs: [
       { name: 'Html', borderColor: '#e44d26' },
       { name: 'Javascript', borderColor: '#007acd' },
@@ -211,7 +211,7 @@ export const projectData: ProjectCardProps[] = [
     colorLeft: '#ffbb55',
     colorRight: '#ffbb55c7',
     iconName: 'frog',
-    title: 'Animais fantásticos',
+    title: 'Animais fantásticos.',
     contentText: 'Landing Page',
     techs: [
       { name: 'Html', borderColor: '#e44d26' },
@@ -235,7 +235,7 @@ export const projectData: ProjectCardProps[] = [
     colorRight: '#2125298f',
     iconName: 'bus',
     title: 'Caravan',
-    contentText: 'Landing Page',
+    contentText: 'Landing Page.',
     techs: [
       { name: 'Html', borderColor: '#e44d26' },
       { name: 'Javascript', borderColor: '#007acd' },
