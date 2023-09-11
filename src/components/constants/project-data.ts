@@ -39,8 +39,10 @@ export const projectData: ProjectCardProps[] = [
     techs: [
       { name: 'Typescript', borderColor: '#007acd' },
       { name: 'Next', borderColor: '#00d6ff' },
-      { name: 'Styled-components', borderColor: '#3493ce' },
-      { name: 'Firebase', borderColor: '#f58411' },
+      { name: 'Css', borderColor: '#3493ce' },
+      { name: 'Nodejs',  borderColor: '#90C53F'},
+      { name: 'Express', borderColor: '#000000'},
+      { name: 'MongoDb', borderColor: '#489B49' }
     ],
     links: [
       {
